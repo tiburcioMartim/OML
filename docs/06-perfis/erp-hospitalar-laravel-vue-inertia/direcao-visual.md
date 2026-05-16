@@ -1,4 +1,4 @@
-﻿# Direção Visual — ERP Hospitalar
+# Direção Visual — ERP Hospitalar
 
 ## Estilo
 - Moderno conservador
@@ -10,3 +10,9 @@
 - Alto contraste obrigatório
 - Dark mode e light mode
 - Temas sazonais (ex: Outubro Rosa)
+
+## Logomarcas
+- Logomarcas devem ser herdadas do sistema legado — nunca inventadas ou geradas
+- Buscar logos tanto em arquivos locais quanto em URLs externas (R2, S3, CDN)
+- Registrar todas as logomarcas em `memoria/inventario-logomarcas.md`
+- Se não encontrar, perguntar ao dev antes de prosseguir

@@ -1,4 +1,8 @@
-﻿# Fase 05 — Investigação da Tela
+# Fase 05 — Investigação da Tela
+
+## Autonomia: 🟢 Autônomo
+
+O OML investiga a tela sem parar. Segue automaticamente para a próxima fase.
 
 ## Objetivo
 Investigar uma tela específica do legado em profundidade.
@@ -13,8 +17,5 @@ Investigar uma tela específica do legado em profundidade.
 - [ ] Identificar regras de negócio
 - [ ] Identificar dados sensíveis
 
-## Frase obrigatória de encerramento
-"Com isso, finalizamos 100% a Fase 05 — Investigação da Tela [NOME]."
-
 ## Próximo passo
-Fase 06 — Dossiê Funcional
+Fase 06 — Dossiê Funcional (🟢 segue automaticamente)

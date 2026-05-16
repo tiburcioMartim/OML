@@ -1,4 +1,8 @@
-﻿# Fase 06 — Dossiê Funcional
+# Fase 06 — Dossiê Funcional
+
+## Autonomia: 🟢 Autônomo
+
+O OML gera o dossiê completo sem parar. Segue automaticamente para a próxima fase.
 
 ## Objetivo
 Gerar dossiê completo da tela cobrindo 21 domínios obrigatórios.
@@ -8,8 +12,5 @@ Gerar dossiê completo da tela cobrindo 21 domínios obrigatórios.
 - [ ] Marcar incertezas como A INVESTIGAR
 - [ ] Registrar regras com origem e evidência
 
-## Frase obrigatória de encerramento
-"Com isso, finalizamos 100% a Fase 06 — Dossiê Funcional da tela [NOME]."
-
 ## Próximo passo
-Fase 07 — Mapeamento Técnico
+Fase 07 — Mapeamento Técnico (🟢 segue automaticamente)

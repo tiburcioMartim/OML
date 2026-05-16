@@ -1,4 +1,8 @@
-﻿# Fase 10 — Plano de Implementação
+# Fase 10 — Plano de Implementação
+
+## Autonomia: 🟢 Autônomo
+
+O OML cria o plano técnico sem parar. Segue automaticamente para a próxima fase.
 
 ## Objetivo
 Criar plano técnico detalhado com microfases de codificação.
@@ -10,8 +14,5 @@ Criar plano técnico detalhado com microfases de codificação.
 - [ ] Definir validações e permissões
 - [ ] Definir testes e rollback
 
-## Frase obrigatória de encerramento
-"Com isso, finalizamos 100% a Fase 10 — Plano de Implementação da tela [NOME]."
-
 ## Próximo passo
-Fase 11 — Planejamento de Testes
+Fase 11 — Planejamento de Testes (🟢 segue automaticamente)

@@ -1,4 +1,8 @@
-﻿# Fase 11 — Planejamento de Testes
+# Fase 11 — Planejamento de Testes
+
+## Autonomia: 🟢 Autônomo
+
+O OML planeja os testes sem parar. Segue automaticamente para a próxima fase.
 
 ## Objetivo
 Planejar testes unitários, feature, integração, regressão, acessibilidade e segurança.
@@ -11,8 +15,5 @@ Planejar testes unitários, feature, integração, regressão, acessibilidade e 
 - [ ] Definir testes de acessibilidade
 - [ ] Definir testes de segurança
 
-## Frase obrigatória de encerramento
-"Com isso, finalizamos 100% a Fase 11 — Planejamento de Testes da tela [NOME]."
-
 ## Próximo passo
-Fase 12 — Autorização de Implementação
+Fase 12 — Autorização de Implementação (🟢 segue automaticamente — Design System já foi aprovado)

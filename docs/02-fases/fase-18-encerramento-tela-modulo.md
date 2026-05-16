@@ -1,4 +1,8 @@
-﻿# Fase 18 — Encerramento da Tela ou Módulo
+# Fase 18 — Encerramento da Tela ou Módulo
+
+## Autonomia: 🟢 Autônomo
+
+O OML encerra e registra automaticamente. Segue para a próxima tela.
 
 ## Objetivo
 Marcar oficialmente a tela como migrada e registrar no histórico.
@@ -9,8 +13,5 @@ Marcar oficialmente a tela como migrada e registrar no histórico.
 - [ ] Atualizar `memoria/backlog-telas.yaml` (status -> migrada)
 - [ ] Capturar evidências finais
 
-## Frase obrigatória de encerramento
-"Com isso, finalizamos 100% a Fase 18 — Encerramento da tela [NOME]. Tela oficialmente migrada."
-
 ## Próximo passo
-`/migracao-proxima-tela`
+`/migracao-proxima-tela` (🟢 segue automaticamente para a próxima tela do backlog)

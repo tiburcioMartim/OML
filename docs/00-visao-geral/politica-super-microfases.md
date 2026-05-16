@@ -2,7 +2,7 @@
 
 ## Objetivo
 
-Garantir que todo trabalho do OML seja executado em unidades extremamente pequenas, sequenciais e verificáveis.
+Garantir que todo trabalho do OML seja executado em unidades pequenas, sequenciais e verificáveis, mas sem paradas desnecessárias.
 
 ## Quando usar
 
@@ -12,9 +12,11 @@ Em todas as fases. Nenhuma tarefa pode ser feita em blocos grandes.
 
 ## Declaração permanente
 
-O OML deve executar qualquer trabalho em unidades extremamente pequenas, sequenciais e verificáveis.
+O OML deve executar qualquer trabalho em unidades pequenas, sequenciais e verificáveis.
 
 É **proibido** executar grandes blocos de migração de uma vez.
+
+Porém, o OML deve **fluir entre microfases sem parar**, acumulando resumos em vez de interromper a cada passo. Parar para pedir autorização em cada microfase cansa o dev e atrasa a migração.
 
 ---
 
@@ -30,8 +32,8 @@ Cada microfase deve conter:
 6. **Arquivos que podem ser alterados** — lista explícita
 7. **Checklist de conclusão** — critérios objetivos
 8. **Evidências produzidas** — o que foi gerado
-9. **Riscos encontrados** — problemas identificados
-10. **Próxima microfase sugerida** — o que vem depois
+9. **Riscos encontrados** — lista breve, pouco texto
+10. **Próxima microfase** — segue automaticamente se 🟢
 
 ---
 
@@ -56,39 +58,28 @@ Microfase 7  — Identificar ações de escrita
 Microfase 8  — Identificar permissões
 Microfase 9  — Identificar integrações
 Microfase 10 — Identificar regras de negócio
-Microfase 11 — Gerar dossiê parcial
-Microfase 12 — Revisar lacunas
-Microfase 13 — Gerar protótipo
-Microfase 14 — Planejar implementação
-Microfase 15 — Aguardar autorização
+Microfase 11 — Gerar dossiê
+Microfase 12 — Implementar (fluxo contínuo)
 ```
+
+**Todas as microfases acima fluem sem parada.** O OML executa todas em sequência e apresenta um resumo ao final.
 
 ---
 
-## Encerramento obrigatório
+## Encerramento
 
-Cada microfase deve terminar com:
+### Fases 🟢 Autônomo
+Encerramento silencioso — o OML segue para a próxima sem exibir frase.
 
-```
-Com isso, finalizamos 100% a Microfase X — [nome da microfase].
-```
+### Fases 🟡 Resumo
+Ao final do bloco, o OML apresenta uma lista breve do que fez e encontrou. Pouco texto. Sem relatórios longos.
 
-Cada fase deve terminar com:
+### Fases 🔴 Crítico
+Encerramento com frase obrigatória e aguardar aprovação:
 
 ```
 Com isso, finalizamos 100% a Fase X — [nome da fase].
 ```
-
-Após encerrar, o OML deve informar:
-
-1. O que foi concluído
-2. Quais arquivos foram criados ou atualizados
-3. Quais decisões foram registradas
-4. Quais pendências existem
-5. Quais riscos foram identificados
-6. O que deve ser feito agora
-7. Qual é a próxima fase/microfase
-8. Se precisa de autorização humana para avançar
 
 ---
 
@@ -100,11 +91,11 @@ Após encerrar, o OML deve informar:
 - [ ] Evidências registradas
 - [ ] Arquivos atualizados
 - [ ] Pendências marcadas como A INVESTIGAR
-- [ ] Riscos registrados
-- [ ] Próxima microfase indicada
+- [ ] Riscos registrados (lista breve)
+- [ ] Próxima microfase indicada ou executada automaticamente
 
 ---
 
 ## Regra
 
-O OML deve preferir avançar lentamente com segurança do que rapidamente com risco.
+O OML deve fluir com cadência, acumulando resumos, e parar somente em Gates (🔴). Velocidade com segurança, não lentidão com burocracia.

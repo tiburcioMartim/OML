@@ -1,5 +1,9 @@
 # Fase 00 — Preparação e Governança
 
+## Autonomia: 🟡 Resumo
+
+O OML executa toda a preparação e apresenta um resumo ao final para o dev confirmar.
+
 ## Objetivo
 
 Criar as regras, padrões, limites e documentos essenciais antes de qualquer migração.
@@ -14,6 +18,8 @@ Acesso ao responsável pelo projeto para responder perguntas sobre stack, banco,
 
 ## Ações obrigatórias
 
+- [ ] Registrar responsável pela migração (nome + email)
+- [ ] Registrar URL do repositório do sistema migrado
 - [ ] Definir perfil do projeto
 - [ ] Definir stack alvo
 - [ ] Definir idioma do código
@@ -34,6 +40,7 @@ Acesso ao responsável pelo projeto para responder perguntas sobre stack, banco,
 - [ ] Definir política de rollback
 - [ ] Definir política de feature flags
 - [ ] Definir política de documentação
+- [ ] Definir política de containerização (apresentar opções Docker vs. local ao dev)
 - [ ] Documentar ambientes reais do projeto
 - [ ] Criar templates oficiais
 
@@ -51,10 +58,12 @@ Acesso ao responsável pelo projeto para responder perguntas sobre stack, banco,
 
 ## Checklist de conclusão
 
+- [ ] Responsável e repositório registrados
 - [ ] Perfil do projeto criado
 - [ ] Stack definida
 - [ ] Todas as políticas documentadas
 - [ ] Direção visual definida
+- [ ] Ambiente de execução definido (Docker, local ou a definir)
 - [ ] Ambientes documentados
 - [ ] Templates revisados
 
@@ -64,4 +73,4 @@ Acesso ao responsável pelo projeto para responder perguntas sobre stack, banco,
 
 ## Próximo passo
 
-Fase 01 — Mapeamento Geral do Legado
+Fase 01 — Mapeamento Geral do Legado (🟢 segue automaticamente)

@@ -1,4 +1,8 @@
-﻿# Fase 02 — Descoberta Automática de Telas
+# Fase 02 — Descoberta Automática de Telas
+
+## Autonomia: 🟢 Autônomo
+
+O OML executa a descoberta sem parar. Segue automaticamente para a próxima fase.
 
 ## Objetivo
 Descobrir automaticamente todas as telas, URLs, menus, botões e fluxos do sistema legado.
@@ -24,8 +28,5 @@ Após a Fase 01.
 - [ ] Backlog gerado em `memoria/backlog-telas.yaml`
 - [ ] Telas esquecidas sinalizadas
 
-## Frase obrigatória de encerramento
-"Com isso, finalizamos 100% a Fase 02 — Descoberta Automática de Telas."
-
 ## Próximo passo
-Fase 03 — Mapa Hierárquico
+Fase 03 — Mapa Hierárquico (🟢 segue automaticamente)

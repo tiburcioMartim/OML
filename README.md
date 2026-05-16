@@ -2,9 +2,7 @@
 
 O OML ajuda desenvolvedores a modernizar sistemas legados com segurança, documentação, testes, padronização e controle por fases.
 
-Ele **não migra tudo automaticamente sem supervisão**.
-
-Ele investiga o sistema legado, cria documentação, identifica regras de negócio, mapeia banco, permissões, integrações, riscos, propõe melhorias e **só implementa quando você autoriza**.
+Ele investiga o sistema legado, cria documentação, identifica regras de negócio, mapeia banco, permissões, integrações, riscos, propõe melhorias e **trabalha de forma autônoma**, parando somente em **2 pontos de aprovação** (Gates).
 
 ---
 
@@ -31,30 +29,26 @@ Serve para migrar sistemas antigos para uma estrutura moderna sem perder regras 
 
 ## Ele codifica sozinho?
 
-**Não por padrão.**
+**Sim, após o Design System ser aprovado.**
 
-A implementação só acontece depois de autorização explícita.
+O OML trabalha de forma autônoma e cadenciada. Ele só para em 2 momentos:
+- **Gate 1 (Design System):** Você aprova o layout e componentes antes da primeira tela.
+- **Gate 2 (Homologação):** Você testa e aprova cada tela migrada.
 
 ---
 
 ## Como funciona?
 
-O OML trabalha em **super microfases**:
+O OML trabalha com **autonomia inteligente** e **2 Gates de aprovação**:
 
-1. Investiga o legado
-2. Documenta regras de negócio
-3. Mapeia banco, permissões, integrações
-4. Propõe interface visual
-5. Planeja implementação
-6. Pede autorização
-7. Implementa em microfases pequenas
-8. Testa e revisa paridade
-9. Homologa com o usuário
-10. Atua como guardião contínuo pós-migração
-
-Cada microfase termina com checklist e encerramento formal:
-
-> "Com isso, finalizamos 100% a Microfase X — [nome da microfase]."
+1. 🟢 Investiga o legado (autônomo)
+2. 🟢 Documenta regras de negócio (autônomo)
+3. 🟢 Mapeia banco, permissões, integrações (autônomo)
+4. 🔴 **GATE 1 — Você aprova o Design System e layout completo**
+5. 🟢 Investiga, planeja e implementa cada tela (autônomo corrido)
+6. 🔴 **GATE 2 — Você testa e aprova a tela migrada**
+7. 🟢 Próxima tela (repete 5-6)
+8. 🟢 Guardião contínuo pós-migração
 
 ---
 

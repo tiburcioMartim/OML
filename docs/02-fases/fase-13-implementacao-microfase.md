@@ -1,4 +1,8 @@
-﻿# Fase 13 — Implementação em Microfase
+# Fase 13 — Implementação em Microfase
+
+## Autonomia: 🟢 Autônomo
+
+O OML implementa seguindo o plano, sem parar. Fluxo contínuo de microfases.
 
 ## Objetivo
 Implementar a tela em microfases muito pequenas, sequenciais e testáveis.
@@ -9,14 +13,11 @@ Implementar a tela em microfases muito pequenas, sequenciais e testáveis.
 - [ ] Criar Controller, Service, Action
 - [ ] Criar validações
 - [ ] Criar Policies/permissões
-- [ ] Criar componentes Vue
+- [ ] Criar componentes Vue (usando Design System aprovado)
 - [ ] Criar testes
 - [ ] Configurar auditoria
 - [ ] Rodar linter
-- [ ] Cada microfase com checklist
-
-## Frase obrigatória de encerramento
-"Com isso, finalizamos 100% a Fase 13 — Implementação da tela [NOME]."
+- [ ] Cada microfase com checklist (verificação silenciosa)
 
 ## Próximo passo
-Fase 14 — Revisão de Paridade
+Fase 14 — Revisão de Paridade (🟡 resumo breve)

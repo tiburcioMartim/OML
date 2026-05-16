@@ -1,4 +1,8 @@
-﻿# Fase 19 — Guardião Contínuo
+# Fase 19 — Guardião Contínuo
+
+## Autonomia: 🟢 Autônomo
+
+O OML monitora continuamente sem parar.
 
 ## Objetivo
 Após a migração, o OML continua atuando como guardião de padronização.
@@ -13,9 +17,6 @@ Após a migração, o OML continua atuando como guardião de padronização.
 - [ ] Gerar relatório de violações
 - [ ] Gerar relatório de dívida técnica
 - [ ] Gerar relatório de aprimoramento
-
-## Frase obrigatória de encerramento
-"Auditoria contínua concluída. [N] pontos de atenção encontrados."
 
 ## Próximo passo
 Corrigir violações e manter padronização.

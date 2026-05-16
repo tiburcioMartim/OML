@@ -1,4 +1,8 @@
-﻿# Fase 07 — Mapeamento Técnico
+# Fase 07 — Mapeamento Técnico
+
+## Autonomia: 🟢 Autônomo
+
+O OML mapeia detalhes técnicos sem parar. Segue automaticamente para a próxima fase.
 
 ## Objetivo
 Mapear detalhes técnicos: queries, Models, validações, cálculos.
@@ -10,8 +14,5 @@ Mapear detalhes técnicos: queries, Models, validações, cálculos.
 - [ ] Mapear cálculos
 - [ ] Mapear jobs e filas
 
-## Frase obrigatória de encerramento
-"Com isso, finalizamos 100% a Fase 07 — Mapeamento Técnico da tela [NOME]."
-
 ## Próximo passo
-Fase 08 — Mapeamento de Riscos
+Fase 08 — Mapeamento de Riscos (🟡 lista breve, sem parar)

@@ -1,5 +1,9 @@
 # Fase 01 — Mapeamento Geral do Legado
 
+## Autonomia: 🟢 Autônomo
+
+O OML executa toda a investigação sem parar. Segue automaticamente para a próxima fase.
+
 ## Objetivo
 
 Compreender a estrutura geral do sistema legado: tecnologia, banco, permissões, integrações e arquitetura.
@@ -19,6 +23,8 @@ Após a Fase 00 estar concluída.
 - [ ] Identificar jobs, filas e automações
 - [ ] Identificar armazenamento de arquivos/imagens
 - [ ] Identificar padrão de URLs
+- [ ] Pedir autorização e, se aprovado, localizar e analisar o arquivo de configuração de ambiente do legado (.env, config.php, conexao.php, etc.)
+- [ ] Pedir autorização e, se aprovado, localizar e inventariar todas as logomarcas (logos, ícones, favicons) do sistema legado — incluindo arquivos locais e URLs externas (R2, S3, CDN)
 - [ ] Documentar visão geral
 
 ## Ações proibidas
@@ -33,11 +39,9 @@ Após a Fase 00 estar concluída.
 - [ ] Permissões identificadas (visão geral)
 - [ ] Integrações identificadas (visão geral)
 - [ ] Storage identificado
-
-## Frase obrigatória de encerramento
-
-"Com isso, finalizamos 100% a Fase 01 — Mapeamento Geral do Legado."
+- [ ] Variáveis de ambiente do legado mapeadas (ou pendente se não autorizado)
+- [ ] Logomarcas do legado inventariadas
 
 ## Próximo passo
 
-Fase 02 — Descoberta Automática de Telas (`/migracao-descobrir-telas`)
+Fase 02 — Descoberta Automática de Telas (🟢 segue automaticamente)

@@ -1,4 +1,8 @@
-﻿# Fase 17 — Conciliação Pós-Migração
+# Fase 17 — Conciliação Pós-Migração
+
+## Autonomia: 🟡 Resumo
+
+O OML compara e apresenta resultado breve. Não para.
 
 ## Objetivo
 Comparar registros, totais, saldos e status entre legado e novo.
@@ -10,8 +14,5 @@ Comparar registros, totais, saldos e status entre legado e novo.
 - [ ] Identificar divergências
 - [ ] Corrigir com trilha de auditoria
 
-## Frase obrigatória de encerramento
-"Com isso, finalizamos 100% a Fase 17 — Conciliação Pós-Migração da tela [NOME]."
-
 ## Próximo passo
-Fase 18 — Encerramento
+Fase 18 — Encerramento (🟢 segue automaticamente)
