@@ -1,0 +1,11 @@
+﻿# Backlog de Telas — Template
+telas:
+  - id: "TELA-0001"
+    titulo: ""
+    modulo: ""
+    url_legado: ""
+    url_erp_laravel: ""
+    criticidade: "a_investigar"
+    status: "nao_iniciada"
+    implementacao_autorizada: false
+    observacoes: ""

@@ -1,0 +1,9 @@
+﻿# Mapa Hierárquico — Template
+hierarquia:
+  - modulo: "Operacional"
+    submenus:
+      - nome: "TI"
+        telas:
+          - id: "TELA-0001"
+            titulo: "Usuários"
+            url_legado: "/operacional/ti/usuarios"
