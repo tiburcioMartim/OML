@@ -14,6 +14,10 @@ Nenhuma. O comando detecta automaticamente o estado do projeto.
 
 ## Ações obrigatórias
 
+- [ ] **Validar estrutura de workspace** (ver `docs/00-visao-geral/politica-estrutura-workspace.md`)
+  - Verificar se o OML é irmão do legado (não está aninhado dentro dele)
+  - Se estiver no local errado, informar o dev e propor a correção (mover para o nível correto)
+  - Se o diretório do novo sistema já existir, verificar se também é irmão
 - [ ] Carregar regras permanentes do OML
 - [ ] Identificar perfil do projeto (se existir)
 - [ ] Verificar documentos existentes na pasta `docs/`
@@ -30,10 +34,11 @@ Nenhuma. O comando detecta automaticamente o estado do projeto.
 
 ## Arquivos que atualiza
 
-Nenhum. Apenas leitura.
+- `memoria/decisoes.md` (se houver correção de estrutura de workspace)
 
 ## Checklist de conclusão
 
+- [ ] Estrutura de workspace validada (diretórios irmãos)
 - [ ] Regras carregadas
 - [ ] Perfil identificado
 - [ ] Status exibido

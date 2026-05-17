@@ -21,6 +21,14 @@ Autorização para análise do .env do legado (sim/não).
 - [ ] Perguntar email do responsável
 - [ ] Perguntar URL do repositório Git do sistema migrado (pode ser informada depois)
 
+### Estrutura de Workspace (ver `docs/00-visao-geral/politica-estrutura-workspace.md`)
+- [ ] Identificar o diretório raiz de migração (pai do OML)
+- [ ] Identificar o diretório do sistema legado
+- [ ] **Perguntar ao dev o nome desejado para o diretório do novo sistema** (ex: `erp-novo`, `sistema-moderno`, `app-v2`)
+- [ ] Criar o diretório do novo sistema **como irmão** do OML e do legado (no diretório raiz)
+- [ ] **Nunca criar o diretório do novo sistema dentro do legado ou dentro do OML**
+- [ ] Registrar os caminhos (`diretorio_raiz`, `diretorio_legado`, `diretorio_novo`, `diretorio_oml`) no perfil do projeto
+
 ### Configuração do Projeto
 - [ ] Perguntar sobre a stack alvo (Laravel, Vue, Inertia, etc.)
 - [ ] Perguntar sobre o idioma do código (PT-BR ou EN)
@@ -54,6 +62,10 @@ Autorização para análise do .env do legado (sim/não).
 ## Checklist de conclusão
 
 - [ ] Dados do responsável registrados (nome, email, repositório)
+- [ ] Estrutura de workspace validada (diretórios irmãos)
+- [ ] Nome do diretório do novo sistema definido pelo dev
+- [ ] Diretório do novo sistema criado como irmão
+- [ ] Caminhos registrados no perfil do projeto
 - [ ] Stack definida
 - [ ] Idioma definido
 - [ ] Banco legado mapeado

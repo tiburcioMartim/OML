@@ -14,16 +14,33 @@ Serve para migrar sistemas antigos para uma estrutura moderna sem perder regras 
 
 ## Como começar
 
-1. Instale ou copie o OML no seu projeto.
+### Estrutura obrigatória de diretórios
+
+O OML, o sistema legado e o novo sistema **devem ser diretórios irmãos** (siblings). Nunca aninhe um dentro do outro.
+
+```
+/diretorio-raiz/
+    ├── /erp-legado/   ← Sistema legado
+    ├── /erp-novo/     ← Novo sistema (nome escolhido por você)
+    └── /OML/          ← Este repositório
+```
+
+> ⚠️ Se o OML for clonado dentro do legado ou em local incorreto, ao ativar, ele detectará o problema e proporá a correção automaticamente.
+
+### Passos
+
+1. Clone o OML como irmão do seu sistema legado.
 2. Inicie com:
 
 ```
 /migracao-ativar
 ```
 
-3. Informe uma URL inicial ou peça para o OML descobrir as telas automaticamente.
-4. O OML conduzirá a migração por etapas.
-5. Você validará decisões e autorizará avanços quando necessário.
+3. O OML validará a estrutura de diretórios automaticamente.
+4. Informe o nome desejado para o diretório do novo sistema quando solicitado.
+5. Informe uma URL inicial ou peça para o OML descobrir as telas automaticamente.
+6. O OML conduzirá a migração por etapas.
+7. Você validará decisões e autorizará avanços quando necessário.
 
 ---
 

@@ -18,6 +18,10 @@ Acesso ao responsável pelo projeto para responder perguntas sobre stack, banco,
 
 ## Ações obrigatórias
 
+- [ ] **Validar estrutura de workspace** (ver `docs/00-visao-geral/politica-estrutura-workspace.md`)
+  - OML, legado e novo sistema devem ser diretórios irmãos
+  - Se o OML estiver dentro do legado, propor correção ao dev
+  - Perguntar ao dev o nome do diretório do novo sistema e criá-lo como irmão
 - [ ] Registrar responsável pela migração (nome + email)
 - [ ] Registrar URL do repositório do sistema migrado
 - [ ] Definir perfil do projeto
@@ -40,7 +44,8 @@ Acesso ao responsável pelo projeto para responder perguntas sobre stack, banco,
 - [ ] Definir política de rollback
 - [ ] Definir política de feature flags
 - [ ] Definir política de documentação
-- [ ] Definir política de containerização (apresentar opções Docker vs. local ao dev)
+- [ ] Definir política de containerização (apresentar opções Docker vs. local ao dev, com prós/contras)
+- [ ] Analisar arquivo `.env` do legado (pedir autorização), mapear variáveis automaticamente e sugerir `.env.example` para o novo projeto
 - [ ] Documentar ambientes reais do projeto
 - [ ] Criar templates oficiais
 
@@ -58,12 +63,14 @@ Acesso ao responsável pelo projeto para responder perguntas sobre stack, banco,
 
 ## Checklist de conclusão
 
+- [ ] **Estrutura de workspace validada (diretórios irmãos)**
 - [ ] Responsável e repositório registrados
 - [ ] Perfil do projeto criado
 - [ ] Stack definida
 - [ ] Todas as políticas documentadas
 - [ ] Direção visual definida
 - [ ] Ambiente de execução definido (Docker, local ou a definir)
+- [ ] Variáveis do `.env` legado mapeadas e `.env.example` sugerido
 - [ ] Ambientes documentados
 - [ ] Templates revisados
 

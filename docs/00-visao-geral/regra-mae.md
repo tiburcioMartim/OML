@@ -63,5 +63,6 @@ Antes de qualquer implementação, o OML deve avaliar a tela ou módulo contra t
 - [ ] Rollback
 - [ ] Documentação
 - [ ] Operação real
+- [ ] Empatia Técnica (OML investigou e sugeriu opções ao invés de apenas inquirir o dev)
 
 **Se qualquer domínio estiver "não analisado", a tela não pode avançar para implementação.**
