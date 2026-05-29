@@ -13,7 +13,8 @@
       "PowerShell(cd \"C:\\\\Users\\\\Gráfica Cróton\\\\Desktop\\\\OML- Orquestrador de Migracao Legada\"; Test-Path \"docs\\\\01-comandos\\\\migracao-gerar-relatorio-aprimoramento.md\" | if \\($_ -eq $true\\) { Write-Host \"OK\" } else { Write-Host \"MISSING\" })",
       "PowerShell(cd \"C:\\\\Users\\\\Gráfica Cróton\\\\Desktop\\\\OML- Orquestrador de Migracao Legada\"; @\\(\"docs\\\\03-guardioes\\\\guardiao-design.md\", \"docs\\\\03-guardioes\\\\guardiao-continuo-padronizacao.md\"\\) | ForEach-Object { if \\(Test-Path $_\\) { Write-Host \"OK: $_\" } else { Write-Host \"MISSING: $_\" } })",
       "Bash(git add *)",
-      "Bash(git commit -m ' *)"
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)"
     ]
   }
 }
