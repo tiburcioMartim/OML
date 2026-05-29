@@ -1,16 +1,23 @@
 # Perfil do Projeto — Template
 
-## Responsável pela Migração
+## Modo do projeto
+
+<!-- migracao | construcao | hibrido — ver docs/00-visao-geral/politica-modos-projeto.md -->
+modo:
+
+## Responsável pelo Projeto
 
 - Nome:
 - Email:
-- URL do repositório do sistema migrado:
+- URL do repositório do sistema:
 
 ## Stack alvo
 
 ## Idioma do código
 
-## Banco legado
+## Banco
+
+<!-- Migração/Híbrido: banco legado (preservar/adaptar/migrar). Construção: design de schema novo. -->
 
 ## Direção visual
 
@@ -26,7 +33,7 @@
 
 ## Variáveis de Ambiente do Legado
 
-<!-- Registrar as CHAVES (nunca valores) importadas do legado -->
+<!-- Apenas modo Migração/Híbrido. Registrar as CHAVES (nunca valores) importadas do legado. Em modo Construção, omitir este bloco. -->
 
 ## Integrações conhecidas
 

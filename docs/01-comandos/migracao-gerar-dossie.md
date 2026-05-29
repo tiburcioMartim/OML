@@ -8,6 +8,13 @@ Gerar o dossiê funcional completo de uma tela, cobrindo todos os 21 domínios o
 
 Após `/migracao-analisar-tela`, para documentar completamente a tela.
 
+## Validação obrigatória de pré-requisitos (Gate duro)
+
+> ⛔ **Se `memoria/regras-negocio/{slug}.md` não existir, ABORTAR** com:
+> "Falta o ledger de regras da tela [ID]. Rode `/migracao-extrair-regras [ID]` primeiro."
+
+Não preencher nenhum bloco antes desta verificação. Ver `docs/04-protocolos/protocolo-gates-validacao.md`.
+
 ## Entradas esperadas
 
 ID da tela. Exemplo: `/migracao-gerar-dossie TELA-0001`
@@ -17,7 +24,7 @@ ID da tela. Exemplo: `/migracao-gerar-dossie TELA-0001`
 - [ ] Preencher todos os 21 blocos do dossiê (ver template)
 - [ ] Identificação, objetivo funcional, fluxo operacional
 - [ ] Campos, ações, banco de dados
-- [ ] Regras de negócio com origem e evidência
+- [ ] Espelhar as regras do ledger `regras-negocio/{slug}.md` (tipo, origem citada, status) — não recriar
 - [ ] Permissões por ação
 - [ ] Integrações com falhas possíveis
 - [ ] LGPD, acessibilidade, design

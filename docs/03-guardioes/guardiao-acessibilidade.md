@@ -23,13 +23,9 @@ O botão deve:
 
 ## Dark/Light Mode Nativo
 
-Dark mode e light mode são **nativos do sistema**, vitais para reduzir a fadiga visual (ex: profissionais de saúde em plantões noturnos). Não são opcionais:
-- **Estratégia Tailwind:** Utilizar `darkMode: 'class'`. O controle do tema é feito adicionando/removendo a classe `.dark` no elemento raiz (`<html>`).
-- **Mapeamento Exaustivo:** Todo novo componente criado **deve** possuir as classes `dark:` mapeadas e emparelhadas com as cores do tema claro (Ex: `bg-white dark:bg-surface-900`, `text-surface-900 dark:text-white`).
-- **Sincronização com o SO:** Detectar nativamente a preferência do usuário via `window.matchMedia('(prefers-color-scheme: dark)')` como padrão inicial.
-- **Prevenção de FOUC (Flash of Unstyled Content):** Injeção de um script inline mínimo diretamente no `<head>` do arquivo base (ex: `app.blade.php`). Este script lê o `localStorage` e aplica a classe `.dark` *antes* da renderização da página, evitando o indesejado "piscar branco" inicial.
-- Persistir a escolha do usuário e garantir transição suave entre temas.
-- Todos os componentes devem ser testados e visuamente corretos nos dois modos.
+Dark mode e light mode são **nativos do sistema** e obrigatórios, vitais para reduzir a fadiga visual. A especificação completa (estratégia Tailwind `darkMode: 'class'`, mapeamento `dark:` emparelhado, sincronização com o SO, persistência, prevenção de FOUC, toggle) é mantida em **fonte única**: ver [guardião de tema dark/light](guardiao-tema-dark-light.md).
+
+Aqui basta a regra de acessibilidade: o **contraste de ambos os temas** deve atender WCAG 2.2 AA (4.5:1) e todos os componentes devem ser testados e visualmente corretos nos dois modos.
 
 ## Botão Rolar para Cima (Scroll to Top)
 

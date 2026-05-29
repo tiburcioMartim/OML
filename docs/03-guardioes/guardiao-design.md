@@ -26,16 +26,13 @@ Estes componentes devem existir desde a criação da Página Visual Base e estar
 
 ## Tema nativo (Dark/Light Mode)
 
-- Dark mode e light mode **não são opcionais** — são nativos do sistema desde o primeiro componente.
-- **Estratégia Tailwind:** Utilizar `darkMode: 'class'`. O controle do tema é feito adicionando/removendo a classe `.dark` no elemento raiz (`<html>`).
-- **Mapeamento Exaustivo:** Todo novo componente criado **deve** possuir as classes `dark:` mapeadas e emparelhadas com as cores do tema claro (Ex: `bg-white dark:bg-surface-900`, `text-surface-900 dark:text-white`).
-- **Sincronização com o SO:** Detectar nativamente a preferência do usuário via `window.matchMedia('(prefers-color-scheme: dark)')` como padrão inicial.
-- **Prevenção de FOUC (Flash of Unstyled Content):** É obrigatório a injeção de um script inline mínimo diretamente no `<head>` do arquivo base (ex: `app.blade.php`). Este script deve ler o `localStorage` e aplicar a classe `.dark` *antes* da renderização da página.
-- A troca de tema deve ser instantânea, sem flashes ou quebras visuais.
-## Página de Acompanhamento da Migração
+Dark e light são nativos do sistema desde o primeiro componente e derivam dos tokens centralizados (nunca cores hardcoded). A especificação completa é mantida em fonte única: ver [guardião de tema dark/light](guardiao-tema-dark-light.md).
 
-- O novo sistema deve incluir uma **página dedicada** para acompanhar o andamento da migração
-- A página deve exibir: progresso geral, lista de telas com status, filtros, histórico de atividades
+## Página de Acompanhamento do Andamento
+
+- O novo sistema deve incluir uma **página dedicada** para acompanhar o andamento (obrigatória em todos os modos)
+- Conteúdo por modo: **Migração** → telas migradas vs. pendentes; **Construção** → features construídas vs. planejadas; **Híbrido** → ambas, separadas por origem
+- A página deve exibir: progresso geral, lista de itens com status, filtros, histórico de atividades
 - Os dados devem ser alimentados automaticamente pelo `memoria/backlog-telas.yaml`
 - A página deve estar acessível pelo menu do sistema (não escondida)
 

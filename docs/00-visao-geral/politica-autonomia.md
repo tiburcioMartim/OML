@@ -54,9 +54,13 @@ Inclui obrigatoriamente **TODOS** os componentes:
 
 O dev testa a tela migrada e aprova. Se rejeitar, OML corrige e re-apresenta.
 
+### Gates duros entre fases (abortar)
+
+Além dos 2 Gates de aprovação humana, fases críticas têm **gates duros**: o comando da fase posterior **aborta com mensagem** se o artefato da anterior não existir — em vez de uma instrução textual que pode ser pulada. Gate emblemático: `/migracao-gerar-dossie` aborta sem o ledger `memoria/regras-negocio/{slug}.md`. Ver `docs/04-protocolos/protocolo-gates-validacao.md`.
+
 ---
 
-## Classificação das 20 Fases
+## Classificação das Fases
 
 | Fase | Nome | Nível |
 |---|---|---|
@@ -65,6 +69,7 @@ O dev testa a tela migrada e aprova. Se rejeitar, OML corrige e re-apresenta.
 | 02 | Descoberta de Telas | 🟢 Autônomo |
 | 03 | Mapa Hierárquico | 🟢 Autônomo |
 | **04** | **Página Visual Base** | **🔴 Crítico — GATE 1** |
+| 04.5 | Extração de Regras de Negócio | 🟡 Resumo |
 | 05 | Investigação da Tela | 🟢 Autônomo |
 | 06 | Dossiê Funcional | 🟢 Autônomo |
 | 07 | Mapeamento Técnico | 🟢 Autônomo |

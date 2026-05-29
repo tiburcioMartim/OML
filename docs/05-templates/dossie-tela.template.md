@@ -54,9 +54,13 @@
 
 ## 7. Regras de negócio
 
-| # | Regra | Origem | Validada |
-|---|---|---|---|
-| 1 | | | [ ] |
+> Fonte da verdade: o **ledger** `memoria/regras-negocio/{slug}.md` (gerado na Fase 04.5 por `/migracao-extrair-regras`). Este bloco é um **espelho** dele — não inventar regra aqui. O dossiê tem **gate duro**: não pode ser gerado sem o ledger.
+
+| ID | Regra | Tipo | Modo | Origem (arquivo:linha) | Status |
+|---|---|---|---|---|---|
+| RN-{slug}-01 | | validação/cálculo/fluxo/permissão/side-effect/temporal/integração/mensagem/default/quirk | 🟦 Legado / 🟩 Greenfield / 🟪 Híbrido | `arquivo:linha` | ✅ Confirmada / 🟡 Hipótese / 🟠 Possível bug / 🔴 Bug intencional |
+
+<!-- Itens 🟠/🔴 e 🟪/🟩 devem ter encaminhamento em memoria/pendencias.md ou memoria/decisoes.md. -->
 
 ---
 

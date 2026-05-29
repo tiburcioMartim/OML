@@ -12,15 +12,25 @@ Sempre. Esta política deve ser verificada no momento da ativação (`/migracao-
 
 ## Regra Obrigatória — Diretórios Irmãos (Sibling)
 
-O OML, o sistema legado e o novo sistema **devem** ser diretórios irmãos (siblings) dentro de um diretório raiz de migração. **Nunca** um dentro do outro.
+O OML, o sistema legado (quando existir) e o novo sistema **devem** ser diretórios irmãos (siblings) dentro de um diretório raiz. **Nunca** um dentro do outro.
 
-### Estrutura correta ✅
+> **Modo Construção (greenfield):** quando não há legado (ver [política de modos de projeto](politica-modos-projeto.md)), o `diretorio_legado` é **opcional** e a estrutura se reduz a um par (OML + novo sistema). A ausência de legado **não é erro** — é sinal de candidato a construção.
+
+### Estrutura correta ✅ — Migração/Híbrido
 
 ```
-/diretorio-raiz-migracao/
+/diretorio-raiz/
     ├── /erp-legado/       ← Sistema legado (somente leitura/consulta)
     ├── /erp-novo/         ← Novo sistema (nome definido pelo dev)
-    └── /OML/              ← Orquestrador de Migração Legada
+    └── /OML/              ← Orquestrador
+```
+
+### Estrutura correta ✅ — Construção (greenfield)
+
+```
+/diretorio-raiz/
+    ├── /app-novo/         ← Novo sistema (nome definido pelo dev)
+    └── /OML/              ← Orquestrador
 ```
 
 ### Estruturas proibidas ❌
@@ -88,9 +98,20 @@ O OML **deve**:
 O OML pergunta ao dev:
 
 > "Não consegui determinar a estrutura do workspace. Por favor, informe:
-> 1. Qual é o diretório raiz do projeto de migração?
-> 2. Qual é o caminho do sistema legado?
+> 1. Qual é o diretório raiz do projeto?
+> 2. Qual é o caminho do sistema legado? (deixe em branco se for um projeto novo)
 > 3. Onde está (ou onde devo criar) o novo sistema?"
+
+### Cenário 4 — Não há legado irmão (candidato a Construção)
+
+Se não existir um diretório legado irmão, o OML **não trata como erro**. Pergunta o modo do projeto:
+
+> "Não encontrei um sistema legado irmão do OML. Este é um projeto **novo (construção do zero)** ou você quer apontar onde está o legado a migrar?
+> 1. Projeto novo (greenfield) — `modo: construcao`
+> 2. Há legado, vou informar o caminho — `modo: migracao`
+> 3. Vou migrar um legado **e** também criar features novas — `modo: hibrido`"
+
+O modo escolhido é gravado no perfil e em `memoria/decisoes.md`.
 
 ---
 
@@ -126,7 +147,7 @@ O OML deve manter internamente (no perfil do projeto) os caminhos absolutos:
 | Variável | Descrição | Exemplo |
 |---|---|---|
 | `diretorio_raiz` | Diretório pai que contém todos os projetos | `/migrando/` |
-| `diretorio_legado` | Caminho do sistema legado | `/migrando/erp-legado/` |
+| `diretorio_legado` | Caminho do sistema legado (**opcional** em modo construção) | `/migrando/erp-legado/` |
 | `diretorio_novo` | Caminho do novo sistema | `/migrando/novo-erp/` |
 | `diretorio_oml` | Caminho do OML | `/migrando/OML/` |
 

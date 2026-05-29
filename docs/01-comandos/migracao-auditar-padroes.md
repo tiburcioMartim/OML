@@ -27,9 +27,16 @@ Nenhuma. Analisa o repositório inteiro.
 - [ ] Classificar severidade de cada violação
 - [ ] Gerar relatório
 
+## Auto-limpeza (correção proativa em escopo)
+
+Seguir `docs/00-visao-geral/politica-auto-limpeza-refatoracao.md`:
+- **Permitido sem perguntar:** refatorar violações de **forma** no sistema **novo** dentro do escopo da tela em implementação (Fase 13) — `<button>`→componente do DS, aplicar Composable, token em vez de cor hardcoded, faltar `dark:`.
+- **Fase 19:** corrigir violações pequenas sem impacto em lógica; refatoração maior vira relatório de dívida técnica.
+
 ## Ações proibidas
 
-- [ ] Não corrigir automaticamente sem autorização
+- [ ] Não refatorar código **legado** nem alterar **comportamento de negócio** (isso passa pelo ledger de regras + `decisoes.md`, não por auto-limpeza)
+- [ ] Não corrigir automaticamente fora do escopo permitido sem autorização
 - [ ] Não ignorar violações
 
 ## Arquivos que atualiza

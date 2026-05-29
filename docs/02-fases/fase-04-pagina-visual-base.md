@@ -17,10 +17,9 @@ Criar a Página Visual base com TODOS os tokens, TODOS os componentes e IDs úni
 - [ ] Definir bordas (radius, espessuras)
 - [ ] Definir sombras (elevações)
 
-### Logomarcas
-- [ ] Documentar logomarcas do legado (caminhos/URLs, formatos, dimensões)
-- [ ] Incorporar logomarcas do legado nos tokens visuais do design system
-- [ ] Nunca gerar ou inventar logomarcas — usar as do legado ou solicitar ao dev
+### Logomarcas / Identidade
+- [ ] **Migração/Híbrido:** documentar e incorporar logomarcas do legado (caminhos/URLs, formatos, dimensões); nunca gerar ou inventar — usar as do legado ou solicitar ao dev
+- [ ] **Construção (greenfield):** definir a identidade visual nova **com o dev** (logo fornecido, ou placeholder explícito até haver um); nunca inventar logo sem confirmar
 
 ### Biblioteca de Ícones
 - [ ] Sugerir bibliotecas de ícones compatíveis com a stack do projeto (ex: Heroicons, Lucide, Phosphor para Vue 3; Blade Icons para Laravel) — apresentar opções com prós/contras e perguntar a preferência do dev
@@ -34,11 +33,11 @@ Criar a Página Visual base com TODOS os tokens, TODOS os componentes e IDs úni
   - Estado persistido em localStorage — lembra a preferência do usuário
   - Grupo da página ativa abre automaticamente
   - Colapso total da sidebar (ícones somente), indicador de ativo, submenus
-- [ ] **Menu gerado imediatamente a partir do backlog de telas (`memoria/backlog-telas.yaml`):**
-  - Tela **pendente** (ainda não migrada) → texto claro/apagado, sem rota (visual disabled)
-  - Tela **migrada** → texto escuro, rota vinculada ao botão (visual ativo, clicável)
-  - O menu deve refletir automaticamente o progresso da migração
-  - Conforme telas forem sendo migradas, o menu se "acende" progressivamente
+- [ ] **Menu gerado a partir do backlog (`memoria/backlog-telas.yaml`):**
+  - Item **pendente** (tela não migrada / feature não construída) → texto claro/apagado, sem rota (visual disabled)
+  - Item **pronto** (tela migrada / feature construída) → texto escuro, rota vinculada (visual ativo, clicável)
+  - O menu reflete automaticamente o progresso e se "acende" conforme os itens ficam prontos
+  - **Migração:** o backlog é a lista de telas migradas vs. pendentes. **Construção:** o backlog é a lista de **features planejadas** vs. construídas
 - [ ] **Menu deve estar presente na página de Design System / guia visual** como componente documentado
 - [ ] Topbar / Header (com logo, busca, notificações, avatar do usuário, logout)
 - [ ] Breadcrumb (com navegação hierárquica)
@@ -90,13 +89,7 @@ Criar a Página Visual base com TODOS os tokens, TODOS os componentes e IDs úni
 - [ ] Pagination
 
 ### Estados e Tema
-- [ ] **Dark mode e Light mode como nativos do sistema** — não são opcionais, são obrigatórios desde o primeiro componente:
-  - Aplicar estratégia Tailwind `darkMode: 'class'`.
-  - Injetar **script de prevenção de FOUC** no `<head>` do arquivo base para ler `localStorage` e aplicar classe `.dark` antes do render.
-  - Todos os tokens de cor e componentes criados devem ter variantes `dark:` emparelhadas com o tema claro.
-  - Todos os componentes devem ser testados e aprovados nos dois modos.
-  - Sincronizar com a preferência do SO via `window.matchMedia`.
-  - A troca de tema deve ser instantânea e sem quebras visuais.
+- [ ] **Dark mode e Light mode como nativos do sistema** — obrigatórios desde o primeiro componente. Seguir a especificação completa do [guardião de tema dark/light](../03-guardioes/guardiao-tema-dark-light.md): `darkMode: 'class'`, variantes `dark:` emparelhadas, sincronização com o SO, persistência, script anti-FOUC no `<head>` e toggle. Todos os componentes testados e aprovados nos dois modos.
 - [ ] Documentar alto contraste
 - [ ] Documentar responsividade (breakpoints)
 - [ ] Documentar estados (loading, vazio, erro, sucesso, disabled)
@@ -108,14 +101,15 @@ Criar a Página Visual base com TODOS os tokens, TODOS os componentes e IDs úni
 - [ ] Atributos ARIA (`aria-label`, `aria-expanded`, `aria-hidden="true"` em ícones decorativos, `aria-current="page"`) configurados nos componentes base.
 - [ ] Estrutura HTML Semântica rigorosa (ex: usar `<button>`/`<a>` e não `<div>` clicável, usar `<nav>`, `<aside>`, `<main>`).
 
-### Página de Acompanhamento da Migração (Obrigatória)
-- [ ] Criar uma página dedicada no novo sistema para acompanhar o andamento da migração. Deve conter:
-  - **Visão geral:** Total de telas, quantas migradas, quantas pendentes, percentual de progresso
+### Página de Acompanhamento (Obrigatória)
+<!-- Migração: acompanhamento da migração (telas). Construção: acompanhamento da construção (features planejadas). -->
+- [ ] Criar uma página dedicada no novo sistema para acompanhar o andamento. Deve conter:
+  - **Visão geral:** Total de itens, quantos prontos (migrados/construídos), quantos pendentes, percentual de progresso
   - **Barra de progresso visual** (ou gráfico) do andamento geral
-  - **Lista de telas** com status individual (pendente, em andamento, migrada, homologada)
+  - **Lista de itens** com status individual (pendente, em andamento, pronto — migrado/construído —, homologado)
   - **Filtros** por status, módulo e criticidade
-  - **Histórico de atividades** (últimas telas migradas, datas, observações)
-  - **Dados alimentados automaticamente** pelo backlog de telas (`memoria/backlog-telas.yaml`)
+  - **Histórico de atividades** (últimos itens concluídos, datas, observações)
+  - **Dados alimentados automaticamente** pelo backlog (`memoria/backlog-telas.yaml`): telas migradas (migração) ou features construídas (construção)
   - Página acessível pelo menu do sistema (não escondida)
   - Deve funcionar em dark e light mode desde o início
 

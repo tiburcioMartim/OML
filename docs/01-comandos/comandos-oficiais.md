@@ -14,13 +14,16 @@ Sempre que precisar saber qual comando usar em determinada situação.
 
 | Comando | Quando usar | O que faz |
 |---|---|---|
-| `/migracao-ativar` | No início do projeto | Inicia o OML e carrega regras |
-| `/migracao-configurar-projeto` | Após ativar | Define perfil, stack e políticas |
-| `/migracao-descobrir-telas` | Fase de descoberta | Encontra telas automaticamente |
+| `/migracao-ativar` | No início do projeto | Inicia o OML, detecta o modo, sincroniza memória e carrega regras |
+| `/migracao-sincronizar` | Início de sessão / sob demanda | Varre o código real e sincroniza `memoria/` (telas, componentes, scaffolds) |
+| `/migracao-configurar-projeto` | Após ativar | Define modo, perfil, stack e políticas |
+| `/construir-capturar-requisitos` | Construção/Híbrido, por feature | Captura requisitos e gera a fonte de verdade da feature nova |
+| `/migracao-descobrir-telas` | Migração/Híbrido — descoberta | Encontra telas do legado automaticamente |
 | `/migracao-carregar-urls` | Complemento manual | Adiciona URLs manualmente |
 | `/migracao-gerar-mapa-hierarquico` | Após descoberta | Organiza telas por hierarquia |
-| `/migracao-analisar-tela` | Para cada tela | Investiga uma tela específica |
-| `/migracao-gerar-dossie` | Após análise | Gera dossiê funcional completo |
+| `/migracao-extrair-regras` | Por tela, antes de analisar (Fase 04.5) | Destila regras de negócio no ledger `regras-negocio/{slug}.md` |
+| `/migracao-analisar-tela` | Para cada tela | Investiga o que existe (técnico) de uma tela |
+| `/migracao-gerar-dossie` | Após análise | Gera dossiê funcional completo (gate duro: exige o ledger de regras) |
 | `/migracao-propor-interface` | Após dossiê | Propõe protótipo visual |
 | `/migracao-planejar-implementacao` | Após protótipo | Cria plano técnico |
 | `/migracao-autorizar-implementacao` | Quando pronto | Libera para codificação |
@@ -40,3 +43,5 @@ Sempre que precisar saber qual comando usar em determinada situação.
 1. Cada comando documenta: quando usar, o que faz, o que não faz, arquivos que atualiza, exemplo e próximo passo.
 2. Nenhum comando de implementação pode ser executado sem autorização prévia.
 3. Comandos de investigação e documentação podem ser executados livremente.
+4. Comandos com **gate duro** abortam com mensagem se o artefato da fase anterior não existir (ver `docs/04-protocolos/protocolo-gates-validacao.md`). Gate duro > convenção implícita.
+5. Os comandos de **descoberta/paridade do legado** (`descobrir-telas`, `carregar-urls`, `gerar-mapa-hierarquico`, `analisar-tela`, `extrair-regras`, `revisar-paridade`) só se aplicam em modo **migração/híbrido**. Em modo **construção**, a fonte de verdade vem de `/construir-capturar-requisitos`. Os demais comandos (configuração, propor-interface, planejar/autorizar implementação, homologar, auditar, status) são compartilhados entre os modos (ver `docs/00-visao-geral/politica-modos-projeto.md`).

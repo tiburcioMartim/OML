@@ -2,11 +2,15 @@
 
 ## Objetivo
 
-Investigar uma tela específica do sistema legado em profundidade.
+Investigar **o que existe** numa tela do legado — estrutura técnica (campos, ações, tabelas, permissões, integrações, dependências). As **regras** ("o que vale") já foram destiladas na Fase 04.5 e vivem no ledger `memoria/regras-negocio/{slug}.md`.
 
 ## Quando usar
 
-Na Fase 05, para cada tela do backlog que será migrada.
+Na Fase 05, para cada tela do backlog, **após** `/migracao-extrair-regras [ID]` (Fase 04.5).
+
+## Validação obrigatória de pré-requisitos (Gate duro)
+
+> ⛔ **Se o Gate 1 (Fase 04 — Design System) não tiver sido aprovado, ABORTAR**: nenhuma tela é investigada para migração antes do layout aprovado. Ver `docs/04-protocolos/protocolo-gates-validacao.md`.
 
 ## Entradas esperadas
 
@@ -24,7 +28,8 @@ ID da tela ou URL legado. Exemplo: `/migracao-analisar-tela TELA-0001`
 - [ ] Identificar tabelas do banco envolvidas
 - [ ] Identificar permissões necessárias
 - [ ] Identificar integrações
-- [ ] Identificar regras de negócio
+- [ ] Identificar arquivos e dependências envolvidos
+- [ ] Cruzar achados com o ledger de regras (Fase 04.5) — confirmar/atualizar origem e status; **não recriar regra aqui**
 - [ ] Identificar dados sensíveis (LGPD)
 - [ ] Registrar dúvidas e incertezas
 - [ ] Atualizar status da tela no backlog
