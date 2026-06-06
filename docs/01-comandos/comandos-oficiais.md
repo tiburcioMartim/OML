@@ -32,6 +32,7 @@ Sempre que precisar saber qual comando usar em determinada situação.
 | `/migracao-auditar-padroes` | A qualquer momento | Audita padrões do repositório |
 | `/migracao-gerar-relatorio-aprimoramento` | Periodicamente | Gera relatório de melhorias |
 | `/migracao-status` | A qualquer momento | Mostra status geral |
+| `/push` | Ao fechar um bloco versionável | Limpa inúteis (perguntando no que for ambíguo), commita por tarefa e semanticamente, e dá o push (ver `docs/04-protocolos/protocolo-push.md`) |
 | `/migracao-proxima-tela` | Após concluir uma tela | Avança para a próxima |
 | `/migracao-bloquear` | Quando necessário | Bloqueia uma tela/módulo |
 | `/migracao-retomar` | Após bloqueio | Retoma tela bloqueada |
