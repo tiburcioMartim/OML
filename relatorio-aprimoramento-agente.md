@@ -28,6 +28,23 @@ Auditoria cruzada de todas as sugestões contra a matriz OML (com citação `arq
 
 ---
 
+## Status de implementação (atualizado em 2026-06-06)
+
+Rodada a partir dos relatórios de projeto em `aprimoramento/` (transitórios — apagados após consumo; este registro é o histórico permanente).
+
+**Implementado nesta rodada:**
+
+| Sugestão (data) | Onde foi implementado |
+|---|---|
+| Banco de dados: 3 sujeitos da escrita — CRUD do usuário ✅ × escrita destrutiva do agente ⛔ × dado fake de teste ✅ (2026-05-30) | `docs/03-guardioes/guardiao-banco-dados.md` (reescrito de stub), `docs/03-guardioes/guardiao-dados-teste.md` (caso 3) |
+| Prop aditiva `linhaClass` na tabela canônica (2026-06-05) | `docs/06-perfis/vue/componentes.md`, `docs/05-templates/dossie-tela.template.md` (§12) |
+| Resolvedor de status: fallback ação→tela + tolerar URL de diretório (2026-06-05) | `docs/06-perfis/laravel/analise-uso-backlog.md` |
+| Padrão "Mapa de Uso × Backlog" como guardião do núcleo (2026-06-05) | `docs/03-guardioes/guardiao-mapa-uso-backlog.md` |
+| Modo construção (greenfield) — Etapa 2/3 | `docs/02-fases/fluxo-construcao.md`, `docs/06-perfis/construcao/perfil.md`; parametrização por modo em `regra-mae.md`, `definicao-de-pronto.md`, `politica-autonomia.md`, `fase-10`, `fase-13`; stubs enriquecidos (`guardiao-nomenclatura-semantica/lgpd-privacidade/seguranca/performance`) |
+| Protocolo de Push (limpar → commitar por tarefa → push; regra de ouro: nunca deletar arquivo ambíguo sem perguntar) | `docs/04-protocolos/protocolo-push.md`, `docs/01-comandos/push.md`, `comandos-oficiais.md` |
+
+---
+
 | Data | Problema | Classificação | Sugestão | Prioridade |
 |---|---|---|---|---|
 | 2026-05-16 | OML não oferecia opção de uso com Docker | Ambiente | Apresentar opções (local, Docker, a definir) com prós/contras e perguntar preferência do dev | Média |
