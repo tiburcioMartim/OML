@@ -28,7 +28,7 @@ Experiência acumulada durante a migração.
 
 ## Arquivos que atualiza
 
-- `memoria/relatorio-aprimoramento-agente.md`
+- `historico-aprimoramento.md` (raiz — fonte única do histórico de aprimoramento)
 
 ## Frase obrigatória de encerramento
 

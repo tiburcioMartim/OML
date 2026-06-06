@@ -31,7 +31,7 @@ A IA perde contexto entre sessões. Os arquivos mantêm o projeto vivo.
 | `memoria/inventario-integracoes.md` | Integrações identificadas |
 | `memoria/inventario-banco.md` | Tabelas e campos mapeados |
 | `memoria/inventario-storage.md` | Arquivos e imagens mapeados |
-| `memoria/relatorio-aprimoramento-agente.md` | Melhorias sugeridas para o OML |
+| `historico-aprimoramento.md` (raiz) | Histórico canônico de melhorias do OML (fonte única) |
 | `memoria/riscos.md` | Riscos identificados |
 | `memoria/pendencias.md` | Pendências não resolvidas |
 
@@ -44,7 +44,7 @@ A IA perde contexto entre sessões. Os arquivos mantêm o projeto vivo.
 3. Toda pendência deve ser registrada em `memoria/pendencias.md`
 4. Todo componente novo deve ser registrado em `memoria/inventario-componentes.md`
 5. Toda tela analisada deve ter seu status atualizado em `memoria/backlog-telas.yaml`
-6. Toda melhoria sugerida deve ir para `memoria/relatorio-aprimoramento-agente.md`
+6. Toda melhoria sugerida deve ir para `historico-aprimoramento.md` (raiz — fonte única do histórico de aprimoramento)
 
 ---
 

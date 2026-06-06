@@ -1,10 +1,28 @@
-# Relatório de Aprimoramento do Agente
+# Histórico de Aprimoramento — OML
 
-<!-- Registrar melhorias sugeridas para o OML -->
+Fonte **única e canônica** do histórico de melhorias do OML. Consolida (e substitui) o antigo `relatorio-aprimoramento-agente.md`, sua cópia em `memoria/`, os relatórios de projeto transitórios de `aprimoramento/` e a conversa de gênese `context.md` — todos deletados após esta consolidação (2026-06-06).
 
-## Status de implementação (atualizado em 2026-05-28)
+> **Onde registrar novas melhorias:** acrescente uma linha na tabela "Log de sugestões" e, quando implementada, mova-a para a seção "Status de implementação" da rodada correspondente. Relatórios de projeto chegam em `aprimoramento/` (transitórios, gitignorados, apagados após consumo) e são consolidados aqui. O comando `/migracao-gerar-relatorio-aprimoramento` e a Fase 19 alimentam este arquivo.
 
-Auditoria cruzada de todas as sugestões contra a matriz OML (com citação `arquivo:linha`). Resultado:
+---
+
+## Status de implementação
+
+### Rodada 2026-06-06
+
+| Sugestão (data) | Onde foi implementado |
+|---|---|
+| Banco de dados: 3 sujeitos da escrita — CRUD do usuário ✅ × escrita destrutiva do agente ⛔ × dado fake de teste ✅ (2026-05-30) | `docs/03-guardioes/guardiao-banco-dados.md` (reescrito de stub), `docs/03-guardioes/guardiao-dados-teste.md` (caso 3) |
+| Prop aditiva `linhaClass` na tabela canônica (2026-06-05) | `docs/06-perfis/vue/componentes.md`, `docs/05-templates/dossie-tela.template.md` (§12) |
+| Resolvedor de status: fallback ação→tela + tolerar URL de diretório (2026-06-05) | `docs/06-perfis/laravel/analise-uso-backlog.md` |
+| Padrão "Mapa de Uso × Backlog" como guardião do núcleo (2026-06-05) | `docs/03-guardioes/guardiao-mapa-uso-backlog.md` |
+| Modo construção (greenfield) — Etapa 2/3 | `docs/02-fases/fluxo-construcao.md`, `docs/06-perfis/construcao/perfil.md`; parametrização por modo em `regra-mae.md`, `definicao-de-pronto.md`, `politica-autonomia.md`, `fase-10`, `fase-13`; stubs enriquecidos (`guardiao-nomenclatura-semantica/lgpd-privacidade/seguranca/performance`) |
+| Protocolo de Push (limpar → commitar por tarefa → push; regra de ouro: nunca deletar arquivo ambíguo sem perguntar) | `docs/04-protocolos/protocolo-push.md`, `docs/01-comandos/push.md`, `comandos-oficiais.md` |
+| Consolidação do histórico de aprimoramento num arquivo único | este arquivo (`historico-aprimoramento.md`) |
+
+### Rodada 2026-05-28
+
+Auditoria cruzada de todas as sugestões contra a matriz OML (com citação `arquivo:linha`).
 
 **Já implementado antes desta rodada (verificado):** ambiente/Docker, importação do `.env` do legado, coleta de dados do dev (nome/email/repo), busca de logomarcas, biblioteca de ícones, 2 Gates + 3 níveis de autonomia, Gate 1 com todos os componentes, riscos em lista breve, menu gerado do backlog, filosofia de autorização/proatividade e disciplina de fluxo/pendências.
 
@@ -28,22 +46,7 @@ Auditoria cruzada de todas as sugestões contra a matriz OML (com citação `arq
 
 ---
 
-## Status de implementação (atualizado em 2026-06-06)
-
-Rodada a partir dos relatórios de projeto em `aprimoramento/` (transitórios — apagados após consumo; este registro é o histórico permanente).
-
-**Implementado nesta rodada:**
-
-| Sugestão (data) | Onde foi implementado |
-|---|---|
-| Banco de dados: 3 sujeitos da escrita — CRUD do usuário ✅ × escrita destrutiva do agente ⛔ × dado fake de teste ✅ (2026-05-30) | `docs/03-guardioes/guardiao-banco-dados.md` (reescrito de stub), `docs/03-guardioes/guardiao-dados-teste.md` (caso 3) |
-| Prop aditiva `linhaClass` na tabela canônica (2026-06-05) | `docs/06-perfis/vue/componentes.md`, `docs/05-templates/dossie-tela.template.md` (§12) |
-| Resolvedor de status: fallback ação→tela + tolerar URL de diretório (2026-06-05) | `docs/06-perfis/laravel/analise-uso-backlog.md` |
-| Padrão "Mapa de Uso × Backlog" como guardião do núcleo (2026-06-05) | `docs/03-guardioes/guardiao-mapa-uso-backlog.md` |
-| Modo construção (greenfield) — Etapa 2/3 | `docs/02-fases/fluxo-construcao.md`, `docs/06-perfis/construcao/perfil.md`; parametrização por modo em `regra-mae.md`, `definicao-de-pronto.md`, `politica-autonomia.md`, `fase-10`, `fase-13`; stubs enriquecidos (`guardiao-nomenclatura-semantica/lgpd-privacidade/seguranca/performance`) |
-| Protocolo de Push (limpar → commitar por tarefa → push; regra de ouro: nunca deletar arquivo ambíguo sem perguntar) | `docs/04-protocolos/protocolo-push.md`, `docs/01-comandos/push.md`, `comandos-oficiais.md` |
-
----
+## Log de sugestões (completo, por data)
 
 | Data | Problema | Classificação | Sugestão | Prioridade |
 |---|---|---|---|---|
@@ -71,3 +74,31 @@ Rodada a partir dos relatórios de projeto em `aprimoramento/` (transitórios �
 | 2026-05-28 | OML foi modelada para migração pura mas projetos reais frequentemente são híbridos (migração de domínios legados + features 100% novas no mesmo projeto, ou novo projeto que herda domínios de um legado existente) | Núcleo genérico / Escopo | Reconhecer explicitamente o **modo greenfield/híbrido** no spec do guardião de regras: regras "inéditas" são registradas no mesmo ledger com origem = decisão do dev (`decisoes.md`) + telas análogas referenciadas. Mesmo formato, mesma fonte da verdade. Evita criar paralela "OML-criacao" forkada. | Alta |
 | 2026-05-28 | Projetos modernos cada vez mais são compostos por 2+ apps que conversam via API (admin + portal de usuário, mobile + web, microserviços), e a mesma regra de negócio implementada em 2 lugares vai divergir | Núcleo genérico / Arquitetura | Ledger de regras suporta **referência cruzada entre apps**: regra mora no app que **escreve** (geralmente o admin); apps que apenas **leem** referenciam via link, não duplicam. Divergência de comportamento é proibida e vira pendência. Documentar na seção "Convivência multi-app" do README de `regras-negocio/`. | Alta |
 | 2026-05-28 | Investigação técnica do legado (`/migracao-analisar-tela` + Fase 05) e extração de regras de negócio são confundidas porque ambas leem o código legado, mas servem propósitos diferentes (a primeira mapeia o que existe; a segunda destila o que vale) | Núcleo genérico / Separação de responsabilidades | Manter Fase 05 (Investigação Técnica) focada em "o que existe" (arquivos, tabelas, integrações, dependências) e nova Fase 04.5 (Extração de Regras) focada em "o que vale" (validações, cálculos, fluxos). A primeira alimenta a segunda, mas são saídas separadas com gates separados. Investigação sem regras destiladas → dossiê genérico e sem foco. | Média |
+| 2026-05-30 | A política "não alterar o banco / não excluir dados sem autorização" era ambígua e fazia o agente hesitar ou auto-bloquear ao migrar telas de gestão cujo propósito é o USUÁRIO editar/excluir (CRUD) | Núcleo genérico / Governança de IA + Segurança de dados | Separar explicitamente no guardião de banco **3 sujeitos**: (1) CRUD do USUÁRIO na UI migrada = permitido e esperado; (2) escrita destrutiva do AGENTE automática/silenciosa sobre dado real = proibida → sinalizar; (3) dado FAKE de teste controlado, removido em seguida = autorizado. DDL: só CREATE aditivo, `down()` no-op em tabela legada. A régua é sobre QUEM dispara e se é dado real ou de teste, não sobre o verbo SQL. | Crítica |
+| 2026-06-05 | Componente de tabela canônico não tinha estilo de linha dirigido por dados — destacar linha crítica/em alerta exigiria gambiarra por tela, quebrando a paridade comportamental | Vue / Design System | Adicionar prop **aditiva** `linhaClass` (string \| função `(linha, index) => string`, default null) ao componente de tabela — sem interferir em hover/seleção/formatação. Incluir na spec do Dossiê (§ Design). | Média |
+| 2026-06-05 | "Análise de Uso" só gerava o botão **Novo** (deep-link) quando a rota era GET navegável → endpoints de ação migrados (POST) apareciam sem link, e URLs de diretório não casavam | Laravel / Rastreabilidade | No resolvedor de status: (1) **fallback ação→tela** — rota não-GET tenta o `modulo.recurso.index` (GET) do mesmo grupo; (2) **tolerar URL de diretório** (sem `.php`) → `index.php` do módulo. | Média |
+| 2026-06-05 | O método "esta tela do legado já foi migrada e onde?" — cruzar log de acesso real × backlog (`rota_laravel`) × navegabilidade — era poderoso mas estava implícito, não documentado como artefato/guardião | Processo / Núcleo genérico | Documentar o padrão "**Mapa de Uso × Backlog**": (a) instrumentar o legado p/ logar acesso; (b) backlog = fonte única do vínculo legado→rota nova; (c) relatório ranqueia telas por uso real e linka legado/novo. Vira guardião/relatório no núcleo genérico. | Alta |
+
+---
+
+## Apêndice — Gênese (consolidado de `context.md`)
+
+A conversa de gênese (256KB) foi a origem do OML; **praticamente todo o seu conteúdo já se materializou na matriz** (`docs/`). Preserva-se aqui apenas o que é difícil de reconstruir a partir do código.
+
+**Evolução do nome:** RHC Migration Agent → Agente de Migração Legada → **OML (Orquestrador de Migração Legada)** — "orquestrador" para refletir os múltiplos guardiões + fases.
+
+**Correções de comportamento que moldaram o agente:**
+- O agente **não é "fazedor de código"** — é investigador/documentador/testador; executor só por último.
+- Não depender de respostas que o dev não sabe — **investigar** em vez de exigir objetivo/arquivos/tabelas.
+- "Refazer do zero" → "**reconstruir com o legado como fonte de verdade**" (reduz alucinação).
+- Não "corrigir" comportamento legado sem autorização (matriz bug × regra).
+- Documentar todo elemento visual inédito **antes** de consolidar como padrão.
+- Comparar lista manual de URLs × URLs descobertas e apontar telas esquecidas.
+- Encerrar fase/microfase **formalmente** ("100%" + próximo passo) para não perder contexto.
+- Manter **memória operacional em arquivos** (a IA perde contexto; os arquivos mantêm o projeto vivo).
+- Agente como **guardião contínuo** pós-migração e que **aprende** (gera relatório de aprimoramento por stack).
+- Escrever o agente como **documentação operacional executável** (arquivos pequenos com formato fixo), não um prompt gigante único.
+
+**Referências normativas adotadas:** WCAG 2.2 (AA baseline, AAA quando viável), LGPD (Lei 13.709/2018), OWASP Top 10, OWASP ASVS 5.0, NIST SP 800-34 (DR), Laravel Pint.
+
+**Tema-núcleo do produto:** migração cirúrgica por super microfases com gates de autorização · preservação inviolável do legado (banco/regras/permissões/integrações) como fonte de verdade até o novo estar 100% · governança por múltiplos guardiões + documentação viva, tudo em PT-BR.

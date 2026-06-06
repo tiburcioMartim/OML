@@ -10,6 +10,7 @@ O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.
 
 ### Adicionado
 
+- **Histórico de Aprimoramento único** (`historico-aprimoramento.md`): fonte canônica que consolida o log datado de sugestões, o status de implementação por rodada e o apêndice de gênese — referências repointadas em `politica-preservacao-contexto.md` e `/migracao-gerar-relatorio-aprimoramento`
 - **Protocolo de Push** + comando `/push`: limpa debug/arquivos inúteis (**perguntando** no que for ambíguo — nunca deletar por suposição), commita **por tarefa e semanticamente** (Conventional Commits PT-BR) e só então dá o push — `docs/04-protocolos/protocolo-push.md`, `docs/01-comandos/push.md`
 - **Guardião do Mapa de Uso × Backlog** (núcleo genérico): cruza log de acesso real do legado × backlog (`rota_laravel`) × navegabilidade da rota para priorizar migração por uso e confirmar paridade — `docs/03-guardioes/guardiao-mapa-uso-backlog.md` (relatório de aprimoramento 2026-06-05)
 - **Análise de Uso × Backlog — Laravel**: resolvedor de status com **fallback ação→tela** (rota não-GET → `modulo.recurso.index`) e **tolerância a URL de diretório** (sem `.php` → `index.php`) — `docs/06-perfis/laravel/analise-uso-backlog.md` (2026-06-05)
@@ -39,6 +40,10 @@ O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.
   - `fase-10` / `fase-13`: Models por modo (adaptado ao legado × schema novo via `guardiao-modelagem-dados.md`)
   - Stubs enriquecidos como "padrões a aplicar de berço": `guardiao-nomenclatura-semantica.md`, `guardiao-lgpd-privacidade.md`, `guardiao-seguranca.md`, `guardiao-performance.md`
 - **Sem mudança de comportamento quando `modo: migracao`** — toda a esteira de migração permanece idêntica
+
+### Removido
+
+- `context.md` (conversa de gênese), `relatorio-aprimoramento-agente.md` (raiz), `memoria/relatorio-aprimoramento-agente.md` (cópia curta) e `aprimoramento/*` (relatórios de projeto transitórios) — todo o conteúdo de valor foi consolidado em `historico-aprimoramento.md`
 
 ---
 
