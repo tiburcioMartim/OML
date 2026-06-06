@@ -16,10 +16,12 @@ Nenhuma. Lê os arquivos de memória.
 
 - [ ] Ler `memoria/backlog-telas.yaml`
 - [ ] Contar telas por status
+- [ ] **Completude da extração de regras:** quantas unidades `finalizada` × `em_extracao` × `nao_iniciada` (meta: 0 pendentes). Listar as unidades **não finalizadas** — o OML deve voltar a elas
+- [ ] **Saúde do legado:** contagem por estado funcional (✔️/⚠️/❌/💀) a partir dos ledgers / Atlas
 - [ ] Listar telas em andamento
 - [ ] Listar pendências de `memoria/pendencias.md`
 - [ ] Listar riscos de `memoria/riscos.md`
-- [ ] Mostrar próxima tela recomendada
+- [ ] Mostrar próxima tela recomendada (priorizar unidades de extração não finalizadas)
 
 ## Ações proibidas
 

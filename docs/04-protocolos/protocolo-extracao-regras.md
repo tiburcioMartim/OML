@@ -44,8 +44,15 @@ Antes das regras, dar um **veredito sobre a unidade inteira** (evidência obriga
    - Se o dev confirmar que é proposital → 🔴 **Bug intencional**, reproduzir com registro em `decisoes.md`.
 5. **Definir o modo:** 🟦 Legado / 🟩 Greenfield / 🟪 Híbrido. Greenfield e híbrido exigem registro em `memoria/decisoes.md` (origem = decisão do dev; citar tela análoga quando houver).
 6. **Multi-app.** Se a regra é usada por 2+ apps: definir o **app dono** (o que escreve) e listar os **apps que leem** (referenciam, não duplicam). Divergência entre apps → pendência prioritária. Ver `memoria/regras-negocio/_README.md`.
-7. **Desenhar o fluxograma das regras** (Mermaid) na seção "Fluxo das regras" do ledger: entradas → validações → cálculos → decisões → side-effects → saída, usando os IDs `RN-{slug}-NN` nos nós. Este diagrama alimenta o Atlas.
-8. **Fechar com resumo breve** (🟡): estado funcional da unidade + contagem por status + lista de 🟠 que aguardam o dev.
+7. **Desenhar os diagramas** (Mermaid) na seção "Fluxo das regras" — quanto mais bem desenhado e informado, melhor:
+   - **Fluxograma** da lógica (entradas → validações → cálculos → decisões → saída), nós rotulados com `RN-{slug}-NN`, ramos de erro marcados.
+   - **Diagrama de sequência** quando houver side-effects/integrações (quem chama quem, ordem, o que falha).
+8. **Finalizar (ou manter na fila).** Avaliar a *Definição de Pronto da Extração* (no topo do ledger). Se cumprida → marcar **Extração finalizada ✅** e `extracao_regras: finalizada` no backlog. Senão → manter na fila; o OML volta à unidade até concluir.
+9. **Fechar com resumo breve** (🟡): estado funcional da unidade + contagem por status + lista de 🟠/❌/💀 que aguardam o dev + se finalizou ou o que falta.
+
+## Self-healing (gate de completude)
+
+Faltou um dado **investigável** (origem de input, query, transformação, ponto de entrada)? O OML **investiga, preenche o ledger e retoma** — não aborta, não joga no dev. Só vira pendência/decisão o que depende de **gente**: 🟠 possível bug, ❌ quebrada, 💀 código morto, aprovações. Ver `docs/04-protocolos/protocolo-gates-validacao.md` ("Gate de completude").
 
 ## Atlas de Fluxos de Regras
 

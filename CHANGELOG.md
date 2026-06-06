@@ -16,6 +16,10 @@ O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.
   - **Linhagem de dados** — mapa de cada input (origem do dado + comportamento) e catálogo de queries no ledger
   - **Fluxograma (Mermaid)** por unidade + **Atlas de Fluxos de Regras** (`memoria/atlas-regras-negocio.md`, comando `/migracao-gerar-atlas-regras`) dando ao dev a visão ampla do negócio do legado — doc agora, promovível a página Vue
   - Atualizados: `ledger-regras-negocio.template.md`, `protocolo-extracao-regras.md`, `fase-04.5`, `migracao-extrair-regras`, `guardiao-investigacao-legado.md` (reescrito de stub), `guardiao-regras-negocio.md`; novos `atlas-regras-negocio.template.md` e `migracao-gerar-atlas-regras.md`
+  - **Marcação de "extração finalizada"** + *Definição de Pronto da Extração*: unidade só sai da fila quando 100% documentada; o OML **persegue toda unidade não finalizada** até cobrir o projeto inteiro (visível em `/migracao-status` e no painel do Atlas)
+  - **Gate de completude auto-resolvível (self-healing)**: lacuna investigável **não aborta** — o OML investiga, preenche a memória e retoma; `/migracao-gerar-dossie` auto-completa a extração em vez de abortar. Só **gente** (🟠/❌/💀, aprovações) detém o agente. Distinção gate humano × gate de completude em `protocolo-gates-validacao.md`
+  - **Linhagem profunda** (cadeia de transformações origem→…→exibição/persistência, documentada para consulta futura) + **diagramas ricos** (flowchart + sequence para side-effects/integrações)
+  - **Backlog instrutivo**: `tipo_unidade`, `estado_funcional`, `extracao_regras`, `ledger`, `uso_real` no `backlog-telas.template.yaml`
 - **Robustez de projetos novos (greenfield) — lote 2026-06-06:**
   - **Protocolo de Plugins do Claude** — detectar/usar `frontend-design` e outros skills disponíveis, orientar instalação quando ausentes (honesto sobre o que o agente faz) — `docs/04-protocolos/protocolo-plugins-claude.md`
   - **Protocolo de Decisão de Arquitetura** — árvore SPA/Inertia × SSR conforme necessidade de SEO/GEO, registrada antes de codar — `docs/04-protocolos/protocolo-decisao-arquitetura.md`

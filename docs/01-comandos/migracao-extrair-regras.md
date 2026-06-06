@@ -27,6 +27,8 @@ ID ou slug da tela. Exemplo: `/migracao-extrair-regras TELA-0001`
 - [ ] **Mapear a linhagem de cada input** (origem do dado + query) e **catalogar as queries**
 - [ ] **Desenhar o fluxograma** das regras (Mermaid) no ledger
 - [ ] Para cada regra: descrição objetiva + **tipo** + **origem** (`arquivo:linha`, citação direta) + **status** + **modo**
+- [ ] **Self-healing:** dado investigável faltando → investigar, preencher o ledger e seguir (não parar)
+- [ ] **Marcar finalizada** (✅ no ledger + `extracao_regras: finalizada` no backlog) só ao cumprir a *Definição de Pronto da Extração*; senão, manter na fila
 - [ ] Tipo ∈ {validação, cálculo, fluxo, permissão, side-effect, temporal, integração, mensagem, default, quirk}
 - [ ] Status ∈ {✅ Confirmada, 🟡 Hipótese, 🟠 Possível bug, 🔴 Bug intencional}
 - [ ] Modo ∈ {🟦 Legado, 🟩 Greenfield, 🟪 Híbrido}

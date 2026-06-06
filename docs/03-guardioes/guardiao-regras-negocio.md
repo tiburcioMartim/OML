@@ -50,6 +50,16 @@ Além do status **por regra**, cada unidade recebe um veredito **inteiro**, com 
 | ❌ Quebrada | Erro reproduzível (citar) | Decisão do dev: corrigir × replicar × descartar → `decisoes.md` |
 | 💀 Código morto | Uso real = 0 / inalcançável | **Confirmar com o dev** antes de descartar (cruzar `guardiao-mapa-uso-backlog.md`) |
 
+## Completude do projeto (o agente quer terminar)
+
+A intenção é **contemplar o projeto inteiro** — extrair corretamente as regras de **todas** as unidades. Por isso:
+
+- Cada unidade tem um marcador **Extração finalizada** (☐/✅) no ledger e `extracao_regras` no backlog. Só vira ✅ quando cumpre a **Definição de Pronto da Extração** (estado funcional, regras com origem, linhagem profunda de cada input, queries, fluxograma/sequência, quirks encaminhados).
+- **Enquanto uma unidade não está finalizada, o OML a mantém na fila e volta a ela** até concluir. Nenhuma unidade fica para trás.
+- O progresso é visível: painel do **Atlas** (✔️/⚠️/❌/💀/⏳) e `/migracao-status` (quantas finalizadas × pendentes). O projeto de regras só está "pronto" quando **0 unidades pendentes**.
+- **Lacuna investigável não para o agente:** ele investiga, preenche o ledger e retoma (gate de completude auto-resolvível — `docs/04-protocolos/protocolo-gates-validacao.md`). Só **gente** o detém (🟠/❌/💀, aprovações).
+- A linhagem fica **documentada para consulta futura** — uma vez rastreada, não se investiga de novo.
+
 ## Atlas de Fluxos de Regras
 
 Cada ledger tem um **fluxograma** (Mermaid) das suas regras. Todos são agregados no **Atlas** (`memoria/atlas-regras-negocio.md`, gerado por `/migracao-gerar-atlas-regras`) — a **visão ampla do negócio do legado** para o dev. O atlas é **espelho** dos ledgers; nunca inventa fluxo. Doc + Mermaid hoje; promovido a página Vue navegável quando o Design System estiver pronto.

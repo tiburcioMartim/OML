@@ -8,12 +8,15 @@ Gerar o dossiê funcional completo de uma tela, cobrindo todos os 21 domínios o
 
 Após `/migracao-analisar-tela`, para documentar completamente a tela.
 
-## Validação obrigatória de pré-requisitos (Gate duro)
+## Validação obrigatória de pré-requisitos (Gate de completude — auto-resolvível)
 
-> ⛔ **Se `memoria/regras-negocio/{slug}.md` não existir, ABORTAR** com:
-> "Falta o ledger de regras da tela [ID]. Rode `/migracao-extrair-regras [ID]` primeiro."
+O ledger `memoria/regras-negocio/{slug}.md` precisa existir **e estar finalizado** (Definição de Pronto da Extração).
 
-Não preencher nenhum bloco antes desta verificação. Ver `docs/04-protocolos/protocolo-gates-validacao.md`.
+- **Gate de completude (🔄):** se o ledger faltar ou não estiver finalizado, **não abortar** — disparar `/migracao-extrair-regras [ID]` (investigar e completar a extração), e **só então** gerar o dossiê. Registrar em resumo breve o que precisou completar.
+- **Gate humano (👤):** se o Gate 1 (Design System) não estiver aprovado, **abortar** (nenhuma tela avança sem layout aprovado).
+- Auto-resolução **não inventa**: itens 🟠/❌/💀 viram pendência/decisão do dev, não bloqueiam o restante.
+
+Ver `docs/04-protocolos/protocolo-gates-validacao.md`.
 
 ## Entradas esperadas
 

@@ -48,19 +48,31 @@ Cada unidade tem: estado funcional, link para o ledger (fonte da verdade) e o fl
 
 ## Fluxos por unidade
 
-<!-- Um bloco por unidade. O diagrama é COPIADO/SINCRONIZADO da seção "Fluxo das regras" do ledger. -->
+<!-- Um bloco por unidade. Diagramas COPIADOS/SINCRONIZADOS da seção "Fluxo das regras" do ledger (flowchart + sequence quando houver). -->
 
-### 🖥️ Faturamento — ⚠️ Funciona com quirk
+### 🖥️ Faturamento — ⚠️ Funciona com quirk · extração ✅
 > Ledger: `memoria/regras-negocio/faturamento.md` · Entrada: `/erp/faturamento.php`
 
 ```mermaid
 flowchart TD
-    A[Entrada] --> B{RN-faturamento-01 validação}
-    B -- inválido --> E[erro]
+    A([Entrada]) --> B{RN-faturamento-01 validação}
+    B -- inválido --> E[/erro RN-faturamento-08/]
     B -- válido --> C[RN-faturamento-02 cálculo total]
     C --> D{RN-faturamento-03 competência aberta?}
-    D -- sim --> G[persiste]
+    D -- sim --> F[[emite NF RN-faturamento-05]] --> G[(persiste)]
     D -- não --> H[bloqueia + mensagem]
+```
+
+```mermaid
+sequenceDiagram
+    actor U as Usuário
+    participant T as Faturamento
+    participant DB as Banco
+    participant X as SEFAZ
+    U->>T: confirmar
+    T->>DB: grava fatura (Q-03)
+    T->>X: emite NF (RN-faturamento-05)
+    X-->>T: autorizada / rejeitada (RN-faturamento-06)
 ```
 
 **Quirks/avisos:** RN-faturamento-02 divide por 100 (🟠 a confirmar).

@@ -1,11 +1,31 @@
-﻿# Backlog de Telas — Template
+# Backlog de Unidades (telas e além) — Template
+#
+# O backlog é a fonte única do vínculo legado -> novo e do progresso.
+# Cobre TODA unidade legada, não só telas: tela, endpoint, job, processamento, relatorio.
+#
+# Campos instrutivos para o DEV ver o todo de relance:
+#   tipo_unidade    : tela | endpoint | job | processamento | relatorio
+#   estado_funcional: a_investigar | funciona | funciona_com_quirk | quebrada | codigo_morto
+#                     (✔️ funciona · ⚠️ funciona_com_quirk · ❌ quebrada · 💀 codigo_morto — sempre com evidência no ledger)
+#   extracao_regras : nao_iniciada | em_extracao | finalizada
+#                     -> "finalizada" SÓ quando o ledger cumpre a Definição de Pronto da Extração
+#                        (ver docs/05-templates/ledger-regras-negocio.template.md).
+#                     -> enquanto NÃO for "finalizada", o OML mantém a unidade na fila de extração
+#                        e volta a ela até concluir — a meta é cobrir 100% do projeto.
+#   status          : ciclo de migração da unidade (nao_iniciada ... migrada)
+
 telas:
   - id: "TELA-0001"
     titulo: ""
     modulo: ""
+    tipo_unidade: "tela"
     url_legado: ""
     url_erp_laravel: ""
     criticidade: "a_investigar"
+    estado_funcional: "a_investigar"
+    extracao_regras: "nao_iniciada"
+    ledger: ""                       # ex: memoria/regras-negocio/faturamento.md
+    uso_real: ""                     # acessos no log (Mapa de Uso) ou "sem instrumentação"
     status: "nao_iniciada"
     implementacao_autorizada: false
     observacoes: ""

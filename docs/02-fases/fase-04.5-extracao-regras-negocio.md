@@ -38,6 +38,8 @@ Produzir o **ledger de regras** da tela (`memoria/regras-negocio/{slug}.md`) —
 - [ ] Definir **modo** de cada regra: 🟦 Legado · 🟩 Greenfield · 🟪 Híbrido (ver guardião de regras de negócio)
 - [ ] Se 2+ apps: preencher **app dono** e **apps que leem** (referência, não duplicação)
 - [ ] Registrar em `memoria/pendencias.md` todo 🟠; em `memoria/decisoes.md` todo 🟪/🟩 e toda mudança vs. legado
+- [ ] **Marcar a extração como finalizada** (☐→✅ no ledger + `extracao_regras: finalizada` no backlog) **somente** quando cumprir a *Definição de Pronto da Extração*. Enquanto não cumprir, a unidade **permanece na fila** e o OML volta a ela.
+- [ ] **Self-healing:** ao faltar um dado investigável (origem de input, query, transformação), **investigar e preencher** — não parar. Só 🟠/❌/💀 e aprovações param o agente.
 
 ## Ações proibidas
 - [ ] Inventar regra sem evidência (sem evidência → 🟡 Hipótese)
@@ -58,6 +60,7 @@ Produzir o **ledger de regras** da tela (`memoria/regras-negocio/{slug}.md`) —
 - [ ] Fluxograma das regras desenhado (Mermaid)
 - [ ] Quirks (🟠) encaminhados ao dev; ❌/💀 com decisão do dev
 - [ ] Modo e multi-app preenchidos quando aplicável
+- [ ] Extração **finalizada** (✅) ou unidade mantida na fila com o que falta registrado
 
 ## Próximo passo
 Fase 05 — Investigação da Tela (🟢 segue automaticamente). O dossiê (Fase 06) **só pode ser gerado** com o ledger existente — gate duro em `/migracao-gerar-dossie`. Atualizar o Atlas com `/migracao-gerar-atlas-regras` para o dev acompanhar a visão ampla do negócio.
