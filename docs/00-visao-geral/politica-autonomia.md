@@ -62,6 +62,8 @@ Além dos 2 Gates de aprovação humana, fases críticas têm **gates duros**: o
 
 ## Classificação das Fases
 
+> **Por modo:** a tabela abaixo é a do modo **Migração**. Em **Construção/Híbrido**, algumas fases são puladas ou substituídas (01/05/17 pulam, 02/03/14 substituem) — o **nível de autonomia de cada fase permanece o mesmo**. A esteira de cada modo está em `docs/02-fases/fluxo-construcao.md`; o modo é governado por `docs/00-visao-geral/politica-modos-projeto.md`.
+
 | Fase | Nome | Nível |
 |---|---|---|
 | 00 | Preparação e Governança | 🟡 Resumo |

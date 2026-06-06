@@ -12,7 +12,7 @@ Sempre. Esta regra deve ser consultada antes de qualquer decisão.
 
 ## Declaração
 
-A migração só é considerada correta quando:
+A entrega (migração ou construção) só é considerada correta quando:
 
 1. Preserva as regras de negócio do legado
 2. Protege o banco existente
@@ -37,6 +37,22 @@ A migração só é considerada correta quando:
 21. Mantém rastreabilidade
 22. Evita alucinação
 23. Só implementa com autorização explícita
+
+---
+
+## Leitura por modo (itens 1-5)
+
+Os itens **6-23 valem integralmente nos três modos**. Os itens **1-5 são específicos do legado** — em construção, leem-se assim (ver `docs/00-visao-geral/politica-modos-projeto.md`):
+
+| # | Migração | Construção (greenfield) |
+|---|---|---|
+| 1 | Preserva regras do legado | Implementa fielmente as regras **decididas pelo dev** (mesmo ledger, origem 🟩) |
+| 2 | Protege o banco existente | Modela o banco novo com rigor (`guardiao-modelagem-dados.md`); a régua dos 3 sujeitos de escrita continua valendo (`guardiao-banco-dados.md`) |
+| 3 | Respeita permissões existentes | Projeta o modelo de permissões com o dev desde o início |
+| 4 | Respeita integrações existentes | Projeta as integrações decididas com o dev |
+| 5 | Mantém o legado funcionando até o novo estar pronto | Não se aplica (não há legado); o equivalente é não quebrar features já entregues do próprio projeto novo |
+
+Em **híbrido**, cada tela/feature usa a coluna do seu próprio modo.
 
 ---
 

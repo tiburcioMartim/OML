@@ -9,7 +9,7 @@ Implementar a tela em microfases muito pequenas, sequenciais e testáveis.
 
 ## Ações obrigatórias
 - [ ] Seguir plano de implementação
-- [ ] Criar Model adaptado ao banco legado
+- [ ] Criar Model: **migração** → adaptado ao banco legado (validado contra o schema vivo); **construção** → Model e migration **novos** projetados via `docs/03-guardioes/guardiao-modelagem-dados.md` (ver Fase 10). A régua dos 3 sujeitos de escrita do `guardiao-banco-dados.md` vale nos dois modos.
 - [ ] Criar Controller, Service, Action
 - [ ] Criar validações
 - [ ] Criar Policies/permissões

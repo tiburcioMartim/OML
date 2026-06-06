@@ -12,20 +12,22 @@ Ao avaliar se uma tela pode receber o status de "migrada".
 
 ## Declaração
 
-Uma tela só pode ser marcada como migrada quando:
+Uma tela só pode ser marcada como **pronta** (migrada ou construída) quando:
 
 1. Implementada
 2. Testada
 3. Revisada
 4. Documentada
-5. Comparada com legado
-6. Aprovada em paridade
+5. Comparada com legado *(migração)* / **validada contra os critérios de aceite** *(construção)*
+6. Aprovada em paridade *(migração)* / **aprovada nos critérios de aceite** *(construção)*
 7. Homologada por usuário
 8. Coberta por rollback
 9. Coberta por auditoria quando necessário
 10. Coberta por observabilidade
 11. Sem pendências críticas
-12. Registrada no histórico de migração
+12. Registrada no histórico
+
+> **Itens 5 e 6 por modo** (ver `docs/00-visao-geral/politica-modos-projeto.md`): em **migração**, a validação final é **paridade com o legado** (Fase 14). Em **construção**, não há legado a espelhar — a validação é contra os **critérios de aceite** definidos com o dev em `/construir-capturar-requisitos` + o Catálogo de Boas Práticas. Em **híbrido**, cada tela usa o critério do seu modo. Todos os demais itens valem igual nos três modos.
 
 ---
 
@@ -39,7 +41,7 @@ Uma tela só pode ser marcada como migrada quando:
 - [ ] Responsividade testada (mobile, tablet, desktop)
 - [ ] LGPD revisada
 - [ ] Segurança revisada
-- [ ] Paridade com legado revisada
+- [ ] Paridade com legado revisada *(migração)* / Critérios de aceite validados *(construção)*
 - [ ] Rollback documentado
 - [ ] Auditoria configurada
 - [ ] Observabilidade ativa
