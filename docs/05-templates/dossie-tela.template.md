@@ -104,6 +104,9 @@
 |---|---|
 | | |
 
+<!-- Destaque de linha por situação (linha crítica/em alerta vinda do legado)? Usar a prop aditiva `linhaClass` do componente de tabela canônico — nunca estilizar a linha por fora (ver docs/06-perfis/vue/componentes.md). -->
+
+
 ---
 
 ## 13. Responsividade
