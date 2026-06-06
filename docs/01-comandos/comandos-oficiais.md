@@ -21,7 +21,8 @@ Sempre que precisar saber qual comando usar em determinada situação.
 | `/migracao-descobrir-telas` | Migração/Híbrido — descoberta | Encontra telas do legado automaticamente |
 | `/migracao-carregar-urls` | Complemento manual | Adiciona URLs manualmente |
 | `/migracao-gerar-mapa-hierarquico` | Após descoberta | Organiza telas por hierarquia |
-| `/migracao-extrair-regras` | Por tela, antes de analisar (Fase 04.5) | Destila regras de negócio no ledger `regras-negocio/{slug}.md` |
+| `/migracao-extrair-regras` | Por unidade, antes de analisar (Fase 04.5) | Destila regras de negócio no ledger `regras-negocio/{slug}.md` (estado funcional, linhagem de inputs, queries, fluxograma) |
+| `/migracao-gerar-atlas-regras` | Após extrair regras de unidades | Agrega os ledgers no Atlas de Fluxos de Regras (`memoria/atlas-regras-negocio.md`) — visão ampla do negócio do legado |
 | `/migracao-analisar-tela` | Para cada tela | Investiga o que existe (técnico) de uma tela |
 | `/migracao-gerar-dossie` | Após análise | Gera dossiê funcional completo (gate duro: exige o ledger de regras) |
 | `/migracao-propor-interface` | Após dossiê | Propõe protótipo visual |

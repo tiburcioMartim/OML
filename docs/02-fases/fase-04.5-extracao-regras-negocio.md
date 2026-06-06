@@ -25,7 +25,12 @@ Produzir o **ledger de regras** da tela (`memoria/regras-negocio/{slug}.md`) —
 
 ## Ações obrigatórias
 
-- [ ] Localizar o código do legado que serve a tela (controller, requests/validações, models, services, views, queries) a partir do ponto de entrada já mapeado nas Fases 02–03
+- [ ] Identificar o **tipo de unidade** (🖥️ tela · 🔌 endpoint · ⚙️ job · 🧮 processamento · 📄 relatório) — a extração cobre **todas**, não só telas
+- [ ] Dar o **estado funcional** da unidade (✔️ Funciona · ⚠️ quirk · ❌ Quebrada · 💀 Código morto) com **evidência**; ❌/💀 → decisão do dev em `memoria/decisoes.md` (cruzar 💀 com o Mapa de Uso × Backlog)
+- [ ] Localizar o código do legado que serve a unidade (controller/handler, requests/validações, models, services, views, queries, jobs) a partir do ponto de entrada já mapeado nas Fases 02–03
+- [ ] **Mapear a linhagem de cada input**: como popula, **origem do dado** (tabela.coluna/query/endpoint/sessão/request/hardcode/cálculo/storage) e dependências — preencher "Mapa de inputs"
+- [ ] **Catalogar as queries** (o que faz, tabelas, escreve?, origem citada, quirk?) na seção "Queries"
+- [ ] **Desenhar o fluxograma** das regras (Mermaid) na seção "Fluxo das regras" usando os IDs `RN-{slug}-NN`
 - [ ] Para **cada regra** encontrada, registrar no ledger: descrição objetiva, **tipo**, **origem** (`arquivo:linha` — citação direta obrigatória) e **status**
 - [ ] Classificar o **tipo**: validação · cálculo · fluxo · permissão · side-effect · temporal · integração · mensagem · default · quirk
 - [ ] Classificar o **status**: ✅ Confirmada · 🟡 Hipótese · 🟠 Possível bug (perguntar ao dev) · 🔴 Bug intencional do legado
@@ -47,10 +52,12 @@ Produzir o **ledger de regras** da tela (`memoria/regras-negocio/{slug}.md`) —
 - `memoria/backlog-telas.yaml` (status → `regras_extraidas`)
 
 ## Checklist de conclusão
-- [ ] Ledger criado/atualizado para a tela
+- [ ] Ledger criado/atualizado para a unidade (tipo e estado funcional preenchidos)
 - [ ] Toda regra tem tipo, origem citada e status
-- [ ] Quirks (🟠) encaminhados ao dev
+- [ ] Inputs com linhagem mapeada e queries catalogadas
+- [ ] Fluxograma das regras desenhado (Mermaid)
+- [ ] Quirks (🟠) encaminhados ao dev; ❌/💀 com decisão do dev
 - [ ] Modo e multi-app preenchidos quando aplicável
 
 ## Próximo passo
-Fase 05 — Investigação da Tela (🟢 segue automaticamente). O dossiê (Fase 06) **só pode ser gerado** com o ledger existente — gate duro em `/migracao-gerar-dossie`.
+Fase 05 — Investigação da Tela (🟢 segue automaticamente). O dossiê (Fase 06) **só pode ser gerado** com o ledger existente — gate duro em `/migracao-gerar-dossie`. Atualizar o Atlas com `/migracao-gerar-atlas-regras` para o dev acompanhar a visão ampla do negócio.

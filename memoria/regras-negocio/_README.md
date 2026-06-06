@@ -3,8 +3,15 @@
 Esta pasta é a **fonte da verdade** das regras de negócio do projeto. Um arquivo por tela/módulo: `{slug}.md`, no formato de `docs/05-templates/ledger-regras-negocio.template.md`.
 
 - **Gerado por:** `/migracao-extrair-regras [ID]` (Fase 04.5).
-- **Consumido por:** dossiê (Fase 06, com **gate duro** — não gera sem o ledger), implementação (Fases 10–13) e paridade (Fase 14).
+- **Consumido por:** dossiê (Fase 06, com **gate duro** — não gera sem o ledger), implementação (Fases 10–13), paridade (Fase 14) e o **Atlas de Fluxos de Regras** (`/migracao-gerar-atlas-regras` → `../atlas-regras-negocio.md`).
 - **Persistência:** os ledgers **sobrevivem ao fim da migração** — continuam consultáveis como documentação viva das regras.
+- **Escopo:** um ledger por **unidade legada** — 🖥️ tela · 🔌 endpoint · ⚙️ job · 🧮 processamento · 📄 relatório (não só telas).
+
+## Cada unidade tem (além das regras)
+
+- **Tipo de unidade** e **estado funcional**: ✔️ Funciona · ⚠️ quirk · ❌ Quebrada · 💀 Código morto (com evidência; ❌/💀 = decisão do dev).
+- **Mapa de inputs** (origem do dado + query) e **catálogo de queries**.
+- **Fluxograma** (Mermaid) das regras — fonte do Atlas.
 
 ## Cada regra tem
 

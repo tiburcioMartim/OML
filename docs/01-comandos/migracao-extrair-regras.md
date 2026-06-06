@@ -21,8 +21,11 @@ ID ou slug da tela. Exemplo: `/migracao-extrair-regras TELA-0001`
 
 ## Ações obrigatórias
 
-- [ ] Localizar o código do legado que serve a tela (controller, requests/validações, models, services, views, queries)
+- [ ] Identificar o **tipo de unidade** (tela/endpoint/job/processamento/relatório) e dar o **estado funcional** (✔️/⚠️/❌/💀) com evidência
+- [ ] Localizar o código do legado que serve a unidade (controller/handler, requests/validações, models, services, views, queries, jobs)
 - [ ] Criar/atualizar o ledger a partir de `docs/05-templates/ledger-regras-negocio.template.md`
+- [ ] **Mapear a linhagem de cada input** (origem do dado + query) e **catalogar as queries**
+- [ ] **Desenhar o fluxograma** das regras (Mermaid) no ledger
 - [ ] Para cada regra: descrição objetiva + **tipo** + **origem** (`arquivo:linha`, citação direta) + **status** + **modo**
 - [ ] Tipo ∈ {validação, cálculo, fluxo, permissão, side-effect, temporal, integração, mensagem, default, quirk}
 - [ ] Status ∈ {✅ Confirmada, 🟡 Hipótese, 🟠 Possível bug, 🔴 Bug intencional}
@@ -54,8 +57,8 @@ ID ou slug da tela. Exemplo: `/migracao-extrair-regras TELA-0001`
 
 ## Frase obrigatória de encerramento
 
-"Com isso, finalizamos 100% a extração de regras da tela [NOME]. Regras: [N] (✅ [n] · 🟡 [n] · 🟠 [n] · 🔴 [n])."
+"Com isso, finalizamos 100% a extração de regras da unidade [NOME] ([estado funcional]). Regras: [N] (✅ [n] · 🟡 [n] · 🟠 [n] · 🔴 [n])."
 
 ## Próximo passo
 
-`/migracao-analisar-tela [ID]` (Fase 05). O dossiê (`/migracao-gerar-dossie`) tem gate duro neste ledger.
+`/migracao-analisar-tela [ID]` (Fase 05). Atualizar o Atlas com `/migracao-gerar-atlas-regras`. O dossiê (`/migracao-gerar-dossie`) tem gate duro neste ledger.

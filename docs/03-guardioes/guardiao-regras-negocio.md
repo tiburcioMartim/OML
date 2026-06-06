@@ -35,6 +35,27 @@ Toda regra deve ter **origem rastreável** com citação direta (`arquivo:linha`
 
 ---
 
+## Unidade legada (escopo da extração)
+
+A extração cobre **toda unidade** que executa regra de negócio, não só telas: 🖥️ `tela` · 🔌 `endpoint` · ⚙️ `job` · 🧮 `processamento` · 📄 `relatório`. Cada uma tem seu ledger, estado funcional e linhagem de dados. Detalhe (input/query/side-effect) sem origem citada = 🟡 Hipótese → pendência. *Só se migra o que se entende* (ver `docs/03-guardioes/guardiao-investigacao-legado.md`).
+
+## Estado funcional da unidade
+
+Além do status **por regra**, cada unidade recebe um veredito **inteiro**, com evidência (nunca suposição):
+
+| Estado | Significado | Ação do OML |
+|---|---|---|
+| ✔️ Funciona | Comportamento correto | Migrar fielmente |
+| ⚠️ Funciona com quirk | Opera, mas com anomalia | Decidir cada quirk (🟠/🔴) com o dev |
+| ❌ Quebrada | Erro reproduzível (citar) | Decisão do dev: corrigir × replicar × descartar → `decisoes.md` |
+| 💀 Código morto | Uso real = 0 / inalcançável | **Confirmar com o dev** antes de descartar (cruzar `guardiao-mapa-uso-backlog.md`) |
+
+## Atlas de Fluxos de Regras
+
+Cada ledger tem um **fluxograma** (Mermaid) das suas regras. Todos são agregados no **Atlas** (`memoria/atlas-regras-negocio.md`, gerado por `/migracao-gerar-atlas-regras`) — a **visão ampla do negócio do legado** para o dev. O atlas é **espelho** dos ledgers; nunca inventa fluxo. Doc + Mermaid hoje; promovido a página Vue navegável quando o Design System estiver pronto.
+
+---
+
 ## Modo: greenfield / híbrido
 
 O modo do projeto (migração / construção / híbrido) é governado por `docs/00-visao-geral/politica-modos-projeto.md` — **fonte autoritativa**. Aqui só importa o reflexo no ledger: regras inéditas usam o **mesmo ledger, mesmo formato, mesma fonte da verdade** (não existe fork "OML-criação"), mudando só a coluna **Modo**:
