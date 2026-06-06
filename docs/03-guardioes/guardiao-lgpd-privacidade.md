@@ -20,4 +20,12 @@ Privacidade por design e por padrão em toda tela, tabela, relatório, exportaç
 - [ ] PII mascarada em logs, telas de listagem e exports quando não essencial
 - [ ] Consentimento registrado quando a base legal for consentimento
 
-> É o eixo "Privacidade e dados pessoais" do [catálogo de boas práticas proativas](guardiao-boas-praticas-proativas.md). Coordena com [segurança](guardiao-seguranca.md), [auditoria](guardiao-auditoria.md) e [dados de teste](guardiao-dados-teste.md) (anonimização).
+## Governança e direitos do titular
+- [ ] **Direitos do titular** operacionalizados: acesso, correção, exclusão, portabilidade, revogação de consentimento — com fluxo/tela, não só "previsto"
+- [ ] **Banner de cookies/consentimento** quando houver rastreamento, com opt-in granular (não pré-marcado) e registro da escolha
+- [ ] **RIPD/DPIA** (Relatório de Impacto) para tratamentos de alto risco (dados sensíveis em escala, decisão automatizada)
+- [ ] **Plano de resposta a incidente** de dados (notificação a ANPD/titulares) — alinhar com [resposta a incidentes](guardiao-resposta-incidentes.md)
+- [ ] **PII não exposta a IA** (treinamento/indexação) sem base legal — alinhar com [SEO/GEO/AIO](guardiao-seo.md)
+- [ ] **Operadores/terceiros** (gateways, e-mail, analytics) sob contrato/DPA — itens que dependem do dev viram [pendência humana](guardiao-pendencias-humanas.md)
+
+> É o eixo "Privacidade e dados pessoais" do [catálogo de boas práticas proativas](guardiao-boas-praticas-proativas.md). Coordena com [segurança](guardiao-seguranca.md), [auditoria](guardiao-auditoria.md), [resposta a incidentes](guardiao-resposta-incidentes.md) e [dados de teste](guardiao-dados-teste.md) (anonimização).

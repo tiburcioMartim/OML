@@ -10,7 +10,7 @@ Ele investiga o sistema legado, cria documentação, identifica regras de negóc
 
 Serve para migrar sistemas antigos para uma estrutura moderna sem perder regras de negócio, permissões, integrações, dados, segurança e padrões visuais.
 
-Também serve para **construir projetos novos do zero (greenfield)**, guiando boas práticas de berço — LGPD, acessibilidade (WCAG 2.2 AA), dark/light mode, HTML/código semântico, responsividade, performance, segurança, i18n e SEO. O OML opera em **três modos** — migração, construção e híbrido (ver [política de modos de projeto](docs/00-visao-geral/politica-modos-projeto.md)). Em construção, a fonte de verdade passa a ser a decisão do dev + boas práticas + perfil; o comportamento da migração permanece inalterado.
+Também serve para **construir projetos novos do zero (greenfield)**, guiando boas práticas de berço — LGPD, acessibilidade (WCAG 2.2 AA), dark/light mode, HTML/código semântico, responsividade, performance, segurança, i18n, máscaras PT-BR, reúso rigoroso de componentes e SEO/GEO/AIO. Decide a **arquitetura de renderização** conforme a necessidade de SEO (SPA/Inertia × SSR), configura **CI/linters** e **Docker**, usa **plugins do Claude** (ex.: `frontend-design`) quando disponíveis, rastreia **pendências humanas** (o que só o dev faz — VPS, DNS, chaves de produção) e cuida do **decomissionamento pós-entrega** (sem módulos órfãos). O OML opera em **três modos** — migração, construção e híbrido (ver [política de modos de projeto](docs/00-visao-geral/politica-modos-projeto.md)). Em construção, a fonte de verdade passa a ser a decisão do dev + boas práticas + perfil; o comportamento da migração permanece inalterado.
 
 ---
 

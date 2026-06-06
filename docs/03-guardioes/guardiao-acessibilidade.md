@@ -21,6 +21,53 @@ O botão deve:
 - Persistir as preferências do usuário (localStorage ou banco)
 - Funcionar em todas as páginas, não apenas no Design System
 
+> As três preferências abaixo (fonte, contraste, movimento) têm especificação **obrigatória e rigorosa** — não basta "ter o botão", tem que funcionar de verdade.
+
+## Controle de Tamanho de Fonte (com nível atual visível)
+
+Ajustar a fonte é inútil se o usuário não sabe em que nível está. Requisitos:
+
+- **Escala discreta e previsível** via tokens: ex. níveis `90% · 100% (padrão) · 110% · 125% · 150%`. Não usar incremento livre de 1px.
+- **Mostrar o nível atual** no painel — número/porcentagem (ex.: "Fonte: 125%") e/ou um indicador de passo (●●●○○). O usuário sempre vê onde está.
+- **Botões "A−", "A" (reset), "A+"** com `aria-label` claro e `aria-disabled` no mínimo/máximo (não deixar passar do limite silenciosamente).
+- **Implementação por `rem` + variável raiz:** alterar `font-size` do `<html>` (ou `--escala-fonte`) e deixar todo o layout reagir. **Proibido** tamanhos em `px` fixos em texto — quebra a escala.
+- **Sem quebra de layout** em nenhum nível: testar 150% nas telas densas. Containers usam `min-height`/`max-width` flexíveis, não alturas fixas.
+- **Persistir** o nível e **anunciar** a mudança a leitores de tela (`aria-live="polite"`, ex.: "Fonte aumentada para 125%").
+- Respeitar o **zoom do navegador** simultaneamente (não brigar com Ctrl++).
+
+## Alto Contraste (auto-contraste com cuidado)
+
+Contraste mal aplicado piora a leitura. Regras:
+
+- **Modo de alto contraste é um tema próprio derivado de tokens** (`[data-contraste="alto"]`), **nunca** um `filter: contrast()` global no CSS — filtro quebra imagens, sombras, gráficos e ícones.
+- Cada par fundo/texto do tema de alto contraste deve atingir **no mínimo 7:1 (WCAG AAA)** para texto normal; o tema padrão já garante 4.5:1 (AA).
+- **Não inverter cores cegamente.** Mapear cada token semântico (sucesso/erro/aviso) para uma variante de alto contraste **revisada** — cores de status precisam continuar distinguíveis e não depender só do matiz (ver daltonismo).
+- **Preservar significado:** bordas, foco e estados (hover/ativo/desabilitado) continuam perceptíveis no alto contraste.
+- **Imagens e mídia** não são "contrastadas" à força; ícones decorativos seguem `aria-hidden`.
+- Combinar com dark/light: alto contraste deve funcionar nas duas bases ou ter sua própria base bem definida.
+- Persistir a preferência e respeitar `prefers-contrast: more` do SO como default inicial.
+
+## Redução de Movimento (corte de animação 100%)
+
+Quando o usuário liga "reduzir movimento", a animação **para de verdade** — não vira "mais lenta".
+
+- **Default do SO:** respeitar `prefers-reduced-motion: reduce` automaticamente; o toggle do widget **sobrepõe** (força ligado/desligado independente do SO) e persiste.
+- **Kill-switch CSS global** quando ativo (classe `[data-movimento="reduzido"]` na raiz):
+  ```css
+  [data-movimento="reduzido"] *,
+  [data-movimento="reduzido"] *::before,
+  [data-movimento="reduzido"] *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  ```
+- **Animação por JS também para:** bibliotecas (GSAP, Framer-Motion, Lottie, autoplay de carrossel/vídeo, parallax, contadores animados) devem **checar a preferência** e renderizar o **estado final estático** — não há "meia animação". Carrossel não auto-roda; vídeo de fundo não dá play.
+- **Sem efeito colateral:** cortar a animação **não** pode esconder conteúdo nem deixar elemento preso em estado intermediário — o resultado é sempre o estado final visível.
+- **Scroll suave** vira instantâneo quando reduzido.
+- Cobertura **100%**: nenhuma animação escapa do corte (incluir componentes de terceiros — se não respeitarem, desabilitar o recurso).
+
 ## Dark/Light Mode Nativo
 
 Dark mode e light mode são **nativos do sistema** e obrigatórios, vitais para reduzir a fadiga visual. A especificação completa (estratégia Tailwind `darkMode: 'class'`, mapeamento `dark:` emparelhado, sincronização com o SO, persistência, prevenção de FOUC, toggle) é mantida em **fonte única**: ver [guardião de tema dark/light](guardiao-tema-dark-light.md).

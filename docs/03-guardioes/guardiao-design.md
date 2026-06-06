@@ -4,7 +4,9 @@
 Criar Página Visual, definir tokens, documentar componentes, garantir IDs únicos, impedir decisões visuais isoladas.
 
 ## Regra
-Todo componente novo deve ser documentado na Página Visual antes de virar padrão.
+Todo componente novo deve ser documentado na Página Visual antes de virar padrão. **Antes de criar, reusar:** a obrigação de consultar o inventário e estender por variante (em vez de copiar) é detalhada no [guardião de reúso de componentes](guardiao-reuso-componentes.md) — leitura conjunta obrigatória.
+
+> Este guardião é **inegociável e sempre ativo** (não depende de `/migracao-ativar`): ver [protocolo de ativação permanente](../04-protocolos/protocolo-ativacao-permanente.md).
 
 ## Regras adicionais
 

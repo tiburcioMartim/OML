@@ -28,7 +28,9 @@ Nenhuma. O comando detecta automaticamente o estado do projeto.
 - [ ] Verificar estado da memória em `memoria/`
 - [ ] **Sincronizar a memória com o código real, ANTES de qualquer trabalho** (ver `docs/04-protocolos/protocolo-sincronizacao-memoria.md`): varrer Controllers, Models, Pages, Components e `menu.js` do projeto novo (e do legado, se houver) e reconciliar `memoria/` — incl. `historico-migracao.md`. Nunca operar com memória defasada.
 - [ ] **Varrer Models e validar `$table` contra `Schema::hasTable()`** (ver `docs/04-protocolos/protocolo-varredura-models.md`): emitir `memoria/scaffolds-suspeitos.md`; Models órfãos viram pendência prioritária antes de qualquer tela.
-- [ ] Mostrar status geral do projeto (incl. divergências de memória e scaffolds suspeitos)
+- [ ] **Inventariar plugins/skills do Claude disponíveis** e registrar em `memoria/plugins-disponiveis.md` (ver `docs/04-protocolos/protocolo-plugins-claude.md`)
+- [ ] **Carregar e exibir pendências humanas abertas** de `memoria/pendencias-humanas.md` (ver `docs/03-guardioes/guardiao-pendencias-humanas.md`)
+- [ ] Mostrar status geral do projeto (incl. divergências de memória, scaffolds suspeitos e pendências humanas)
 - [ ] Indicar o próximo passo recomendado
 
 ## Ações proibidas

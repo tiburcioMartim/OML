@@ -27,7 +27,15 @@ Cada eixo abaixo é fiscalizado por um guardião próprio. Este catálogo é o *
 | **Segurança** | [guardiao-seguranca.md](guardiao-seguranca.md) | Validação server-side, authn/authz, CSRF/XSS/SQLi, rate limiting, headers, upload seguro, cripto |
 | **Segredos e credenciais** | [guardiao-segredos-credenciais.md](guardiao-segredos-credenciais.md) | `.env` + `.env.example` com chaves vazias, nunca segredo no código nem em log, separação por ambiente |
 | **Internacionalização / Localização** | [guardiao-internacionalizacao-localizacao.md](guardiao-internacionalizacao-localizacao.md) | PT-BR, datas/moeda/fuso, CPF/CNPJ/telefone/CEP, pluralização |
-| **SEO** | [guardiao-seo.md](guardiao-seo.md) | Títulos e meta tags, HTML semântico para indexação, Open Graph, sitemap, performance percebida |
+| **SEO / GEO / AIO** | [guardiao-seo.md](guardiao-seo.md) | Títulos e meta tags, HTML semântico/SSR para indexação, Open Graph, sitemap, dados estruturados, ser citável por LLMs e consumível por IA |
+| **Arquitetura de renderização** | [protocolo-decisao-arquitetura.md](../04-protocolos/protocolo-decisao-arquitetura.md) | Escolher SPA/Inertia × SSR conforme necessidade de SEO/GEO, antes de codar |
+| **Reúso de componentes** | [guardiao-reuso-componentes.md](guardiao-reuso-componentes.md) | Reuse-first; variante em vez de cópia; nada de design desconexo espalhado |
+| **Máscaras e formatação** | [guardiao-mascaras-formatacao.md](guardiao-mascaras-formatacao.md) | CPF/CNPJ/telefone/CEP/dinheiro/data/% via fonte única; exibição × armazenamento separados |
+| **CI e qualidade** | [protocolo-ci-qualidade.md](../04-protocolos/protocolo-ci-qualidade.md) | Pipeline GitHub: lint, análise estática, testes, a11y, audit; merge só com tudo verde |
+| **Docker / ambiente** | [guardiao-docker-containerizacao.md](guardiao-docker-containerizacao.md) + [protocolo-docker.md](../04-protocolos/protocolo-docker.md) | Quando Docker for escolhido: multi-stage, segredos fora da imagem, rollback por tag |
+| **Plugins do Claude** | [protocolo-plugins-claude.md](../04-protocolos/protocolo-plugins-claude.md) | Detectar/usar `frontend-design` e outros; orientar instalação quando ausentes |
+| **Pendências humanas** | [guardiao-pendencias-humanas.md](guardiao-pendencias-humanas.md) | O que só o dev faz (VPS, DNS, chaves de produção, legal) registrado e cobrado |
+| **Decomissionamento pós-entrega** | [protocolo-decomissionamento-pos-entrega.md](../04-protocolos/protocolo-decomissionamento-pos-entrega.md) | O que manter × aposentar × remover; nada de módulos órfãos |
 | **Design tokens / customização** | [guardiao-customizacao-visual.md](guardiao-customizacao-visual.md) | Cores, fontes, espaçamentos e preferências centralizados em tokens configuráveis |
 | **Modelagem de dados** | [guardiao-modelagem-dados.md](guardiao-modelagem-dados.md) | Normalização, chaves, índices, soft deletes, auditoria, constraints na escrita |
 | **Testes** | [guardiao-testes.md](guardiao-testes.md) | TDD onde fizer sentido; toda regra de negócio crítica gera ao menos um teste |
