@@ -8,6 +8,12 @@ O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.
 
 ## [Não lançado]
 
+## [1.1.0] - 2026-06-07
+
+### Adicionado
+
+- **Comandos do OML como slash commands de verdade:** `/migracao-ativar`, `/push`, `/oml-atualizar` e todos os demais agora são registrados em `.claude/commands/` (um arquivo fino por comando, delegando ao doc em `docs/01-comandos/`), aparecendo no autocomplete do `/`. `.claude/commands/` passa a ser **motor** no `oml.manifesto.json` (propaga via `/oml-atualizar`).
+
 ## [1.0.0] - 2026-06-07
 
 ### Adicionado

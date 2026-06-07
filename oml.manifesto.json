@@ -1,6 +1,6 @@
 {
   "nome": "OML — Orquestrador de Migração Legada",
-  "versao": "1.0.0",
+  "versao": "1.1.0",
   "leiame": "Contrato Motor×Estado do OML. Define o que a atualização pode sobrescrever (motor) e o que é intocável (estado). Consumido por /oml-atualizar e pelo passo seed-if-missing de /migracao-ativar. Detalhes em docs/00-visao-geral/politica-versionamento-atualizacao.md.",
   "motor": {
     "descricao": "Sobrescrevível na atualização — igual em todo projeto. É o agente em si.",
@@ -14,7 +14,8 @@
       "historico-aprimoramento.md",
       "VERSION",
       "oml.manifesto.json",
-      ".gitignore"
+      ".gitignore",
+      ".claude/commands/"
     ]
   },
   "estado": {
