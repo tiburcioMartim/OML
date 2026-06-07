@@ -26,6 +26,8 @@ Na configuração (`/migracao-configurar-projeto`), o OML **gera um `CLAUDE.md` 
 
 Resultado: ao abrir qualquer sessão no projeto novo, o agente já chega com design/reúso/a11y/máscaras/tokens ligados.
 
+Além do `CLAUDE.md`, a configuração **gera `.claude/commands/` no projeto novo** — um slash command por comando do OML (via [`comando-projeto.template.md`](../05-templates/comando-projeto.template.md)), delegando aos docs em `../OML/docs/01-comandos/`. Assim os comandos do OML **autocompletam no `/`** enquanto o dev trabalha no projeto, não só dentro do clone do OML. (O `/oml-atualizar` fica de fora — ele roda no clone do OML.) Esses comandos do projeto são **estado do projeto**, não do motor: o `/oml-atualizar` não os toca; a fonte que eles apontam (`../OML/docs/`) é que evolui. Para acompanhar comandos **novos** do OML, o `/migracao-ativar` regenera por **seed-if-missing** os arquivos que faltarem em `.claude/commands/` do projeto (sem sobrescrever os existentes) — então um comando novo aparece no autocomplete na próxima ativação, sem reconfigurar.
+
 ### Camada 2 — Hook `SessionStart` (opcional, reforço)
 Para quem quer garantia extra, um hook `SessionStart` em `.claude/settings.json` do projeto novo injeta um lembrete dos guardiões no início de cada sessão (ver [skill de configuração de hooks]). Útil quando o time é grande e nem todos leem o `CLAUDE.md`. **Opcional** — a Camada 1 já resolve o caso comum.
 

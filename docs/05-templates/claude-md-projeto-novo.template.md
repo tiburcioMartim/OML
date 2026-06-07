@@ -31,7 +31,7 @@ Este projeto é construído/migrado sob o **OML — Orquestrador de Migração L
 8. **Idioma:** todo o código e a documentação em **PT-BR**.
 
 ## Comandos
-Comandos do OML disponíveis em `../OML/docs/01-comandos/comandos-oficiais.md`. Para retomar o fluxo completo: `/migracao-ativar`. Para status: `/migracao-status`.
+Os comandos do OML estão registrados como **slash commands** em `.claude/commands/` deste projeto — digite `/` para ver no autocomplete (ex.: `/migracao-ativar`, `/migracao-status`, `/migracao-proxima-tela`, `/push`). Índice completo em `../OML/docs/01-comandos/comandos-oficiais.md`.
 
 ## Memória do projeto
 `memoria/` contém a fonte de verdade viva (decisões, backlog, inventários, pendências humanas). Nunca operar com memória defasada — sincronizar no início da sessão.

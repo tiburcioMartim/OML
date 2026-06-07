@@ -8,6 +8,12 @@ O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.
 
 ## [Não lançado]
 
+## [1.2.0] - 2026-06-07
+
+### Adicionado
+
+- **Comandos do OML também dentro do projeto novo:** `/migracao-configurar-projeto` passa a gerar `.claude/commands/` na raiz do projeto (via novo `docs/05-templates/comando-projeto.template.md`), um slash command por comando do OML delegando a `../OML/docs/01-comandos/`. Assim os comandos **autocompletam no `/` onde o dev codifica**, não só dentro do clone do OML. Documentado em `protocolo-ativacao-permanente.md` (Camada 1) e refletido no `claude-md-projeto-novo.template.md`. (`/oml-atualizar` fica de fora — roda no clone do OML.) Os comandos do projeto se mantêm em dia via **seed-if-missing no `/migracao-ativar`**: comando novo do OML aparece no autocomplete sem reconfigurar.
+
 ## [1.1.0] - 2026-06-07
 
 ### Adicionado

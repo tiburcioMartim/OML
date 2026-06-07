@@ -14,6 +14,7 @@ Fonte **única e canônica** do histórico de melhorias do OML. Consolida (e sub
 |---|---|
 | Atualizar OMLs em uso sem perder memória/histórico dos projetos (2026-06-07) | Separação **Motor × Estado**: `oml.manifesto.json`, `docs/00-visao-geral/politica-versionamento-atualizacao.md`, `VERSION`; `memoria/` destravada do git (`git rm --cached`) + `.gitignore`; esqueleto vazio em `docs/05-templates/memoria-seed/`; comando `/oml-atualizar` + `docs/04-protocolos/protocolo-atualizacao-oml.md`; seed-if-missing em `migracao-ativar.md`; `.claude/settings.local.json` ignorado; registros em `comandos-oficiais.md`, `README.md`, `CHANGELOG.md` |
 | Comandos do OML viram slash commands de verdade — autocomplete do `/` (2026-06-07) | `.claude/commands/` com 1 arquivo por comando (delegando a `docs/01-comandos/`); `.claude/commands/` marcado como motor no manifesto; bump v1.1.0 |
+| Comandos do OML autocompletando dentro do projeto novo (2026-06-07) | `docs/05-templates/comando-projeto.template.md`; passo de geração em `migracao-configurar-projeto.md`; `protocolo-ativacao-permanente.md` (Camada 1) e `claude-md-projeto-novo.template.md` atualizados; **seed-if-missing de comandos no `/migracao-ativar`** (mantêm-se em dia); bump v1.2.0 |
 
 > **Ação humana pendente:** limpar os caminhos absolutos de `.claude/settings.json` (o harness do Claude Code bloqueia a edição automática desse arquivo — proteção contra auto-concessão de permissão) e migrar permissões específicas de máquina para `.claude/settings.local.json`.
 

@@ -53,6 +53,7 @@ Nome, email e URL do repositório do sistema.
 ### Ferramental e Ativação Permanente
 - [ ] **Inventariar plugins/skills do Claude** disponíveis e registrar em `memoria/plugins-disponiveis.md`; orientar instalação dos recomendados ausentes — ver `docs/04-protocolos/protocolo-plugins-claude.md`
 - [ ] **Gerar `CLAUDE.md` na raiz do projeto novo** a partir de `docs/05-templates/claude-md-projeto-novo.template.md`, para os guardiões inegociáveis valerem sem `/migracao-ativar` — ver `docs/04-protocolos/protocolo-ativacao-permanente.md`
+- [ ] **Gerar `.claude/commands/` na raiz do projeto novo** a partir dos comandos listados em `docs/01-comandos/comandos-oficiais.md`, usando `docs/05-templates/comando-projeto.template.md` (um arquivo por comando; **exceto** `/oml-atualizar`, que roda no clone do OML). Cada comando delega ao doc do OML por caminho relativo (`../OML/docs/01-comandos/...`; usar o basename real de `diretorio_oml` se diferente de `OML`). Assim os comandos do OML **autocompletam no `/` dentro do projeto**, onde o dev codifica — ver `docs/04-protocolos/protocolo-ativacao-permanente.md`
 - [ ] Inicializar `memoria/pendencias-humanas.md` (o que só o dev poderá fazer: VPS, DNS, chaves de produção, legal) — ver `docs/03-guardioes/guardiao-pendencias-humanas.md`
 
 ### Configuração de Ambiente do Legado (apenas Migração/Híbrido)
@@ -92,6 +93,7 @@ Nome, email e URL do repositório do sistema.
 - [ ] (Construção/Híbrido) Arquitetura de renderização decidida (SEO/GEO) e registrada
 - [ ] CI/qualidade definido; plugins inventariados
 - [ ] `CLAUDE.md` gerado no projeto novo (ativação permanente)
+- [ ] `.claude/commands/` gerado no projeto novo (comandos do OML autocompletam no projeto)
 - [ ] `memoria/pendencias-humanas.md` inicializado
 - [ ] Perfil salvo em arquivo
 
