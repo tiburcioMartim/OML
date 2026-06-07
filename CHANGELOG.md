@@ -8,6 +8,12 @@ O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.
 
 ## [Não lançado]
 
+## [1.3.0] - 2026-06-07
+
+### Adicionado
+
+- **Instalação global dos comandos:** `scripts/instalar-comandos-globais.ps1` gera os comandos do OML em `~/.claude/commands/` apontando (caminho absoluto) para este OML, fazendo-os autocompletar em **qualquer pasta** — não só no clone do OML. Idempotente: re-rode após `/oml-atualizar` para pegar comandos novos. Comandos do projeto e do clone do OML têm **precedência** sobre os globais. `scripts/` passa a ser **motor** no `oml.manifesto.json`. (Documentado no README e em `comandos-oficiais.md`.)
+
 ## [1.2.1] - 2026-06-07
 
 ### Alterado

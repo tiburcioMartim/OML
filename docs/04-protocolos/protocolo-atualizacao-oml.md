@@ -78,7 +78,8 @@ Para cada entrada de `migracoes[]` em [`oml.manifesto.json`](../../oml.manifesto
    - resumo do CHANGELOG aplicado;
    - novidades de memória criadas pelo seed;
    - **ações humanas** requeridas (ex.: limpar `.claude/settings.json`, configurar `settings.local.json`, revisar migração manual);
-   - lembrete: backup em `memoria/.backup-...` (apagar quando o dev validar).
+   - lembrete: backup em `memoria/.backup-...` (apagar quando o dev validar);
+   - se o dev usa comandos **globais**, lembrar de re-rodar `scripts/instalar-comandos-globais.ps1` para refletir comandos novos.
 
 ---
 

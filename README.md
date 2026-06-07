@@ -56,6 +56,14 @@ Os comandos do OML são **slash commands de verdade**. Abra o Claude Code **na p
 
 > 💡 **Acabou de clonar ou atualizar e não apareceu nada?** Os comandos carregam **na inicialização da sessão** — **feche e reabra** o Claude Code na pasta. Eles autocompletam na pasta onde os arquivos estão: no clone do OML e, em projetos configurados pelo OML, na pasta do **projeto** (gerados no `/migracao-configurar-projeto`).
 
+**Quer os comandos em qualquer pasta?** Rode uma vez (Windows):
+
+```
+powershell -File scripts/instalar-comandos-globais.ps1
+```
+
+Isso instala versões **globais** em `~/.claude/commands/` apontando para este OML. Re-rode após `/oml-atualizar` para pegar comandos novos. (Precedência: comandos do projeto > do clone do OML > globais.)
+
 ### Atualizando um projeto que já usa o OML
 
 O OML evolui constantemente. Para trazer as melhorias para um projeto antigo **sem perder memória, decisões e histórico**, rode dentro do OML do projeto:
