@@ -15,6 +15,7 @@ Sempre que precisar saber qual comando usar em determinada situação.
 | Comando | Quando usar | O que faz |
 |---|---|---|
 | `/migracao-ativar` | No início do projeto | Inicia o OML, detecta o modo, sincroniza memória e carrega regras |
+| `/oml-atualizar` | Quando o motor do OML evoluiu | Atualiza o **motor** do OML preservando o **estado** do projeto (memória, decisões, regras). Ver `docs/04-protocolos/protocolo-atualizacao-oml.md` |
 | `/migracao-sincronizar` | Início de sessão / sob demanda | Varre o código real e sincroniza `memoria/` (telas, componentes, scaffolds) |
 | `/migracao-configurar-projeto` | Após ativar | Define modo, perfil, stack e políticas |
 | `/construir-capturar-requisitos` | Construção/Híbrido, por feature | Captura requisitos e gera a fonte de verdade da feature nova |
@@ -47,3 +48,4 @@ Sempre que precisar saber qual comando usar em determinada situação.
 3. Comandos de investigação e documentação podem ser executados livremente.
 4. Comandos com **gate duro** abortam com mensagem se o artefato da fase anterior não existir (ver `docs/04-protocolos/protocolo-gates-validacao.md`). Gate duro > convenção implícita.
 5. Os comandos de **descoberta/paridade do legado** (`descobrir-telas`, `carregar-urls`, `gerar-mapa-hierarquico`, `analisar-tela`, `extrair-regras`, `revisar-paridade`) só se aplicam em modo **migração/híbrido**. Em modo **construção**, a fonte de verdade vem de `/construir-capturar-requisitos`. Os demais comandos (configuração, propor-interface, planejar/autorizar implementação, homologar, auditar, status) são compartilhados entre os modos (ver `docs/00-visao-geral/politica-modos-projeto.md`).
+6. `/oml-atualizar` é **agnóstico de modo** (vale para migração, construção e híbrido) e mexe no **motor** do agente — não confundir com `/migracao-sincronizar` (reconcilia a **memória** com o código) nem com `/migracao-ativar` (carrega o agente na sessão). Ver `docs/00-visao-geral/politica-versionamento-atualizacao.md`.

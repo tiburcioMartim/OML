@@ -8,8 +8,17 @@ O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.
 
 ## [Não lançado]
 
+## [1.0.0] - 2026-06-07
+
 ### Adicionado
 
+- **Sistema de versionamento e atualização não-destrutiva (Motor × Estado):** projetos que já usam o OML passam a receber as melhorias do agente **sem perder estado** (memória, decisões, histórico, regras de negócio, backlog, gates, pendências).
+  - **Contrato Motor × Estado** — `oml.manifesto.json` (raiz) + `docs/00-visao-geral/politica-versionamento-atualizacao.md` declaram o que é sobrescrevível (motor) e o que é intocável (estado)
+  - **`memoria/` saiu do versionamento** (`git rm -r --cached memoria` + `.gitignore`): `git pull` nunca mais colide com os dados do projeto; o esqueleto vazio virou seed do motor em `docs/05-templates/memoria-seed/`
+  - **`VERSION`** (SemVer) na raiz — todo projeto sabe sua versão e o delta do CHANGELOG
+  - **Comando `/oml-atualizar`** + `docs/04-protocolos/protocolo-atualizacao-oml.md`: backup → destrava a memória → traz só o motor → seed-if-missing → registra em `decisoes.md`/`historico-migracao.md` → relatório com ações humanas
+  - **seed-if-missing na ativação** — `/migracao-ativar` cria a estrutura de memória que falta (clone novo ou após atualização) **sem tocar** no que já existe
+  - **`.claude/settings.local.json`** (ignorado pelo git) para permissões específicas de máquina; o `settings.json` versionado fica genérico
 - **Aprofundamento de Regras de Negócio (entendimento minucioso do legado):**
   - **Unidades legadas de 1ª classe** — extração cobre 🖥️ tela · 🔌 endpoint · ⚙️ job · 🧮 processamento · 📄 relatório (não só telas)
   - **Estado funcional da unidade** — ✔️ Funciona · ⚠️ quirk · ❌ Quebrada · 💀 Código morto (com evidência; ❌/💀 = decisão do dev, 💀 cruza o Mapa de Uso)

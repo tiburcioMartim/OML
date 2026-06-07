@@ -1,3 +1,12 @@
 # Relatórios de aprimoramento de projeto (insumos transitórios — apagados após consumo).
 # O histórico permanente das melhorias vive em historico-aprimoramento.md (versionado).
 aprimoramento/
+
+# Estado do projeto (Estado, não Motor): preenchido em runtime e ÚNICO de cada projeto.
+# Nunca versionado pelo motor — o esqueleto vazio vive em docs/05-templates/memoria-seed/.
+# Ver docs/00-visao-geral/politica-versionamento-atualizacao.md.
+memoria/
+
+# Configurações locais por máquina (permissões específicas, caminhos absolutos).
+# O settings.json versionado carrega só permissões genéricas; o específico vai aqui.
+.claude/settings.local.json

@@ -44,6 +44,16 @@ O OML, o sistema legado e o novo sistema **devem ser diretórios irmãos** (sibl
 6. O OML conduzirá a migração por etapas.
 7. Você validará decisões e autorizará avanços quando necessário.
 
+### Atualizando um projeto que já usa o OML
+
+O OML evolui constantemente. Para trazer as melhorias para um projeto antigo **sem perder memória, decisões e histórico**, rode dentro do OML do projeto:
+
+```
+/oml-atualizar
+```
+
+Ele separa **Motor** (o agente — sobrescrevível) de **Estado** (os dados do seu projeto — intocáveis), faz backup, traz o motor novo e cria só a estrutura de memória que faltava. Detalhes em [política de versionamento e atualização](docs/00-visao-geral/politica-versionamento-atualizacao.md).
+
 ---
 
 ## Ele codifica sozinho?
@@ -87,6 +97,7 @@ O OML trabalha com **autonomia inteligente** e **2 Gates de aprovação**:
 | `/migracao-auditar-padroes` | Audita padrões pós-migração |
 | `/migracao-status` | Mostra o status atual |
 | `/migracao-proxima-tela` | Avança para a próxima tela |
+| `/oml-atualizar` | Atualiza o motor do OML preservando o estado do projeto |
 
 Para documentação completa de cada comando, consulte [docs/01-comandos/](docs/01-comandos/).
 

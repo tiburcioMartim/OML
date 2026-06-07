@@ -8,6 +8,14 @@ Fonte **única e canônica** do histórico de melhorias do OML. Consolida (e sub
 
 ## Status de implementação
 
+### Rodada 2026-06-07
+
+| Sugestão (data) | Onde foi implementado |
+|---|---|
+| Atualizar OMLs em uso sem perder memória/histórico dos projetos (2026-06-07) | Separação **Motor × Estado**: `oml.manifesto.json`, `docs/00-visao-geral/politica-versionamento-atualizacao.md`, `VERSION`; `memoria/` destravada do git (`git rm --cached`) + `.gitignore`; esqueleto vazio em `docs/05-templates/memoria-seed/`; comando `/oml-atualizar` + `docs/04-protocolos/protocolo-atualizacao-oml.md`; seed-if-missing em `migracao-ativar.md`; `.claude/settings.local.json` ignorado; registros em `comandos-oficiais.md`, `README.md`, `CHANGELOG.md` |
+
+> **Ação humana pendente:** limpar os caminhos absolutos de `.claude/settings.json` (o harness do Claude Code bloqueia a edição automática desse arquivo — proteção contra auto-concessão de permissão) e migrar permissões específicas de máquina para `.claude/settings.local.json`.
+
 ### Rodada 2026-06-06
 
 | Sugestão (data) | Onde foi implementado |

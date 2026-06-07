@@ -1,0 +1,49 @@
+{
+  "nome": "OML — Orquestrador de Migração Legada",
+  "versao": "1.0.0",
+  "leiame": "Contrato Motor×Estado do OML. Define o que a atualização pode sobrescrever (motor) e o que é intocável (estado). Consumido por /oml-atualizar e pelo passo seed-if-missing de /migracao-ativar. Detalhes em docs/00-visao-geral/politica-versionamento-atualizacao.md.",
+  "motor": {
+    "descricao": "Sobrescrevível na atualização — igual em todo projeto. É o agente em si.",
+    "caminhos": [
+      "docs/",
+      "README.md",
+      "CHANGELOG.md",
+      "CONTRIBUTING.md",
+      "CODE_OF_CONDUCT.md",
+      "LICENSE",
+      "historico-aprimoramento.md",
+      "VERSION",
+      "oml.manifesto.json",
+      ".gitignore"
+    ]
+  },
+  "estado": {
+    "descricao": "Dado ÚNICO de cada projeto. A atualização NUNCA sobrescreve nem apaga.",
+    "caminhos": [
+      "memoria/",
+      ".claude/settings.json"
+    ]
+  },
+  "local": {
+    "descricao": "Específico por máquina; ignorado pelo git; nunca versionado nem sobrescrito.",
+    "caminhos": [
+      ".claude/settings.local.json",
+      "aprimoramento/"
+    ]
+  },
+  "seed": {
+    "descricao": "Esqueleto vazio de memoria/. O seed-if-missing copia apenas o que faltar; nunca sobrescreve arquivo existente.",
+    "origem": "docs/05-templates/memoria-seed/",
+    "destino": "memoria/"
+  },
+  "migracoes": [
+    {
+      "versao": "1.0.0",
+      "descricao": "Linha de base: separação Motor×Estado, memoria/ destravada do git e seed-if-missing na ativação.",
+      "passos": [
+        "Se memoria/ ainda for rastreada pelo git (saída de 'git ls-files memoria' não-vazia): fazer backup de memoria/, rodar 'git rm -r --cached memoria', garantir 'memoria/' no .gitignore e commitar ANTES de qualquer pull.",
+        "Rodar seed-if-missing a partir de docs/05-templates/memoria-seed/ (cria só o que faltar)."
+      ]
+    }
+  ]
+}
