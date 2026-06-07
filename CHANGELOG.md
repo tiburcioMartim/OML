@@ -8,6 +8,12 @@ O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.
 
 ## [Não lançado]
 
+## [1.2.1] - 2026-06-07
+
+### Alterado
+
+- **Documentação de cara para o GitHub:** README com badges (versão/licença/idioma), seção de uso dos **slash commands** (incl. o "reabra a sessão para carregar"), seção de **versionamento e atualização** e árvore de projeto atualizada. `introducao.md` reflete os três modos e o versionamento. `CONTRIBUTING.md` ganha regras de versionamento (SemVer, CHANGELOG, tag; `memoria/` nunca versionada).
+
 ## [1.2.0] - 2026-06-07
 
 ### Adicionado

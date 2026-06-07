@@ -1,5 +1,9 @@
 # OML — Orquestrador de Migração Legada
 
+[![versão](https://img.shields.io/github/v/tag/tiburcioMartim/OML?label=vers%C3%A3o&sort=semver&color=blue)](https://github.com/tiburcioMartim/OML/releases)
+[![licença](https://img.shields.io/badge/licen%C3%A7a-MIT-green)](LICENSE)
+![idioma](https://img.shields.io/badge/idioma-PT--BR-yellow)
+
 O OML ajuda desenvolvedores a modernizar sistemas legados com segurança, documentação, testes, padronização e controle por fases.
 
 Ele investiga o sistema legado, cria documentação, identifica regras de negócio, mapeia banco, permissões, integrações, riscos, propõe melhorias e **trabalha de forma autônoma**, parando somente em **2 pontos de aprovação** (Gates).
@@ -29,6 +33,8 @@ O OML, o sistema legado e o novo sistema **devem ser diretórios irmãos** (sibl
 
 > ⚠️ Se o OML for clonado dentro do legado ou em local incorreto, ao ativar, ele detectará o problema e proporá a correção automaticamente.
 
+> 🌱 **Projeto novo (greenfield)?** Não há legado: a estrutura é só um par — `/OML/` + `/app-novo/` (irmãos). A ausência de legado **não é erro** (ver [modos de projeto](docs/00-visao-geral/politica-modos-projeto.md)).
+
 ### Passos
 
 1. Clone o OML como irmão do seu sistema legado.
@@ -43,6 +49,12 @@ O OML, o sistema legado e o novo sistema **devem ser diretórios irmãos** (sibl
 5. Informe uma URL inicial ou peça para o OML descobrir as telas automaticamente.
 6. O OML conduzirá a migração por etapas.
 7. Você validará decisões e autorizará avanços quando necessário.
+
+### Usando os comandos (slash commands)
+
+Os comandos do OML são **slash commands de verdade**. Abra o Claude Code **na pasta do OML** e digite `/` para ver o menu (ex.: `/migracao-status`, `/push`). Comece a escrever para filtrar (`/migr…`) e passe argumentos quando houver (`/migracao-extrair-regras 42`).
+
+> 💡 **Acabou de clonar ou atualizar e não apareceu nada?** Os comandos carregam **na inicialização da sessão** — **feche e reabra** o Claude Code na pasta. Eles autocompletam na pasta onde os arquivos estão: no clone do OML e, em projetos configurados pelo OML, na pasta do **projeto** (gerados no `/migracao-configurar-projeto`).
 
 ### Atualizando um projeto que já usa o OML
 
@@ -83,9 +95,13 @@ O OML trabalha com **autonomia inteligente** e **2 Gates de aprovação**:
 
 ## Comandos principais
 
+Digite `/` no Claude Code para vê-los no autocomplete (lista completa em [comandos-oficiais](docs/01-comandos/comandos-oficiais.md)).
+
 | Comando | Descrição |
 |---|---|
-| `/migracao-ativar` | Inicia o OML no projeto |
+| `/migracao-ativar` | Inicia o OML no projeto (valida estrutura, garante memória/comandos, sincroniza) |
+| `/migracao-configurar-projeto` | Define modo, stack e perfil; gera `CLAUDE.md` + comandos no projeto |
+| `/migracao-sincronizar` | Reconcilia a memória com o código real |
 | `/migracao-descobrir-telas` | Descobre automaticamente as telas do legado |
 | `/migracao-analisar-tela` | Analisa uma tela específica |
 | `/migracao-gerar-dossie` | Gera dossiê funcional da tela |
@@ -106,16 +122,28 @@ Para documentação completa de cada comando, consulte [docs/01-comandos/](docs/
 ## Estrutura do projeto
 
 ```
+.claude/commands/      → Comandos do OML como slash commands do Claude Code
 docs/
-  00-visao-geral/     → Filosofia, regras, políticas
+  00-visao-geral/      → Filosofia, regras, políticas (incl. versionamento)
   01-comandos/         → Documentação de cada comando
   02-fases/            → Protocolos de cada fase da migração
   03-guardioes/        → Regras por domínio técnico
   04-protocolos/       → Procedimentos operacionais
-  05-templates/        → Modelos reutilizáveis
+  05-templates/        → Modelos reutilizáveis (+ memoria-seed/ = esqueleto da memória)
   06-perfis/           → Perfis por stack e projeto
-memoria/               → Memória operacional do agente
+memoria/               → Estado do projeto (fora do git; criado a partir do seed)
+VERSION                → Versão do OML (SemVer)
+oml.manifesto.json     → Contrato Motor×Estado (o que atualiza × o que é intocável)
+CHANGELOG.md           → Histórico de versões
 ```
+
+---
+
+## Versionamento e atualização
+
+O OML segue [SemVer](https://semver.org/lang/pt-BR/) — a versão atual está em [`VERSION`](VERSION) e o histórico no [CHANGELOG](CHANGELOG.md).
+
+Atualizar um projeto **nunca apaga seus dados**: o [`oml.manifesto.json`](oml.manifesto.json) separa o **Motor** (o agente — sobrescrevível) do **Estado** (a `memoria/` do projeto — intocável). O `/oml-atualizar` faz backup, traz só o motor e cria apenas a estrutura de memória que falta. Detalhes na [política de versionamento e atualização](docs/00-visao-geral/politica-versionamento-atualizacao.md).
 
 ---
 

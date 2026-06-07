@@ -2,7 +2,7 @@
 
 ## Objetivo
 
-O **OML — Orquestrador de Migração Legada** é um framework documental e operacional para conduzir migrações de sistemas legados para stacks modernas com precisão cirúrgica.
+O **OML — Orquestrador de Migração Legada** é um framework documental e operacional para conduzir migrações de sistemas legados para stacks modernas com precisão cirúrgica. Também **constrói projetos novos (greenfield)** — opera em três modos: migração, construção e híbrido (ver [modos de projeto](politica-modos-projeto.md)). É **versionado e atualizável sem perder dados** (contrato Motor×Estado — ver [versionamento e atualização](politica-versionamento-atualizacao.md)).
 
 ## O que o OML é
 
@@ -11,6 +11,7 @@ O **OML — Orquestrador de Migração Legada** é um framework documental e ope
 - Um sistema de documentação viva
 - Um auditor contínuo de padronização
 - Um framework reutilizável e open source
+- Versionado e auto-atualizável sem perder o estado do projeto (Motor×Estado)
 
 ## O que o OML não é
 
