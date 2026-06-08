@@ -6,7 +6,13 @@ Como o OML prepara e publica trabalho no repositório remoto. Mode-agnóstico (m
 
 ---
 
-## As 3 etapas, em ordem
+## O fluxo, em ordem
+
+### 0. Sincronizar (pull) — atualizar antes de publicar 🔄
+Antes de limpar/commitar/empurrar, em **cada** projeto que vai receber push:
+- `git fetch` e verificar divergência (`git rev-list --left-right --count @{u}...HEAD`).
+- **Se houver commits a puxar (`behind > 0`), puxe** — é regra do dev: "sempre que for identificado que há pull a ser feito para atualizar o projeto, faça-o". Preferir `--rebase` quando o local também estiver à frente (evita merge-bubble); abortar e sinalizar se houver conflito.
+- Conferir o **conteúdo líquido** (`git diff <upstream>...HEAD`): se vazio, não há nada a publicar (commits que se cancelam) — não force push de ruído.
 
 ### 1. Limpeza — remover debug e arquivos inúteis 🔴
 Antes de qualquer commit, varrer o working tree por:
@@ -33,9 +39,10 @@ Complementa: `docs/03-guardioes/guardiao-limpeza-arquivos.md` e `docs/03-guardio
 
 ### 3. Push — só no fim, efetivamente
 - Só depois de **toda** a limpeza e **todos** os commits por tarefa concluídos.
-- Garantir que está na branch correta (não commitar direto na `main` sem intenção — branch descritiva quando for melhoria, ver `CONTRIBUTING.md`).
+- **Listar antes os projetos** que vão receber push e o que cada um leva (regra do dev: "sempre dê uma lista de quais projetos irão ser feitos os push"). Projetos sem mudança líquida ficam fora da lista, com o motivo.
+- **Branch-alvo — regra do dev:** o push vai para a branch de **homologação** quando ela existir (`origin/homologacao`); **só** vai para **produção/`main`** quando **não** houver branch de homologação. Nunca empurrar direto para `production`/`main` de um projeto que tenha fluxo de homologação sem intenção explícita do dev (= deploy → gate 🔴). Para melhoria, branch descritiva quando fizer sentido (ver `CONTRIBUTING.md`).
 - `git push` de fato (o protocolo não termina em "pronto para push" — termina com o push feito).
-- Reportar o resultado real (branch, commits enviados); se o push falhar, mostrar o erro e parar.
+- Reportar o resultado real (projeto, branch, commits enviados); se o push falhar, mostrar o erro e parar.
 
 ---
 
@@ -46,12 +53,18 @@ Complementa: `docs/03-guardioes/guardiao-limpeza-arquivos.md` e `docs/03-guardio
 - [ ] Mensagem de commit não-semântica ("update", "wip", "ajustes")
 - [ ] Commitar segredos/credenciais/dados sensíveis
 - [ ] Dar push antes de limpar e commitar tudo
+- [ ] Pular o pull quando o projeto está desatualizado (`behind > 0`)
+- [ ] Push direto em produção/`main` quando há branch de homologação (sem intenção explícita do dev)
+- [ ] Empurrar sem listar antes os projetos que recebem push
 - [ ] Encerrar em "pronto para push" sem executar o push
 
 ## Checklist de conclusão
+- [ ] Projetos sincronizados (pull onde havia `behind`); diff líquido conferido
 - [ ] Working tree varrido; inúteis claros removidos e listados
 - [ ] Ambíguos perguntados ao dev (nenhuma exclusão por suposição)
 - [ ] Sem segredos no diff
 - [ ] Commits por tarefa, com mensagens semânticas
 - [ ] Tudo o que era relevante foi commitado
+- [ ] Projetos que recebem push listados (e os de fora, com motivo)
+- [ ] Branch-alvo correta (homologação quando existe; produção só na ausência)
 - [ ] Push executado e resultado reportado
