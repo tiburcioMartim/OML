@@ -8,6 +8,14 @@ Fonte **única e canônica** do histórico de melhorias do OML. Consolida (e sub
 
 ## Status de implementação
 
+### Rodada 2026-06-08
+
+| Sugestão (data) | Onde foi implementado |
+|---|---|
+| Push: pull-first + alvo homologação + listar projetos (2026-06-08) | **Aplicado na OML do projeto** (`rhc-erp-laravel/OML`): `docs/04-protocolos/protocolo-push.md` (nova etapa "0. Sincronizar (pull)" + etapa 3 reescrita com branch-alvo homologação/fallback produção e lista de projetos), `docs/01-comandos/push.md` (ações obrigatórias/proibidas + frase de encerramento). **Pendente revisão p/ subir à matriz** (não aplicado aqui na matriz sem revisão, conforme regra do comando). |
+
+> **Origem (uso real 2026-06-08):** ao rodar `/push`, o `rhc-erp` (legado, produção) aparecia 31 commits "à frente" só porque o `origin` estava desatualizado; após `fetch` virou 8 atrás / 3 à frente, e os commits à frente eram um par `ajuste`+`revert` com **diff líquido vazio**. O dev firmou a regra: (1) pull sempre que houver o que atualizar; (2) push vai para branch de **homologação** quando existir, produção só na ausência dela; (3) sempre listar os projetos que receberão push.
+
 ### Rodada 2026-06-07
 
 | Sugestão (data) | Onde foi implementado |
@@ -90,6 +98,7 @@ Auditoria cruzada de todas as sugestões contra a matriz OML (com citação `arq
 | 2026-06-05 | Componente de tabela canônico não tinha estilo de linha dirigido por dados — destacar linha crítica/em alerta exigiria gambiarra por tela, quebrando a paridade comportamental | Vue / Design System | Adicionar prop **aditiva** `linhaClass` (string \| função `(linha, index) => string`, default null) ao componente de tabela — sem interferir em hover/seleção/formatação. Incluir na spec do Dossiê (§ Design). | Média |
 | 2026-06-05 | "Análise de Uso" só gerava o botão **Novo** (deep-link) quando a rota era GET navegável → endpoints de ação migrados (POST) apareciam sem link, e URLs de diretório não casavam | Laravel / Rastreabilidade | No resolvedor de status: (1) **fallback ação→tela** — rota não-GET tenta o `modulo.recurso.index` (GET) do mesmo grupo; (2) **tolerar URL de diretório** (sem `.php`) → `index.php` do módulo. | Média |
 | 2026-06-05 | O método "esta tela do legado já foi migrada e onde?" — cruzar log de acesso real × backlog (`rota_laravel`) × navegabilidade — era poderoso mas estava implícito, não documentado como artefato/guardião | Processo / Núcleo genérico | Documentar o padrão "**Mapa de Uso × Backlog**": (a) instrumentar o legado p/ logar acesso; (b) backlog = fonte única do vínculo legado→rota nova; (c) relatório ranqueia telas por uso real e linka legado/novo. Vira guardião/relatório no núcleo genérico. | Alta |
+| 2026-06-08 | O Protocolo de Push só tratava limpar→commitar→push e ignorava (a) atualizar o projeto antes (pull), (b) qual branch recebe o push em repos com fluxo de homologação e (c) a transparência de quais projetos serão empurrados num push multi-projeto | Núcleo genérico / Processo | Acrescentar ao Protocolo de Push: **(1) etapa 0 "Sincronizar (pull)"** — `fetch` + se `behind>0` puxar (`--rebase` quando também à frente), e checar diff líquido p/ não empurrar commits que se cancelam; **(2) branch-alvo** — push vai para a branch de **homologação** quando existir, produção/`main` só na ausência dela (push direto em produção com fluxo de homolog. = deploy → gate 🔴); **(3) lista de projetos** — sempre enumerar os projetos que receberão push (e os de fora, com motivo). | Alta |
 
 ---
 
