@@ -79,7 +79,7 @@ Para cada entrada de `migracoes[]` em [`oml.manifesto.json`](../../oml.manifesto
    - novidades de memória criadas pelo seed;
    - **ações humanas** requeridas (ex.: limpar `.claude/settings.json`, configurar `settings.local.json`, revisar migração manual);
    - lembrete: backup em `memoria/.backup-...` (apagar quando o dev validar);
-   - se o dev usa comandos **globais**, lembrar de re-rodar `scripts/instalar-comandos-globais.ps1` para refletir comandos novos.
+   - se o dev usa comandos **globais**, lembrar de re-rodar o instalador para refletir comandos novos (`scripts/instalar-comandos-globais.ps1` no Windows; `scripts/instalar-comandos-globais.sh` no Linux/macOS).
 
 ---
 
