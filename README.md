@@ -50,6 +50,16 @@ O OML, o sistema legado e o novo sistema **devem ser diretórios irmãos** (sibl
 6. O OML conduzirá a migração por etapas.
 7. Você validará decisões e autorizará avanços quando necessário.
 
+### Cofre de Acessos (o "`.env` do OML")
+
+Para o OML **resolver o problema de ponta a ponta** — logar no ERP, consultar o banco, exercitar integrações — ele lê um cofre próprio de credenciais:
+
+- O `/migracao-ativar` cria `acessos.example.env` (só **chaves**) e `acessos.local.env` (**valores**, já no `.gitignore`).
+- Você preenche os blocos que existirem (legado, novo, banco, integrações) **uma vez** em `acessos.local.env`.
+- O OML usa esses acessos para agir e **nunca** imprime, commita ou copia os valores para a memória — 2FA/captcha ele para e pede a você.
+
+Detalhes: [`docs/04-protocolos/protocolo-acessos-oml.md`](docs/04-protocolos/protocolo-acessos-oml.md).
+
 ### Usando os comandos (slash commands)
 
 Os comandos do OML são **slash commands de verdade**. Abra o Claude Code **na pasta do OML** e digite `/` para ver o menu (ex.: `/migracao-status`, `/push`). Comece a escrever para filtrar (`/migr…`) e passe argumentos quando houver (`/migracao-extrair-regras 42`).
@@ -148,6 +158,8 @@ docs/
   05-templates/        → Modelos reutilizáveis (+ memoria-seed/ = esqueleto da memória)
   06-perfis/           → Perfis por stack e projeto
 memoria/               → Estado do projeto (fora do git; criado a partir do seed)
+acessos.example.env    → Cofre de Acessos do OML (só chaves; versionado)
+acessos.local.env      → Cofre de Acessos do OML (valores reais; FORA do git)
 VERSION                → Versão do OML (SemVer)
 oml.manifesto.json     → Contrato Motor×Estado (o que atualiza × o que é intocável)
 CHANGELOG.md           → Histórico de versões

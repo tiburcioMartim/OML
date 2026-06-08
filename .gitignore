@@ -10,3 +10,10 @@ memoria/
 # Configurações locais por máquina (permissões específicas, caminhos absolutos).
 # O settings.json versionado carrega só permissões genéricas; o específico vai aqui.
 .claude/settings.local.json
+
+# Cofre de Acessos do OML — credenciais reais que o agente usa para operar
+# (logar no ERP, banco, integrações). NUNCA versionar VALORES reais.
+# O template SÓ-CHAVES (acessos.example.env) é versionado; o de valores, não.
+# Ver docs/04-protocolos/protocolo-acessos-oml.md.
+*.local.env
+acessos.local.env

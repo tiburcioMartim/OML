@@ -35,6 +35,20 @@ modo:
 
 <!-- Apenas modo Migração/Híbrido. Registrar as CHAVES (nunca valores) importadas do legado. Em modo Construção, omitir este bloco. -->
 
+## Cofre de Acessos do OML
+
+<!--
+Acessos operacionais que o OML usa para agir (logar no ERP, banco, integrações).
+Os VALORES vivem SÓ em `OML/acessos.local.env` (gitignored) — NUNCA aqui.
+Registrar apenas o ESTADO de cada bloco (configurado/vazio), nunca o valor.
+Ver docs/04-protocolos/protocolo-acessos-oml.md.
+-->
+- Sistema legado (login): <!-- configurado | vazio -->
+- Sistema novo (login): <!-- configurado | vazio -->
+- Banco legado: <!-- configurado | vazio -->
+- Banco novo: <!-- configurado | vazio -->
+- Integrações: <!-- listar serviços configurados, sem valores -->
+
 ## Integrações conhecidas
 
 ## Estrutura de permissões

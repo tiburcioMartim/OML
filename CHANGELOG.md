@@ -8,6 +8,16 @@ O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.
 
 ## [Não lançado]
 
+## [1.4.0] - 2026-06-08
+
+### Adicionado
+
+- **Cofre de Acessos do OML (`acessos.local.env`):** o agente passa a ter um "`.env` próprio" com os **acessos operacionais** que ele usa para **agir e resolver o problema de ponta a ponta** — logar no ERP legado/novo, consultar o banco, acessar integrações — sem depender do dev executar cada passo. Dois arquivos: `acessos.example.env` (só **chaves**, versionado, fonte em `docs/05-templates/acessos.example.env`) e `acessos.local.env` (**valores reais**, ignorado pelo git via `*.local.env`, classificado como **local** no `oml.manifesto.json`). Novo `docs/04-protocolos/protocolo-acessos-oml.md`; seed-if-missing no `/migracao-ativar` (cria o que faltar, garante o `.gitignore`, reporta blocos preenchidos × vazios **mascarados**); migração 1.4.0 no manifesto (propaga via `/oml-atualizar`). Regras duras no `guardiao-segredos-credenciais.md`: valores só no `.local.env`, nunca imprimir/ecoar/commitar/colar-no-chat, 2FA/captcha não se burla. Distinto da Importação de `.env` do legado (que mapeia só **chaves**). Bloco "Cofre de Acessos do OML" no template de perfil.
+
+### Alterado
+
+- **Protocolo de Push — pull-first + branch de homologação + lista de projetos** (promovido do relatório de aprimoramento do `rhc-erp-laravel` para a matriz): nova **etapa 0 "Sincronizar (pull)"** (`fetch`, puxar quando `behind > 0` com `--rebase` se também à frente, conferir diff líquido p/ não empurrar ruído); etapa 3 passa a **listar os projetos** que receberão push e a mirar a branch de **homologação** quando existir (produção/`main` só na ausência — push direto em produção com fluxo de homolog. = deploy → gate 🔴). `docs/04-protocolos/protocolo-push.md` e `docs/01-comandos/push.md` (ações obrigatórias/proibidas, checklist e frase de encerramento).
+
 ## [1.3.0] - 2026-06-07
 
 ### Adicionado

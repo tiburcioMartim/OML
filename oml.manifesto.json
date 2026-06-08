@@ -1,6 +1,6 @@
 {
   "nome": "OML — Orquestrador de Migração Legada",
-  "versao": "1.3.0",
+  "versao": "1.4.0",
   "leiame": "Contrato Motor×Estado do OML. Define o que a atualização pode sobrescrever (motor) e o que é intocável (estado). Consumido por /oml-atualizar e pelo passo seed-if-missing de /migracao-ativar. Detalhes em docs/00-visao-geral/politica-versionamento-atualizacao.md.",
   "motor": {
     "descricao": "Sobrescrevível na atualização — igual em todo projeto. É o agente em si.",
@@ -30,13 +30,21 @@
     "descricao": "Específico por máquina; ignorado pelo git; nunca versionado nem sobrescrito.",
     "caminhos": [
       ".claude/settings.local.json",
-      "aprimoramento/"
+      "aprimoramento/",
+      "acessos.local.env",
+      "*.local.env"
     ]
   },
   "seed": {
     "descricao": "Esqueleto vazio de memoria/. O seed-if-missing copia apenas o que faltar; nunca sobrescreve arquivo existente.",
     "origem": "docs/05-templates/memoria-seed/",
     "destino": "memoria/"
+  },
+  "acessos": {
+    "descricao": "Cofre de Acessos do OML. O .example (só chaves) é motor/versionado; o .local.env (valores) é local e nunca versionado. Seed-if-missing na ativação cria o que faltar; nunca sobrescreve o .local.env existente. Ver docs/04-protocolos/protocolo-acessos-oml.md.",
+    "origem": "docs/05-templates/acessos.example.env",
+    "destino_exemplo": "acessos.example.env",
+    "destino_valores": "acessos.local.env"
   },
   "migracoes": [
     {
@@ -45,6 +53,14 @@
       "passos": [
         "Se memoria/ ainda for rastreada pelo git (saída de 'git ls-files memoria' não-vazia): fazer backup de memoria/, rodar 'git rm -r --cached memoria', garantir 'memoria/' no .gitignore e commitar ANTES de qualquer pull.",
         "Rodar seed-if-missing a partir de docs/05-templates/memoria-seed/ (cria só o que faltar)."
+      ]
+    },
+    {
+      "versao": "1.4.0",
+      "descricao": "Cofre de Acessos do OML: credenciais operacionais que o agente usa para agir (logar no ERP, banco, integrações).",
+      "passos": [
+        "Garantir 'acessos.local.env' e '*.local.env' no .gitignore do OML ANTES de criar qualquer arquivo de valores.",
+        "Seed-if-missing: copiar docs/05-templates/acessos.example.env para acessos.example.env (só se faltar) e criar acessos.local.env a partir do .example (chaves vazias) se faltar — NUNCA sobrescrever um acessos.local.env existente."
       ]
     }
   ]

@@ -27,6 +27,7 @@ Nenhuma. O comando detecta automaticamente o estado do projeto.
 - [ ] Verificar documentos existentes na pasta `docs/`
 - [ ] **Garantir a memória (seed-if-missing)** (ver `docs/00-visao-geral/politica-versionamento-atualizacao.md`): para cada item de `docs/05-templates/memoria-seed/`, **se não existir** o correspondente em `memoria/`, copiá-lo (cria a estrutura inicial num clone novo e o esqueleto faltante após uma atualização). **Nunca sobrescrever** arquivo de memória já existente — é dado do projeto.
 - [ ] **Garantir os slash commands do projeto (seed-if-missing)** — *somente quando operando para um projeto novo* (perfil com `diretorio_novo`; CWD = projeto): para cada comando listado em `../OML/docs/01-comandos/comandos-oficiais.md` (exceto `/oml-atualizar`), **se não existir** `.claude/commands/<nome>.md` na raiz do projeto, gerá-lo a partir de `../OML/docs/05-templates/comando-projeto.template.md`. **Nunca sobrescrever** um já existente. Assim, comandos novos do OML passam a autocompletar no projeto sem reconfigurar — ver `docs/04-protocolos/protocolo-ativacao-permanente.md`.
+- [ ] **Garantir o Cofre de Acessos do OML (seed-if-missing)** (ver `docs/04-protocolos/protocolo-acessos-oml.md`): (1) garantir `*.local.env`/`acessos.local.env` no `.gitignore` do OML; (2) se `acessos.example.env` não existir, copiá-lo de `docs/05-templates/acessos.example.env`; (3) se `acessos.local.env` não existir, criá-lo do `.example` (chaves com **valores vazios**); (4) carregar o `acessos.local.env` e reportar **quais blocos estão preenchidos × vazios, sempre mascarando** (`(definida)`/`(vazia)`, nunca o valor). **Nunca sobrescrever** um `acessos.local.env` existente — é dado da máquina/do dev.
 - [ ] Verificar estado da memória em `memoria/`
 - [ ] **Sincronizar a memória com o código real, ANTES de qualquer trabalho** (ver `docs/04-protocolos/protocolo-sincronizacao-memoria.md`): varrer Controllers, Models, Pages, Components e `menu.js` do projeto novo (e do legado, se houver) e reconciliar `memoria/` — incl. `historico-migracao.md`. Nunca operar com memória defasada.
 - [ ] **Varrer Models e validar `$table` contra `Schema::hasTable()`** (ver `docs/04-protocolos/protocolo-varredura-models.md`): emitir `memoria/scaffolds-suspeitos.md`; Models órfãos viram pendência prioritária antes de qualquer tela.
@@ -54,6 +55,7 @@ Nenhuma. O comando detecta automaticamente o estado do projeto.
 - [ ] Perfil identificado
 - [ ] Memória garantida (seed-if-missing): estrutura faltante criada, dados existentes intocados
 - [ ] Slash commands do projeto garantidos (seed-if-missing): comandos novos do OML disponíveis no projeto
+- [ ] Cofre de Acessos garantido (seed-if-missing): `.gitignore` ok, `acessos.example.env` e `acessos.local.env` presentes, blocos reportados mascarados
 - [ ] Memória sincronizada com o código real (sem dados defasados)
 - [ ] Models varridos e `scaffolds-suspeitos.md` atualizado
 - [ ] Status exibido
