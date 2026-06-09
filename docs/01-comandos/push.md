@@ -20,15 +20,18 @@ Nenhuma obrigatória. Opcional: branch de destino e escopo (quais tarefas commit
 - [ ] Verificar que não há segredos/credenciais no diff (`docs/03-guardioes/guardiao-segredos-credenciais.md`)
 - [ ] **Commitar por tarefa**, com mensagem semântica (Conventional Commits, PT-BR)
 - [ ] Commitar tudo o que estiver disponível e relevante
-- [ ] **Listar os projetos** que receberão push (e os que ficam de fora, com motivo)
+- [ ] **Abrir o campo de opções de seleção de projetos** — montar a lista de projetos **candidatos** (com push líquido a fazer) e **abrir um campo de opções interativo** (no Claude Code: a ferramenta de pergunta com opções, `AskUserQuestion` com `multiSelect: true` — nunca apenas uma lista em texto) com **uma opção por linha** (cada projeto + **"Todos"**, seleção múltipla). Só candidatos com push aparecem; **se não houver nenhum candidato, não abrir campo (nada aparece)**
 - [ ] Confirmar a branch de destino — **homologação quando existir; produção/`main` só se não houver homologação**
-- [ ] **Dar o push efetivamente** e reportar o resultado real
+- [ ] **Dar o push efetivamente** — apenas nos projetos selecionados — e reportar o resultado real (e os candidatos não-selecionados)
 
 ## Ações proibidas
 
 - [ ] Excluir arquivo ambíguo sem perguntar
 - [ ] Commit único genérico misturando tarefas
 - [ ] Mensagens não-semânticas ("wip", "ajustes")
+- [ ] Mostrar no campo um projeto sem push líquido, ou abrir o campo quando não há candidato
+- [ ] Imprimir a seleção como lista/texto em vez de abrir o campo de opções interativo
+- [ ] Empurrar projeto que o dev não selecionou
 - [ ] Push antes de limpar e commitar tudo
 - [ ] Push direto em produção/`main` quando há branch de homologação (sem intenção explícita do dev)
 - [ ] Pular o pull quando o projeto está desatualizado
@@ -43,7 +46,8 @@ Nenhuma obrigatória. Opcional: branch de destino e escopo (quais tarefas commit
 - [ ] Inúteis removidos/listados; ambíguos perguntados
 - [ ] Sem segredos no diff
 - [ ] Commits por tarefa e semânticos
-- [ ] Push executado e reportado
+- [ ] Campo de opções interativo aberto (uma opção/linha + "Todos"); só candidatos com push; nenhum campo se não há candidato
+- [ ] Push executado apenas nos selecionados e reportado (incluindo os de fora)
 
 ## Frase obrigatória de encerramento
 
