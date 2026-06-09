@@ -48,6 +48,7 @@ Uma tela só pode ser marcada como **pronta** (migrada ou construída) quando:
 - [ ] Tooltips e descrições presentes
 - [ ] Máscaras e formatações corretas
 - [ ] Permissões configuradas
+- [ ] URL(s) válida(s) de teste entregue(s) ao dev (obrigatório — ver `docs/04-protocolos/protocolo-homologacao.md`)
 - [ ] Homologação pelo usuário
 - [ ] Registrado em `memoria/historico-migracao.md`
 - [ ] Sem pendências críticas abertas
