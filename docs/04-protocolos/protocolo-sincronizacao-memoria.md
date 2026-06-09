@@ -12,7 +12,7 @@ A memória do OML (`memoria/`) desatualiza: o agente passa a operar com dados ob
 | Pages Inertia / views renderizadas | `historico-migracao.md` (tela implementada) |
 | `menu.js` / definição de menu | `backlog-telas.yaml` (telas ativas × pendentes) |
 | Components reais | `inventario-componentes.md` |
-| Policies / gates / middleware | `inventario-permissoes.md` |
+| Policies / gates / middleware / `usePermissions` | `permissoes/{slug}.md` (ledgers) + `permissoes/matriz-permissoes.md` (RBAC) |
 | Clients / chamadas externas | `inventario-integracoes.md` |
 | Models + schema vivo | `inventario-banco.md`, `scaffolds-suspeitos.md` |
 
@@ -24,7 +24,7 @@ A memória do OML (`memoria/`) desatualiza: o agente passa a operar com dados ob
    - Tela no código mas não no backlog → adicionar e investigar origem.
    - Tela no backlog marcada pendente mas já implementada no código → atualizar `historico-migracao.md` para migrada/homologada (conforme marcadores reais).
    - Tela no backlog sem correspondência no código → manter pendente.
-4. **Reconciliar inventários** (componentes, permissões, integrações, banco) com o que de fato existe.
+4. **Reconciliar inventários** (componentes, integrações, banco) com o que de fato existe. **Permissões:** reconciliar os ledgers `memoria/permissoes/` e a matriz RBAC contra o enforcement real do novo (middleware/policy/gate/`usePermissions`); tela implementada **sem** controle de acesso correspondente no ledger = achado 🟠 (possível buraco de segurança) → `memoria/pendencias.md`.
 5. **Rodar a varredura de Models** (`protocolo-varredura-models.md`) → `scaffolds-suspeitos.md`; órfãos viram pendência prioritária.
 6. **Carimbar** data e responsável da sincronização.
 7. **Avisar o dev** (lista breve) se a divergência for grande — sem hard-stop, salvo risco de segurança/financeiro.

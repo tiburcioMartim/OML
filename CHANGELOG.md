@@ -8,6 +8,22 @@ O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.
 
 ## [Não lançado]
 
+## [1.5.0] - 2026-06-09
+
+### Adicionado
+
+- **Subsistema dedicado de Permissões e Acessos** (promovido a cidadão de 1ª classe, com o mesmo rigor de ledger das Regras de Negócio — segurança + LGPD). O tratamento anterior era um toco (guardião de 8 linhas, template de tabela vazia, sem protocolo/comando/gate). Agora há:
+  - **Comando `/migracao-mapear-permissoes [ID]`** (`docs/01-comandos/`) — mapeia os **8 eixos** do controle de acesso do legado (① auth · ② tela `telas`+`permissao_tela` *default-deny* · ③ setor · ④ unidade/multi-tenant · ⑤ nível · ⑥ ação/CRUD · ⑦ domínio · ⑧ auditoria), enumera sujeitos com origem citada e mapeia para o novo (middleware/policy/gate/`usePermissions` + chave estável).
+  - **Protocolo de Investigação de Permissões** (`docs/04-protocolos/protocolo-investigacao-permissoes.md`), ancorado no mecanismo real do legado (`includes/session/verificar_permissao.php`), incl. caça a **telas sem guarda** (abertas) e veredito de paridade.
+  - **Ledger por tela** `memoria/permissoes/{slug}.md` + **Matriz RBAC global** `memoria/permissoes/matriz-permissoes.md` (templates em `docs/05-templates/`), com seed-if-missing (`docs/05-templates/memoria-seed/permissoes/`).
+  - **Gate duro 🔴 no Gate 2:** `/migracao-homologar` **aborta** se a paridade de acesso não estiver verificada (`protocolo-gates-validacao.md`). Dossiê auto-resolve o ledger ausente (gate de completude).
+  - **Invariantes:** *default-deny preservado · sem escalonamento de privilégio · sem lockout*. Qualquer mudança de acesso vs. legado = 🔴 (decisão do dev em `decisoes.md`).
+
+### Alterado
+
+- **Guardião de Permissões e Acessos** reescrito (missão, regra-mãe, 8 eixos com evidência, status, elevação 🔴, ações proibidas). **Guardião de Coexistência de Permissões** reforçado (ponte `url_erp_laravel`, dupla camada durante a convivência, default-deny nas duas pontas).
+- **Wiring:** `comandos-oficiais.md` (registro + regra de modo), `migracao-analisar-tela` e `fase-05` (mapear acesso na investigação), `protocolo-revisao-paridade` e `fase-14` (permissão = dimensão dura), `protocolo-sincronizacao-memoria` (reconciliar ledgers/matriz; tela sem controle = 🟠). `mapa-permissoes.template` e seed `inventario-permissoes` superados pelo subsistema (viram ponteiros).
+
 ## [1.4.0] - 2026-06-08
 
 ### Adicionado

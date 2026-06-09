@@ -12,7 +12,7 @@ Mapear **o que existe** na tela do legado — a estrutura técnica. As **regras*
 - [ ] Identificar objetivo funcional
 - [ ] Identificar campos, botões, filtros, modais
 - [ ] Identificar tabelas do banco
-- [ ] Identificar permissões
+- [ ] **Mapear o controle de acesso** com `/migracao-mapear-permissoes [ID]` (8 eixos → ledger `memoria/permissoes/{slug}.md`); ver `docs/03-guardioes/guardiao-permissoes-acessos.md`
 - [ ] Identificar integrações
 - [ ] Identificar arquivos e dependências envolvidos
 - [ ] Identificar dados sensíveis

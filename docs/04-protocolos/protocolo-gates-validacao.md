@@ -33,7 +33,10 @@ Marcadores de aprovação humana (Gates 🔴) ficam em `memoria/gates/`:
 |---|---|---|---|
 | `/migracao-extrair-regras` (04.5) | `memoria/gates/gate-1-design-system.md` | 👤 Humano | ABORTA: "Gate 1 (Design System) não aprovado. Conclua a Fase 04 e obtenha o 'sim' do dev." |
 | `/migracao-analisar-tela` (05) | `memoria/gates/gate-1-design-system.md` | 👤 Humano | ABORTA: "Gate 1 (Design System) não aprovado. Nenhuma tela é migrada antes do layout aprovado." |
+| `/migracao-mapear-permissoes` (05) | `memoria/gates/gate-1-design-system.md` | 👤 Humano | ABORTA: "Gate 1 (Design System) não aprovado." |
 | `/migracao-gerar-dossie [ID]` (06) | ledger **finalizado** `memoria/regras-negocio/{slug}.md` | 🔄 Completude | **Auto-resolve:** se o ledger faltar ou não estiver *finalizado*, dispara `/migracao-extrair-regras [ID]` (investiga e completa), depois gera o dossiê. Só escala ao dev o que for 🟠/❌/💀. |
+| `/migracao-gerar-dossie [ID]` (06) | ledger de permissões `memoria/permissoes/{slug}.md` | 🔄 Completude | **Auto-resolve:** se faltar, dispara `/migracao-mapear-permissoes [ID]` (investiga os 8 eixos) e segue. Só escala 🟠 (tela sem guarda) / 🔴 (mudança de acesso). |
+| `/migracao-homologar [ID]` (15 — **Gate 2**) | paridade de acesso **verificada** no ledger `memoria/permissoes/{slug}.md` | 👤 Humano 🔴 | **ABORTA:** "Paridade de permissões não verificada (default-deny / mesmos sujeitos / sem escalonamento / sem lockout). Rode `/migracao-mapear-permissoes [ID]`." Segurança + LGPD — não homologa sem isso. |
 | `/migracao-planejar-implementacao [ID]` (10) | dossiê da tela | 🔄 Completude | Auto-resolve: gera o dossiê (que por sua vez auto-resolve o ledger) e segue. |
 | `/migracao-autorizar-implementacao [ID]` (12) | plano + plano de testes | 🔄 Completude → 👤 Humano | Auto-resolve plano/testes; a **autorização** em si é gate humano (Gate de implementação). |
 

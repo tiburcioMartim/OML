@@ -8,7 +8,8 @@ O OML compara e apresenta uma lista breve de divergências. Não para. Pouco tex
 Comparar comportamento da tela nova com o legado.
 
 ## Ações obrigatórias
-- [ ] Comparar campos, ações, regras, permissões, cálculos
+- [ ] Comparar campos, ações, regras, cálculos
+- [ ] **Paridade de permissões (dura)** contra o ledger `memoria/permissoes/{slug}.md`: default-deny preservado · mesmos sujeitos (sem escalonamento/lockout) · escopos setor/unidade/nível íntegros (multi-tenant sem vazamento) · negação = `flash.error`, não 404. Ver `docs/04-protocolos/protocolo-revisao-paridade.md`. **Divergência de acesso = 🔴** (`decisoes.md`); sem isso verificado, o Gate 2 **aborta**.
 - [ ] Registrar divergências
 - [ ] Classificar divergências
 

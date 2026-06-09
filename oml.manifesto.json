@@ -1,6 +1,6 @@
 {
   "nome": "OML — Orquestrador de Migração Legada",
-  "versao": "1.4.0",
+  "versao": "1.5.0",
   "leiame": "Contrato Motor×Estado do OML. Define o que a atualização pode sobrescrever (motor) e o que é intocável (estado). Consumido por /oml-atualizar e pelo passo seed-if-missing de /migracao-ativar. Detalhes em docs/00-visao-geral/politica-versionamento-atualizacao.md.",
   "motor": {
     "descricao": "Sobrescrevível na atualização — igual em todo projeto. É o agente em si.",
@@ -61,6 +61,14 @@
       "passos": [
         "Garantir 'acessos.local.env' e '*.local.env' no .gitignore do OML ANTES de criar qualquer arquivo de valores.",
         "Seed-if-missing: copiar docs/05-templates/acessos.example.env para acessos.example.env (só se faltar) e criar acessos.local.env a partir do .example (chaves vazias) se faltar — NUNCA sobrescrever um acessos.local.env existente."
+      ]
+    },
+    {
+      "versao": "1.5.0",
+      "descricao": "Subsistema dedicado de Permissões e Acessos: ledger por tela + matriz RBAC, com o rigor das Regras de Negócio.",
+      "passos": [
+        "Seed-if-missing: copiar docs/05-templates/memoria-seed/permissoes/ para memoria/permissoes/ (cria só o que faltar; nunca sobrescreve ledger existente).",
+        "Os comandos/guardiões/protocolos novos são motor (docs/ e .claude/commands/) e já vêm pela atualização padrão; re-rodar a instalação global de comandos para o /migracao-mapear-permissoes autocompletar fora do clone."
       ]
     }
   ]

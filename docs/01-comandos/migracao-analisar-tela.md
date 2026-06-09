@@ -26,7 +26,7 @@ ID da tela ou URL legado. Exemplo: `/migracao-analisar-tela TELA-0001`
 - [ ] Identificar filtros e listagens
 - [ ] Identificar modais e fluxos alternativos
 - [ ] Identificar tabelas do banco envolvidas
-- [ ] Identificar permissões necessárias
+- [ ] **Mapear o controle de acesso** rodando `/migracao-mapear-permissoes [ID]` (8 eixos → ledger `memoria/permissoes/{slug}.md`) — não basta "identificar permissões"; ver `docs/03-guardioes/guardiao-permissoes-acessos.md`
 - [ ] Identificar integrações
 - [ ] Identificar arquivos e dependências envolvidos
 - [ ] Cruzar achados com o ledger de regras (Fase 04.5) — confirmar/atualizar origem e status; **não recriar regra aqui**
@@ -57,4 +57,4 @@ ID da tela ou URL legado. Exemplo: `/migracao-analisar-tela TELA-0001`
 
 ## Próximo passo
 
-`/migracao-gerar-dossie [ID]`
+`/migracao-mapear-permissoes [ID]` (se ainda não rodado) → `/migracao-gerar-dossie [ID]`
