@@ -8,6 +8,21 @@ O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.
 
 ## [Não lançado]
 
+## [1.6.0] - 2026-07-17
+
+### Adicionado
+
+- **Debate Adversário (`/adversario`)** — mecanismo de "advogado do diabo" do OML: um agente **Adversário** independente refuta a proposta/decisão/artefato **por padrão** e um **Juiz** independente julga e sintetiza, em rodadas, até convergir no melhor resultado — em vez de o OML autovalidar a própria ideia. Cobre arquitetura, código, artefatos de migração e textos/prompts. Novos `docs/04-protocolos/protocolo-adversario.md` e `docs/01-comandos/adversario.md`, launcher `.claude/commands/adversario.md`, registrado em `comandos-oficiais.md`.
+  - **Três papéis isolados** (Proponente / Adversário / Juiz), cada um em subagente próprio — **regra dura de isolamento por papel** (um subagente por papel por rodada; Adversário só objeta, Juiz só julga) para impedir a autovalidação em que um único contexto propõe, critica e se aprova.
+  - **Severidades** 🔴/🟡/🔵 **+ ⚠️ lacuna de evidência** (objeção sem origem por **fonte retida** bloqueia, não é rebaixada a estilo), e **pacote de evidência neutro** que o Proponente não pode curar a favor da tese.
+  - **Três estados terminais** distintos: **CONVERGIDO** (2 secas consecutivas **ou** retornos decrescentes declarados pelo Juiz, sem 🔴/⚠️ aberto), **ESGOTADO** (teto de rodadas quentes com 🔴 aberto) e **BLOQUEADO** (⚠️ retém um fato que só o dev tem). O orçamento conta **só rodadas quentes**; **backstop absoluto** de 5 rodadas totais.
+  - **Integração ao fluxo** condicionada à criticidade (decisão de arquitetura; `/migracao-autorizar-implementacao` e `/migracao-revisar-paridade` de alta criticidade) + item na **Definição de Pronto** e no **Protocolo de Gates**. Seção **"Quando NÃO usar"** para não desperdiçar no trivial/reversível.
+  - **Ata durável** em `memoria/atas/` (seed `docs/05-templates/memoria-seed/atas/`) — rastro de todo debate (Regra-Mãe #21); **laço de aprendizado**: objeção recorrente (≥3 debates) é promovida a checklist/guardião via `historico-aprimoramento.md` (wiring em `/migracao-gerar-relatorio-aprimoramento`).
+
+### Alterado
+
+- **Wiring:** `docs/00-visao-geral/definicao-de-pronto.md` (item condicional de debate adversário), `docs/04-protocolos/protocolo-gates-validacao.md` (gate condicional à criticidade), `docs/01-comandos/migracao-gerar-relatorio-aprimoramento.md` (varre `memoria/atas/` atrás de objeções recorrentes), `comandos-oficiais.md` (registro). Migração 1.6.0 no `oml.manifesto.json` (seed `memoria/atas/`).
+
 ## [1.5.0] - 2026-06-09
 
 ### Adicionado
