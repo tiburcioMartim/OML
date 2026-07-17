@@ -26,6 +26,7 @@ Sempre que precisar saber qual comando usar em determinada situação.
 | `/migracao-gerar-atlas-regras` | Após extrair regras de unidades | Agrega os ledgers no Atlas de Fluxos de Regras (`memoria/atlas-regras-negocio.md`) — visão ampla do negócio do legado |
 | `/migracao-analisar-tela` | Para cada tela | Investiga o que existe (técnico) de uma tela |
 | `/migracao-mapear-permissoes` | Por tela, na investigação (Fase 05) | Mapeia o controle de acesso nos 8 eixos (auth/tela/setor/unidade/nível/ação/domínio/auditoria) no ledger `permissoes/{slug}.md` + matriz RBAC; veredito de paridade (default-deny, sem escalonamento/lockout) |
+| `/migracao-mapear-seguranca` | Por tela, na investigação (Fase 05) e nos riscos (Fase 08) | Mapeia a postura de segurança nos 10 eixos ancorados em OWASP:2025/API:2023/ASVS 5.0/CWE:2025 no ledger `seguranca/{slug}.md` + matriz; nível ASVS (L3 p/ dado de saúde) e veredito de não-rebaixamento (ver `docs/04-protocolos/protocolo-investigacao-seguranca.md`) |
 | `/migracao-gerar-dossie` | Após análise | Gera dossiê funcional completo (gate duro: exige o ledger de regras) |
 | `/migracao-propor-interface` | Após dossiê | Propõe protótipo visual |
 | `/migracao-planejar-implementacao` | Após protótipo | Cria plano técnico |

@@ -40,7 +40,7 @@ Uma tela só pode ser marcada como **pronta** (migrada ou construída) quando:
 - [ ] Acessibilidade revisada
 - [ ] Responsividade testada (mobile, tablet, desktop)
 - [ ] LGPD revisada
-- [ ] Segurança revisada
+- [ ] Segurança revisada (ledger `memoria/seguranca/{slug}.md` — 10 eixos OWASP/ASVS/CWE; **L3** nos fluxos de dado de saúde; sem rebaixamento vs. legado)
 - [ ] Debate adversário realizado *quando aplicável* (alta criticidade/arquitetura/irreversível — ver `docs/04-protocolos/protocolo-adversario.md`)
 - [ ] Paridade com legado revisada *(migração)* / Critérios de aceite validados *(construção)*
 - [ ] Rollback documentado

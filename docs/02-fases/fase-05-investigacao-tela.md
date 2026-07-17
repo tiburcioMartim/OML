@@ -13,6 +13,7 @@ Mapear **o que existe** na tela do legado — a estrutura técnica. As **regras*
 - [ ] Identificar campos, botões, filtros, modais
 - [ ] Identificar tabelas do banco
 - [ ] **Mapear o controle de acesso** com `/migracao-mapear-permissoes [ID]` (8 eixos → ledger `memoria/permissoes/{slug}.md`); ver `docs/03-guardioes/guardiao-permissoes-acessos.md`
+- [ ] **Mapear a segurança** com `/migracao-mapear-seguranca [ID]` (10 eixos OWASP:2025/ASVS 5.0/CWE:2025 → ledger `memoria/seguranca/{slug}.md`; L3 nos fluxos de dado de saúde); ver `docs/03-guardioes/guardiao-seguranca.md`
 - [ ] Identificar integrações
 - [ ] Identificar arquivos e dependências envolvidos
 - [ ] Identificar dados sensíveis

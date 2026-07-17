@@ -13,6 +13,7 @@ Identificar riscos técnicos, operacionais e de negócio da migração da tela.
 - [ ] Identificar riscos de banco
 - [ ] Identificar riscos de integração
 - [ ] Identificar riscos de permissão
+- [ ] Identificar riscos de **segurança** — consultar/gerar o ledger `memoria/seguranca/{slug}.md` via `/migracao-mapear-seguranca` (10 eixos OWASP/ASVS/CWE); 🔴 de segurança (rebaixamento/exposição/segurança do paciente) elevam automaticamente
 - [ ] Classificar severidade
 - [ ] Registrar em `memoria/riscos.md` (lista breve, sem relatórios longos)
 
