@@ -42,6 +42,18 @@ Marcadores de aprovação humana (Gates 🔴) ficam em `memoria/gates/`:
 
 > Mudança vs. versão anterior: o gate do dossiê deixou de **abortar** por ledger ausente — agora **auto-completa** a extração e segue. O agente persegue a completude; só **gente** o detém.
 
+## Gate condicional — Debate Adversário
+
+Diferente dos gates acima, o **Debate Adversário** (`/adversario`, ver `docs/04-protocolos/protocolo-adversario.md`) **não é um gate duro universal** — seria desperdício exigi-lo no barato. É um **gate condicional à criticidade**:
+
+| Ponto do fluxo | Quando dispara |
+|---|---|
+| Decisão de arquitetura (`protocolo-decisao-arquitetura.md`) | **Obrigatório** antes de gravar em `decisoes.md` |
+| `/migracao-autorizar-implementacao` (Fase 12) | **Obrigatório** para telas de **alta criticidade** (💀/❌); recomendado nas demais |
+| `/migracao-revisar-paridade` (Fase 14) | **Recomendado** para telas de alta criticidade |
+
+Triagem pela `docs/00-visao-geral/matriz-criticidade.md`. Itens triviais/reversíveis **pulam** o debate (ver "Quando NÃO usar" do protocolo). A Ata fica em `memoria/atas/`.
+
 ## Regras
 
 - **Gate humano** é bloqueante, não um aviso. Não há "prosseguir mesmo assim" automático. A mensagem de abort nomeia a aprovação/decisão que falta. Exige "sim" explícito do dev (ver `docs/00-visao-geral/politica-autonomia.md`); só então o marcador em `memoria/gates/` é criado.

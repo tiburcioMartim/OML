@@ -14,6 +14,7 @@ Experiência acumulada durante a migração.
 
 ## Ações obrigatórias
 
+- [ ] Varrer as **Atas de debate** (`memoria/atas/`) e identificar **tipos de objeção recorrentes** (≥ 3 debates) — cada recorrência é um buraco no Proponente que deve virar checklist/guardião (laço de aprendizado do `docs/04-protocolos/protocolo-adversario.md`)
 - [ ] Identificar lacunas encontradas no OML
 - [ ] Classificar por escopo (núcleo genérico, Laravel, Vue, ERP hospitalar, etc.)
 - [ ] Descrever o problema encontrado

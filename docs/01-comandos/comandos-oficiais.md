@@ -33,6 +33,7 @@ Sempre que precisar saber qual comando usar em determinada situação.
 | `/migracao-revisar-paridade` | Após implementação | Compara legado x novo |
 | `/migracao-homologar` | Após paridade | Homologa com usuário |
 | `/migracao-auditar-padroes` | A qualquer momento | Audita padrões do repositório |
+| `/adversario` | Antes de fechar decisão/código/artefato | Debate adversário autônomo: um agente independente refuta por padrão e uma síntese converge para o melhor resultado (ver `docs/04-protocolos/protocolo-adversario.md`) |
 | `/migracao-gerar-relatorio-aprimoramento` | Periodicamente | Gera relatório de melhorias |
 | `/migracao-status` | A qualquer momento | Mostra status geral |
 | `/push` | Ao fechar um bloco versionável | Limpa inúteis (perguntando no que for ambíguo), commita por tarefa e semanticamente, e dá o push (ver `docs/04-protocolos/protocolo-push.md`) |
