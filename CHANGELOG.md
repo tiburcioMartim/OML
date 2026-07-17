@@ -8,6 +8,23 @@ O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.
 
 ## [Não lançado]
 
+## [1.7.0] - 2026-07-17
+
+### Adicionado
+
+- **Subsistema dedicado de Segurança** (promovido a cidadão de 1ª classe, no mesmo rigor do subsistema de Permissões v1.5.0). O tratamento anterior era um toco (guardião de 25 linhas + 3 guardiões de 7 linhas; sem comando/protocolo/ledger/gate). Agora há:
+  - **Comando `/migracao-mapear-seguranca [ID]`** — investiga a postura de segurança da tela/endpoint nos **10 eixos** (E1 acesso/autz · E2 auth/sessão · E3 injeção · E4 validação/regra · E5 cripto/LGPD · E6 config/exposição · E7 API/externo · E8 integridade/supply chain · E9 log/auditoria · E10 erros/exceções), cada achado com **status + origem citada (`arquivo:linha`) + âncora**.
+  - **Ancoragem em corpus autoritativo** (o agente cita, não "acha"): **OWASP Top 10 2025** (SSRF absorvido em A01, XSS reabsorvido em Injection, novas A03 Supply Chain e A10 Exceptional Conditions), **OWASP API Security Top 10 2023**, **OWASP ASVS 5.0** (L2 piso, **L3** para fluxos de dado de saúde), **CWE Top 25 2025**, + pitfalls Laravel e pacote hospitalar/LGPD (art. 11/46/37/48; retenção CFM ~20 anos).
+  - **Protocolo de Investigação de Segurança** (`docs/04-protocolos/protocolo-investigacao-seguranca.md`) com a referência de padrões fixa, passos por eixo, a **trilha greenfield (threat model + controles de berço)**, Definição de Pronto, gate e varredura orquestrada com verificação adversarial.
+  - **Ledger por tela** `memoria/seguranca/{slug}.md` + **matriz global** `memoria/seguranca/matriz-seguranca.md` (templates em `docs/05-templates/`), com seed-if-missing (`docs/05-templates/memoria-seed/seguranca/`).
+  - **Gate 🔴 condicional no Gate 2:** `/migracao-homologar` **aborta** em tela de **alta criticidade** (dado de saúde, cálculo clínico/financeiro) sem o veredito de segurança verificado (tela de baixa criticidade não bloqueia — evita desperdício).
+  - **Invariantes:** *não rebaixar controle do legado · secure-by-design no greenfield · validação no servidor · fail-safe · segredo/dado sensível fora do código e do log*. Rebaixamento/exposição/risco ao paciente = **🔴** (decisão do dev). Nunca inventar vulnerabilidade nem "confirmar" exploit sem evidência (sem ambiente vivo → 🟡).
+  - **Integração com o `/adversario`:** o threat model/ledger é alvo natural do debate adversário em alta criticidade.
+
+### Alterado
+
+- **Guardião de Segurança** reescrito (missão, ancoragem a padrão vigente, 10 eixos mapeados, invariantes, leitura por modo migração/greenfield, elevação 🔴). **Wiring:** `comandos-oficiais.md` (registro), `fase-05` (mapear segurança na investigação), `fase-08` (riscos de segurança), `definicao-de-pronto.md` (segurança = ledger + L3), `protocolo-gates-validacao.md` (gate condicional à criticidade). Migração 1.7.0 no `oml.manifesto.json` (seed `memoria/seguranca/`).
+
 ## [1.6.0] - 2026-07-17
 
 ### Adicionado
