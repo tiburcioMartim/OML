@@ -20,6 +20,7 @@ Nenhuma. Detecta os diretórios pelo perfil do projeto (`diretorio_legado`, `dir
 - [ ] Atualizar `memoria/historico-migracao.md` com as telas **já implementadas** detectadas no código (rota + página existentes → migrada/homologada conforme marcadores)
 - [ ] Reconciliar os demais arquivos de `memoria/`: `inventario-componentes.md` (componentes reais), `inventario-permissoes.md`, `inventario-integracoes.md`, `inventario-banco.md`, `decisoes.md`, `pendencias.md`, `riscos.md`
 - [ ] Rodar a varredura de Models (`docs/04-protocolos/protocolo-varredura-models.md`) → `memoria/scaffolds-suspeitos.md`
+- [ ] **Costurar o Cérebro** (ver `docs/04-protocolos/protocolo-cerebro-obsidian.md`): garantir que unidades novas (ledgers, dossiês) tenham entrada linkável por `[[wikilink]]` e atualizar o MOC do sistema em `cerebro/sistemas/`. Divergência vira pendência, nunca exclusão silenciosa.
 - [ ] Registrar carimbo de data e responsável da sincronização
 - [ ] Se a divergência entre memória e código for grande, **avisar o dev** com lista breve antes de prosseguir
 

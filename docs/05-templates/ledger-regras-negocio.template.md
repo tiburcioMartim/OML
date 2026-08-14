@@ -168,6 +168,20 @@ sequenceDiagram
 
 ---
 
+## 🧠 Ligações (cérebro)
+
+<!--
+  O que faz este ledger virar nó do grafo do cérebro (ver docs/04-protocolos/protocolo-cerebro-obsidian.md).
+  Emitir [[wikilinks]] para o que se conecta — SÓ para o que EXISTE (política anti-alucinação).
+  Um [[link]] pendente só é aceitável como marcador consciente de algo a criar, nunca como fato.
+-->
+
+- **Sistema dono:** [[cerebro/sistemas/{slug-do-sistema}]]
+- **Unidades relacionadas:** [[regras-negocio/{outro-slug}]] (dependências, telas que consomem/alimentam)
+- **Domínios que atravessa:** [[cerebro/dominios/{slug}]] (ex.: LGPD, uma integração, uma frente)
+
+---
+
 ## Convivência multi-app
 
 <!-- Preencher SOMENTE se a regra é usada por 2+ apps. Regra (fonte única): docs/03-guardioes/guardiao-regras-negocio.md → "Convivência multi-app". Resumo: a regra mora no app que ESCREVE (dono); apps que só LEEM referenciam, não duplicam; divergência é proibida e vira pendência. -->

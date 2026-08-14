@@ -32,6 +32,7 @@ Nenhuma. O comando detecta automaticamente o estado do projeto.
 - [ ] **Sincronizar a memória com o código real, ANTES de qualquer trabalho** (ver `docs/04-protocolos/protocolo-sincronizacao-memoria.md`): varrer Controllers, Models, Pages, Components e `menu.js` do projeto novo (e do legado, se houver) e reconciliar `memoria/` — incl. `historico-migracao.md`. Nunca operar com memória defasada.
 - [ ] **Varrer Models e validar `$table` contra `Schema::hasTable()`** (ver `docs/04-protocolos/protocolo-varredura-models.md`): emitir `memoria/scaffolds-suspeitos.md`; Models órfãos viram pendência prioritária antes de qualquer tela.
 - [ ] **Inventariar plugins/skills do Claude disponíveis** e registrar em `memoria/plugins-disponiveis.md` (ver `docs/04-protocolos/protocolo-plugins-claude.md`)
+- [ ] **Garantir e carregar o Cérebro (seed-if-missing)** (ver `docs/04-protocolos/protocolo-cerebro-obsidian.md`): se existir `cerebro/INDEX.md` na raiz do workspace, carregá-lo como índice do conhecimento; se **não** existir, semear a partir de `docs/05-templates/cerebro/`. **Nunca sobrescrever** um `cerebro/` já existente — é dado do dev.
 - [ ] **Carregar e exibir pendências humanas abertas** de `memoria/pendencias-humanas.md` (ver `docs/03-guardioes/guardiao-pendencias-humanas.md`)
 - [ ] Mostrar status geral do projeto (incl. divergências de memória, scaffolds suspeitos e pendências humanas)
 - [ ] Indicar o próximo passo recomendado
@@ -58,6 +59,7 @@ Nenhuma. O comando detecta automaticamente o estado do projeto.
 - [ ] Cofre de Acessos garantido (seed-if-missing): `.gitignore` ok, `acessos.example.env` e `acessos.local.env` presentes, blocos reportados mascarados
 - [ ] Memória sincronizada com o código real (sem dados defasados)
 - [ ] Models varridos e `scaffolds-suspeitos.md` atualizado
+- [ ] Cérebro garantido/carregado (índice do conhecimento disponível)
 - [ ] Status exibido
 - [ ] Próximo passo indicado
 
