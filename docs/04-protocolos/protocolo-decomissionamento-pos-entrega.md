@@ -60,13 +60,21 @@ permissão continua entrando pelo legado, e ainda se perde o registro de que a t
 
 ### Passos
 
-1. **Registrar** a tela numa lista única (chave = identificador da tela no sistema novo), com:
-   motivo **medido**, tela substituta, data, caminho do legado que continua no ar, os pontos de
-   código a remover no dia da limpeza, e — o campo que decide se a exclusão será limpa ou
-   destrutiva — **o que precisa ser preservado antes** (`guardar`). `guardar: null` é uma
-   afirmação forte e só se escreve depois de olhar.
-2. **Tirar dos menus** (menu lateral e painel do módulo). Rota e permissões ficam **intactas**:
-   quem precisa conferir um histórico continua chegando por URL.
+1. **Registrar** a tela numa lista única (chave = identificador dela no catálogo do sistema
+   novo), com: motivo **medido**, tela substituta, data, quem marcou, caminho do legado que
+   continua no ar, os pontos de código a remover no dia da limpeza, e — o campo que decide se
+   a exclusão será limpa ou destrutiva — **o que precisa ser preservado antes** (`guardar`).
+   `guardar` vazio é uma afirmação forte e a interface de marcação deve dizer isso em voz alta
+   antes de aceitar.
+   🔑 **Essa lista é DADO, não código.** Como arquivo do repositório ela funciona, mas marcar
+   uma tela passa a custar um dev, um commit e um deploy — enquanto quem sabe que uma tela
+   virou lixo é quem administra permissões. Em lista de dado, aposentar cabe num clique, e o
+   levantamento anda na velocidade de quem o está fazendo.
+2. **Tirar dos menus** (menu lateral e painel do módulo) — pela MARCA, não apagando o item da
+   árvore do menu. O item precisa continuar declarado: desmarcar é um clique e a promessa
+   desse clique é a tela **voltar** ao menu; sem o item, "desmarcar" não devolve nada.
+   Rota e permissões ficam **intactas**: quem precisa conferir um histórico continua chegando
+   por URL.
 3. **Informativo na página**, montado no *layout* e alimentado pela lista — nunca escrito à mão
    dentro de cada página, senão marcar a próxima tela vira "lembrar de repetir do jeito certo".
 4. **Selo na área de permissões**, na mesma linha do nome da tela, nas telas de grupo E de
