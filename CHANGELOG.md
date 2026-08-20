@@ -8,6 +8,10 @@ O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.
 
 ## [Não lançado]
 
+### Adicionado
+
+- **Protocolo de Decomissionamento — Parte C: como APOSENTAR uma tela** (`docs/04-protocolos/protocolo-decomissionamento-pos-entrega.md`). A tabela de decisão já previa "aposentar (marcar deprecated)", mas não dizia **como**, e na prática marcar virava improviso tela a tela. A Parte C fixa a regra dos **dois informativos, sempre os dois**: um **na própria página** (para quem ainda chega por URL ou favorito) e outro **na área de permissões do TI** (para quem monta grupo e libera acesso novo). 🔑 Um só não resolve — o problema de uma tela aposentada é justamente **ninguém abrir**, então o aviso da página nunca alcança quem continua distribuindo a permissão dela, e a tela morta segue sendo concedida por anos. Também fixa: lista única de registro com o campo **`guardar`** (o que precisa ser preservado antes de excluir — é o que separa exclusão limpa de destrutiva), o aviso montado no *layout* e não escrito à mão em cada página, **não bloquear nem esconder** o conteúdo, sinalização por **padrão** (hachura) e não por cor, e o alerta de que **sair do menu mata o breadcrumb** em projetos cuja trilha é montada a partir do menu. Checklist do protocolo atualizado.
+
 ## [1.7.0] - 2026-07-17
 
 ### Adicionado
