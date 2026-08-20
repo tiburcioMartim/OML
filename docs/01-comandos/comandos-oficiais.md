@@ -14,7 +14,8 @@ Sempre que precisar saber qual comando usar em determinada situação.
 
 | Comando | Quando usar | O que faz |
 |---|---|---|
-| `/migracao-ativar` | No início do projeto | Inicia o OML, detecta o modo, sincroniza memória e carrega regras |
+| `/migracao-ativar` | No início do projeto / quando a memória pode estar defasada | Inicia o OML, detecta o modo, sincroniza memória (varre o código) e carrega regras |
+| `/migracao-ativar-rapido` | Padrão do dia a dia — trabalho contínuo, código sem mudanças relevantes | Ativação enxuta: carrega regras + garante memória + pendências + status, **sem** varrer o código. Para refrescar a memória, rode `/migracao-sincronizar` |
 | `/oml-atualizar` | Quando o motor do OML evoluiu | Atualiza o **motor** do OML preservando o **estado** do projeto (memória, decisões, regras). Ver `docs/04-protocolos/protocolo-atualizacao-oml.md` |
 | `/migracao-sincronizar` | Início de sessão / sob demanda | Varre o código real e sincroniza `memoria/` (telas, componentes, scaffolds) |
 | `/migracao-configurar-projeto` | Após ativar | Define modo, perfil, stack e políticas |
@@ -26,18 +27,17 @@ Sempre que precisar saber qual comando usar em determinada situação.
 | `/migracao-gerar-atlas-regras` | Após extrair regras de unidades | Agrega os ledgers no Atlas de Fluxos de Regras (`memoria/atlas-regras-negocio.md`) — visão ampla do negócio do legado |
 | `/migracao-analisar-tela` | Para cada tela | Investiga o que existe (técnico) de uma tela |
 | `/migracao-mapear-permissoes` | Por tela, na investigação (Fase 05) | Mapeia o controle de acesso nos 8 eixos (auth/tela/setor/unidade/nível/ação/domínio/auditoria) no ledger `permissoes/{slug}.md` + matriz RBAC; veredito de paridade (default-deny, sem escalonamento/lockout) |
-| `/migracao-mapear-seguranca` | Por tela, na investigação (Fase 05) e nos riscos (Fase 08) | Mapeia a postura de segurança nos 10 eixos ancorados em OWASP:2025/API:2023/ASVS 5.0/CWE:2025 no ledger `seguranca/{slug}.md` + matriz; nível ASVS (L3 p/ dado de saúde) e veredito de não-rebaixamento (ver `docs/04-protocolos/protocolo-investigacao-seguranca.md`) |
 | `/migracao-gerar-dossie` | Após análise | Gera dossiê funcional completo (gate duro: exige o ledger de regras) |
 | `/migracao-propor-interface` | Após dossiê | Propõe protótipo visual |
 | `/migracao-planejar-implementacao` | Após protótipo | Cria plano técnico |
 | `/migracao-autorizar-implementacao` | Quando pronto | Libera para codificação |
-| `/migracao-revisar-paridade` | Após implementação | Compara legado x novo |
-| `/migracao-homologar` | Após paridade | Homologa com usuário |
+| `/migracao-revisar-paridade` | Após implementação (Fase 14) | Agente rigoroso de paridade: ficha D1–D11 + ledger de regras + 8 eixos de permissão, e **write-back no painel** (`verificado_agente` + links íntegros). Ver `docs/04-protocolos/protocolo-paridade-rigorosa.md` |
+| `/migracao-homologar` | Após paridade (Gate 2) | Homologa com o usuário; exige `verificado_agente` no painel (auto-resolve se faltar) e grava `homologado` no "sim" do dev |
 | `/migracao-auditar-padroes` | A qualquer momento | Audita padrões do repositório |
-| `/adversario` | Antes de fechar decisão/código/artefato | Debate adversário autônomo: um agente independente refuta por padrão e uma síntese converge para o melhor resultado (ver `docs/04-protocolos/protocolo-adversario.md`) |
 | `/migracao-gerar-relatorio-aprimoramento` | Periodicamente | Gera relatório de melhorias |
 | `/migracao-status` | A qualquer momento | Mostra status geral |
-| `/push` | Ao fechar um bloco versionável | Limpa inúteis (perguntando no que for ambíguo), commita por tarefa e semanticamente, e dá o push (ver `docs/04-protocolos/protocolo-push.md`) |
+| `/commit` | Ao querer consolidar o trabalho sem publicar ainda | Limpa inúteis (perguntando no que for ambíguo) e commita por tarefa e semanticamente, em todos os projetos do workspace — sem dar push (ver `docs/04-protocolos/protocolo-commit.md`) |
+| `/push` | Ao fechar um bloco versionável | Roda a limpeza e o commit do `/commit` e, além disso, escolhe os projetos e dá o push (ver `docs/04-protocolos/protocolo-push.md`) |
 | `/migracao-proxima-tela` | Após concluir uma tela | Avança para a próxima |
 | `/migracao-bloquear` | Quando necessário | Bloqueia uma tela/módulo |
 | `/migracao-retomar` | Após bloqueio | Retoma tela bloqueada |
