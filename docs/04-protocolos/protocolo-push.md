@@ -14,28 +14,21 @@ Antes de limpar/commitar/empurrar, em **cada** projeto que vai receber push:
 - **Se houver commits a puxar (`behind > 0`), puxe** — é regra do dev: "sempre que for identificado que há pull a ser feito para atualizar o projeto, faça-o". Preferir `--rebase` quando o local também estiver à frente (evita merge-bubble); abortar e sinalizar se houver conflito.
 - Conferir o **conteúdo líquido** (`git diff <upstream>...HEAD`): se vazio, não há nada a publicar (commits que se cancelam) — não force push de ruído.
 
-### 1. Limpeza — remover debug e arquivos inúteis 🔴
-Antes de qualquer commit, varrer o working tree por:
-- arquivos de **debug** (dumps, `console.log`/`dd()` esquecidos, prints temporários, `*.log`);
-- **scratch de teste** e arquivos descartáveis que **não devem ser versionados** (rascunhos, `test-*.tmp`, saídas de execução, pastas temporárias);
-- artefatos de build não versionáveis e arquivos órfãos.
+### 1-2. Limpeza + Commit — ver `docs/04-protocolos/protocolo-commit.md` 🔴
+Estas duas etapas **são** o Protocolo de Commit, extraído para comando próprio (`/commit`) —
+o `/push` as executa exatamente como documentadas lá, sem repetir a regra aqui:
 
-**Regra de ouro (segurança contra exclusão indevida):**
-> **Se houver QUALQUER dúvida se um arquivo é inútil, NÃO exclua — PERGUNTE ao dev.** "Limpar arquivos inúteis" já causou a exclusão acidental da própria OML. A exclusão é uma ação destrutiva: a régua é a mesma do sujeito 2 do `docs/03-guardioes/guardiao-banco-dados.md` (escrita destrutiva do agente = parar e sinalizar).
+- **0.** Frente viva — não commitar o que outra sessão está escrevendo agora.
+- **1.** Limpeza — remover debug e arquivos inúteis, com a regra de ouro contra exclusão
+  indevida (🔴 ambíguo = perguntar, nunca supor; "limpar arquivos inúteis" já causou a exclusão
+  acidental da própria OML) e o gate duro de dado sensível/pessoal.
+- **2.** Verificar integridade (sintaxe/build) antes de agrupar.
+- **3.** Commit por tarefa e semanticamente, incluindo a cirurgia de hunk para arquivo
+  compartilhado por duas tarefas ao mesmo tempo.
 
-- Arquivos **claramente** descartáveis (extensão temporária óbvia, ignorados pelo `.gitignore`) → o OML pode remover e **listar** o que removeu (🟡 Resumo).
-- Qualquer arquivo **ambíguo** (código, doc, config, dado, ou que o OML não criou) → **listar e perguntar** antes de excluir (🔴 Crítico, não prossegue sem "sim").
-- Olhar o conteúdo antes de excluir — se contradiz a descrição de "inútil", **não exclua**; surfaça a dúvida.
-- O que for inútil mas merece ficar fora do versionamento (não apagado) → sugerir entrada no `.gitignore`, não deletar.
-
-Complementa: `docs/03-guardioes/guardiao-limpeza-arquivos.md` e `docs/03-guardioes/guardiao-segredos-credenciais.md` (jamais commitar segredo/credencial — abortar o push se detectar).
-
-### 2. Commit — por tarefa e semanticamente
-- **Um commit por tarefa/unidade lógica** — não juntar mudanças sem relação no mesmo commit; não fazer um commitão de tudo.
-- Agrupar os arquivos pelo que pertence à mesma tarefa (usar `git add` seletivo / por caminho).
-- Mensagem **semântica** (Conventional Commits, em PT-BR): `feat:`, `fix:`, `docs:`, `chore:`, `refactor:`, `test:`, com escopo quando útil (`feat(construcao): ...`).
-- Mensagem descreve **o quê e por quê**, não só "ajustes".
-- Commitar **tudo o que estiver disponível** ao final — não deixar mudança relevante fora.
+Complementa: `docs/03-guardioes/guardiao-limpeza-arquivos.md` e
+`docs/03-guardioes/guardiao-segredos-credenciais.md` (jamais commitar segredo/credencial —
+abortar o push se detectar).
 
 ### 3. Seleção de projetos — escolher o que sobe 🔘
 Depois de limpar e commitar, montar a lista de **projetos candidatos**: os que têm conteúdo líquido a publicar (commits à frente do upstream / diff líquido não-vazio).
@@ -55,11 +48,7 @@ Depois de limpar e commitar, montar a lista de **projetos candidatos**: os que t
 ---
 
 ## Ações proibidas
-- [ ] Excluir arquivo ambíguo sem perguntar ao dev (regra de ouro)
-- [ ] Excluir arquivo que o OML não criou sem confirmação
-- [ ] Commit único e genérico misturando tarefas distintas
-- [ ] Mensagem de commit não-semântica ("update", "wip", "ajustes")
-- [ ] Commitar segredos/credenciais/dados sensíveis
+Ver também `docs/04-protocolos/protocolo-commit.md` (limpeza e commit — etapas 1-2). Específicas do push:
 - [ ] Dar push antes de limpar e commitar tudo
 - [ ] Pular o pull quando o projeto está desatualizado (`behind > 0`)
 - [ ] Push direto em produção/`main` quando há branch de homologação (sem intenção explícita do dev)
@@ -72,11 +61,7 @@ Depois de limpar e commitar, montar a lista de **projetos candidatos**: os que t
 
 ## Checklist de conclusão
 - [ ] Projetos sincronizados (pull onde havia `behind`); diff líquido conferido
-- [ ] Working tree varrido; inúteis claros removidos e listados
-- [ ] Ambíguos perguntados ao dev (nenhuma exclusão por suposição)
-- [ ] Sem segredos no diff
-- [ ] Commits por tarefa, com mensagens semânticas
-- [ ] Tudo o que era relevante foi commitado
+- [ ] Etapas 1-2 (limpeza + commit) concluídas — ver checklist de `docs/04-protocolos/protocolo-commit.md`
 - [ ] Campo de opções interativo aberto (uma opção por linha + "Todos"); só candidatos com push aparecem; nenhum campo se não há candidato
 - [ ] Push feito apenas nos projetos selecionados; não-selecionados reportados
 - [ ] Branch-alvo correta (homologação quando existe; produção só na ausência)
