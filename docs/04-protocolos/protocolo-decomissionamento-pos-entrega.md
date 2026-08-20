@@ -85,8 +85,33 @@ permissão continua entrando pelo legado, e ainda se perde o registro de que a t
    ⚠️ Conferir o que a marcação em lote ("marcar visíveis/todas") faz com o filtro ligado:
    se ela opera sobre o que está VISÍVEL, ligar o filtro e clicar concede todas as
    aposentadas de uma vez — o oposto da intenção de quem foi ali limpar.
-5. **Não bloquear e não esconder** o conteúdo. Quem chegou ali foi conferir alguma coisa;
-   tirar a tela da frente troca um incômodo por uma pergunta sem resposta.
+5. **Decidir, com o dono do sistema, entre ESCONDER e FECHAR** — e essa é a escolha que mais
+   muda o resultado:
+
+   | | Esconder | Fechar |
+   |---|---|---|
+   | Some dos menus | sim | sim |
+   | Quem tem permissão ainda abre | sim | **não** |
+   | Custo | tela morta continua sendo usada e concedida | quem precisava de um número histórico perde o caminho |
+
+   *Esconder* é o default seguro quando a tela ainda pode ter uso legítimo. *Fechar* é o certo
+   quando a intenção é **parar de usar de vez** e o que resta é só esperar o legado sair —
+   caso em que "esconder" só adia o problema, porque a tela continua acessível a quem já tem
+   a permissão e ninguém percebe que ela nunca deixou de ser usada.
+
+   🔑 **Fechar não pode ser revogar.** As permissões ficam gravadas como estão: elas são o
+   registro de quem usava e é o que volta a valer se a tela sair do desuso. Apagá-las
+   tornaria a decisão irreversível na prática, porque reconstruir quem tinha acesso a quê é
+   trabalho que ninguém faz.
+
+   🔴 Ao fechar, três lugares quebram em silêncio se você esquecer:
+   **(a)** as rotas-filhas (o `store` da tela continua aberto se o gate só olhar a rota da
+   página); **(b)** quem tem a tela como TELA INICIAL passa a cair numa porta trancada a cada
+   login; **(c)** favoritos e abas salvas viram atalhos que devolvem erro.
+
+   E deixe **uma** porta aberta: quem administra o catálogo precisa conseguir abrir a tela
+   para conferir o `guardar` antes de mandar apagar. Sem isso, a única forma de olhar é tirar
+   do desuso — devolvendo a tela ao menu de todo mundo no caminho.
 
 ### Sinalização
 O sinal visual é o **padrão** (hachura/listra), não a cor: cor sozinha colide com a paleta da
